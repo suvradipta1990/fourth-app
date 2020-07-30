@@ -21,17 +21,19 @@
        </tr>
            <tr>
             <td> </td>
-            <td><input type="text" id="login" class="fadeIn second" name="login" placeholder="username/mobile number"></td>
+            <td>
+                <input type="text" id="login" class="fadeIn second" [(ngModel)]="userName" placeholder="username/mobile number">
+            </td>
              <td> </td>
             </tr> 
            <tr>
             <td> </td>
-            <td><input type="password" id="password" class="fadeIn second" name="login" placeholder="password"></td>
+            <td><input type="password" id="password" class="fadeIn second" [(ngModel)]="password" placeholder="password"></td>
               <td> </td>
             </tr> 
             <tr>
                 <td> </td>
-               <td><input id="loginbtn" type="submit" (click)="gethomepage()" class="fadeIn second" rel="next" href='home' value="Log In"></td> 
+               <td><input id="loginbtn" type="submit" (click)="login()" class="fadeIn second" rel="next" href='home' value="Log In"></td> 
             <!--   <td><button  class="fadeIn second " [routerLink]="'home'">Log In</button ></td>--> 
                <td> </td>
             </tr>

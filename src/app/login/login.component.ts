@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-// We haven't defined these services yet
-import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 export * from './login.component';
 
 @Component({
@@ -10,12 +8,33 @@ export * from './login.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  [x: string]: any;
-  ngOnInit() {
+
+  constructor(private router: Router) { }
+ 
+    
+   
+
+    public userName :String;
+    public password :String;
+
+
+
+
+    login() : void {
+
+      console.log("username :: "+this.userName);
+      console.log("password :: "+this.password);
+      if(this.userName == 'user' && this.password == '123'){
+       this.router.navigate(["home"]);
+      }else {
+        alert("Invalid credentials");
+      }
+    }
+ 
+  gethomepage(): void {
+    this.router.navigate(['home']);
   }
-  ngOnDestroy() {
-}
-gethomepage(): void {
-  this.router.navigate(['home']);
-}
+
+  ngOnInit() {}
+  ngOnDestroy() {}
 }

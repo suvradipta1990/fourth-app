@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-//import { CallbackComponent } from './callback.component';
+import { CommonModule } from '@angular/common';
+
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
@@ -14,7 +16,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
+  ],  
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
