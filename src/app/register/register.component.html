@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div id="id01" class="wrapper">
+ <!--   <span onclick="window.close()" class="close" title="Close Modal" href='/dashboard'>&times;</span> -->
+  <div>
+
+    <!-- Login Form -->
+    <form>
+    <table>
+        <tr>
+            <td> </td>
+            <td><img src="https://img.icons8.com/fluent/96/000000/user-male-circle.png"/></td>
+            <td> </td>
+        </tr>
+        <tr>
+         <td><input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name"></td>
+         <td><input type="text" id="lastname" class="fadeIn second" name="lastname" placeholder="Last Name"></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="mobilenumber" class="fadeIn second" name="mobilenumber" placeholder="Mobile no"></td>
+          <td><input type="text" id="emailid" class="fadeIn second" name="emailid" placeholder="Email"></td>
+        </tr>
+        <tr>
+            <td><input type="password" id="password" class="fadeIn second" name="password" placeholder="Create a password"></td>
+            <td><input type="text" id="confirmpassword" class="fadeIn second" name="confirmpassword" placeholder="Confirm password"></td>
+        </tr>
+        <tr>
+            <td><input type="date" class="fadeIn second" name="Date of birth" value="date"></td>
+            <td><input type="submit" class="fadeIn second" value="Register"></td>
+        </tr>
+           
+    </table>
+    </form>
+  </div>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    //calling <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" href='/dashboard'>&times;</span>
+  
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>

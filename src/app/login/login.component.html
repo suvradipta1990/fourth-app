@@ -1,0 +1,65 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div id="id01" class="wrapper ">
+    <!-- <span onclick="window.close()" class="close" title="Close Modal" href='/dashboard'>&times;</span> -->
+  <div>
+    <!-- Login Form -->
+    <form >
+       <table>
+           <tr>
+               <td> </td>
+               <td><img src="https://img.icons8.com/fluent/96/000000/user-male-circle.png"/></td>
+               <td> </td>
+           </tr>
+           <tr>
+            <td width="300px"> </td>
+            
+            <td> </td>
+       </tr>
+           <tr>
+            <td> </td>
+            <td><input type="text" id="login" class="fadeIn second" name="login" placeholder="username/mobile number"></td>
+             <td> </td>
+            </tr> 
+           <tr>
+            <td> </td>
+            <td><input type="password" id="password" class="fadeIn second" name="login" placeholder="password"></td>
+              <td> </td>
+            </tr> 
+            <tr>
+                <td> </td>
+               <td><input id="loginbtn" type="submit" (click)="gethomepage()" class="fadeIn second" rel="next" href='home' value="Log In"></td> 
+            <!--   <td><button  class="fadeIn second " [routerLink]="'home'">Log In</button ></td>--> 
+               <td> </td>
+            </tr>
+            <tr> 
+                <td> </td>
+                <td><a class="underlineHover" href="#">Forgot Password?</a></td>
+                <td> </td>
+            </tr>
+    </table>
+    </form>
+
+  </div>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var login = document.getElementById('loginbtn');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    //calling <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" href='/dashboard'>&times;</span>
+  
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function homepage() {
+     window.location.assign("home")
+    }
+    </script>
