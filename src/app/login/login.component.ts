@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     
    
 
-    public userName :String;
-    public password :String;
+    public userName :String = "";
+    public password :String= "";
 
 
 
@@ -25,6 +25,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log("username :: "+this.userName);
       console.log("password :: "+this.password);
       if(this.userName == 'user' && this.password == '123'){
+
+        // call back end for authorization
+
        this.router.navigate(["home"]);
       }else {
         alert("Invalid credentials");
