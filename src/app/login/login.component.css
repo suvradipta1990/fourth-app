@@ -356,3 +356,7 @@ input[type=submit]:placeholder {
 #icon {
   width:60%;
 }
+
+.center{
+  margin: auto;
+}

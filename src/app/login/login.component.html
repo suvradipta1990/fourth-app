@@ -2,9 +2,9 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div id="id01" class="wrapper ">
+<div id="id01" class="wrapper">
     <!-- <span onclick="window.close()" class="close" title="Close Modal" href='/dashboard'>&times;</span> -->
-  <div>
+  <div class ="center">
     <!-- Login Form --> 
     <a href="#" class="icon-center"><img src="https://img.icons8.com/fluent/96/000000/user-male-circle.png"/></a>
     
@@ -16,13 +16,13 @@
            <tr>
             <td> </td>
             <td>
-                <input type="text"class="fadeIn second" [(ngModel)]="userName" name="userName" placeholder="username/mobile number">
+                <input type="text"class="fadeIn second" [(ngModel)]="userName" required name="userName" placeholder="username/mobile number*">
             </td>
              <td> </td>
             </tr> 
            <tr>
             <td> </td>
-            <td><input type="password"class="fadeIn second" [(ngModel)]="password" placeholder="password"></td>
+            <td><input type="password"class="fadeIn second" [(ngModel)]="password" required placeholder="password*" ></td>
               <td> </td>
             </tr> 
             <tr>
