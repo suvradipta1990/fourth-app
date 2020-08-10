@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentsComponent } from './students/students.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { StudentsComponent } from './students/students.component';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

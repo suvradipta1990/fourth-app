@@ -26,13 +26,8 @@ export class AuthService {
       this.isAuthenticated.next(true);
       this.authClient.session.setCookieAndRedirect(transaction.sessionToken);
     }
-    async logout(redirect: string) {
-      try {
-        await this.authClient.signOut();
-        this.isAuthenticated.next(false);
-        this.router.navigate([redirect]);
-      } catch (err) {
-        console.error(err);
-      }
-    }
+    logout(): void {
+      localStorage.setItem('isLoggedIn', "false");
+      localStorage.removeItem('token');
+    } 
   }

@@ -7,14 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { StudentsComponent } from './students/students.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuard } from './auth.guard';
  
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'students', component: StudentsComponent },
+  { path: 'home', component: HomeComponent,canActivate: [AuthGuard] },
+  { path: 'students', component: StudentsComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 
