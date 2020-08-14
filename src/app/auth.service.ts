@@ -26,8 +26,13 @@ export class AuthService {
       this.isAuthenticated.next(true);
       this.authClient.session.setCookieAndRedirect(transaction.sessionToken);
     }
+    
     logout(): void {
-      localStorage.setItem('isLoggedIn', "false");
-      localStorage.removeItem('token');
+      // localStorage.setItem('isLoggedIn', "false");
+      // localStorage.removeItem('token');
+      // localStorage.removeItem('user_id');
+      // localStorage.removeItem('user_name');
+      // localStorage.removeItem('profile_id');
+      //this.authClient.session.removeItem();
     } 
   }
