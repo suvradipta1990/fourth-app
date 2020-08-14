@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { ProfileService } from "./services/home.service";
 import {Profile} from "./Profile";
 import {ProfileHistory} from "./ProfileHistory";
-//import { MatTabsModule } from '@angular/material/tabs';
-import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { LoginComponent } from '../login/login.component';
 export * from './home.component';
 
 @Component({
@@ -32,10 +31,10 @@ export class HomeComponent implements OnInit {
     public parentstab :string= "";
     public  profile: Profile;
     public  profilehist: ProfileHistory[];
+  prof_id: string;
   constructor(private router: Router,
     public authService: AuthService,
     private profileService: ProfileService) { }
-
 
   ngOnInit(): void {
     this.currDiv = 1;
@@ -45,14 +44,15 @@ export class HomeComponent implements OnInit {
     this.username = localStorage.getItem('user_name');
     this.user_id = localStorage.getItem('user_id');
     this.is_admin = localStorage.getItem('is_admin'); 
-    this.getprofile(this.user_id);
-    console.log("profile_id");
-    //this.profile_id=localStorage.getItem('profile_id');
-    console.log(this.profile);
+    const pro_id =this.getprofile(this.user_id);
+    this.profile_id=localStorage.getItem('profile_id');
+
+    console.log("profile_id for profile history");
+    console.log(this.profile_id);
     this.getProfileHistory(this.profile_id);
+  //  localStorage.removeItem('profile_id');
   }
   getprofile(user_id: string) : void {
-  
     console.log("inside getprofile "+ user_id);
     this.profileService.getprofile(user_id)
     .subscribe((data) => {
@@ -81,9 +81,10 @@ export class HomeComponent implements OnInit {
           data[0].is_deleted,
           data[0].user_id,
           data[0].email);
+
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);
-         // localStorage.setItem('profile_id', this.profile_id);
+          localStorage.setItem('profile_id', this.profile_id);
 
       }else {
         alert("Profile not found"); 
@@ -98,7 +99,6 @@ export class HomeComponent implements OnInit {
         console.log('profile_history_count');
          this.profilehist=data;
           console.log(this.profilehist);
-        //  localStorage.setItem('isLoggedIn', "true");
         }else {
           console.log(this.profilehist);
         }
@@ -108,6 +108,9 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');
       localStorage.removeItem('profile_id');
+      localStorage.clear();
       this.router.navigate(["/login"]);
+      LoginComponent.logout();
     }
+
 }

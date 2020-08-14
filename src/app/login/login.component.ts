@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-export * from './login.component';
 import { LoginService } from "./services/login.service";
 import {User} from "./user";
 import { Input, Output, EventEmitter } from '@angular/core';
@@ -15,6 +14,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   user_id: string;
   is_admin: string;
+  static logout: any;
   constructor(private router: Router, 
              private loginService: LoginService) {   }
    user:User;
@@ -53,7 +53,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   gethomepage(): void {
     this.router.navigate(['home']);
   }
+  logout(){
+    localStorage.clear();
+  }
 
   ngOnInit() {}
   ngOnDestroy() {}
 }
+
+export * from './login.component';
