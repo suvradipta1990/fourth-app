@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { ProfileService } from "./services/home.service";
 import {Profile} from "./Profile";
 import {ProfileHistory} from "./ProfileHistory";
+import {PaymentSummary} from "./PaymentSummary";
 import { LoginComponent } from '../login/login.component';
 export * from './home.component';
 
@@ -29,8 +30,10 @@ export class HomeComponent implements OnInit {
 
     public profiletab :string = "";
     public parentstab :string= "";
+    public diffDays :any;
     public  profile: Profile;
     public  profilehist: ProfileHistory[];
+    public  paysummary: PaymentSummary[];
   prof_id: string;
   constructor(private router: Router,
     public authService: AuthService,
@@ -44,13 +47,7 @@ export class HomeComponent implements OnInit {
     this.username = localStorage.getItem('user_name');
     this.user_id = localStorage.getItem('user_id');
     this.is_admin = localStorage.getItem('is_admin'); 
-    const pro_id =this.getprofile(this.user_id);
-    this.profile_id=localStorage.getItem('profile_id');
-
-    console.log("profile_id for profile history");
-    console.log(this.profile_id);
-    this.getProfileHistory(this.profile_id);
-  //  localStorage.removeItem('profile_id');
+    this.getprofile(this.user_id);
   }
   getprofile(user_id: string) : void {
     console.log("inside getprofile "+ user_id);
@@ -84,8 +81,11 @@ export class HomeComponent implements OnInit {
 
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);
-          localStorage.setItem('profile_id', this.profile_id);
-
+          
+          console.log("profile_id for profile history");
+          console.log(this.profile_id);
+          this.getProfileHistory(this.profile_id);
+          this.getPaymentSummary(this.profile_id);
       }else {
         alert("Profile not found"); 
       }
@@ -104,12 +104,33 @@ export class HomeComponent implements OnInit {
         }
       });
     }
+
+    getPaymentSummary(profile_id: string){
+      this.profileService.getPaymentSummary(profile_id)
+      .subscribe((data) => {
+        if(data != null ) {
+          console.log('paysummary_count');
+           this.paysummary=data;
+            console.log(this.paysummary);
+          }else {
+            console.log(this.paysummary);
+          }
+        });
+      }
+
+      calculateDiff(from_date :Date,to_date:Date) {
+        var date1:any = new Date(from_date);
+        var date2:any = new Date(to_date);
+        this.diffDays = Math.floor((date2 - date1) / (1000 * 60 * 60 * 24));
+        return this.diffDays;
+    }
+
     logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');
       localStorage.removeItem('profile_id');
       localStorage.clear();
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/"]);
       LoginComponent.logout();
     }
 

@@ -1,9 +1,7 @@
-<div class="row">
-    <div class="col-md-2 " text-align="right">
-        <input id="logoutbtn" type="submit" (click)="logout()" 
-        class="fadeIn second"  href='home' value="Log out">
-    </div>
-</div>
+<!-- <div class="row topnav-right"> -->
+ <input id="logoutbtn" type="submit" (click)="logout()" 
+         class="topnav-right" href='home' value="Log out">
+<!-- </div> -->
 <div class="center">
     <h1><p>Welcome {{profile.first_name}}</p></h1>
         <ul ng-if=this.is_admin>
@@ -108,30 +106,7 @@
                                                         <p>{{profile.mothers_name}}</p>
                                                     </div>
                                             </div>
-                                            <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Address</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>NA</p>
-                                                    </div>
-                                                </div>
-                                            <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>English Level</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>Expert</p>
-                                                    </div>
-                                            </div>
-                                            <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Availability</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>6 months</p>
-                                                    </div>
-                                            </div>
+                                            
                                         </div>
                                     </mat-tab>
                                     <mat-tab>
@@ -162,6 +137,12 @@
                                                         <p>{{history.practise_till.substring(0, 10)}}</p>
                                                     </div>
                                                     <div class="col-md-6">
+                                                        <label>DURATION</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>NA</p>
+                                                    </div>
+                                                    <div class="col-md-6">
                                                         <label>IS LALITKALA TEACHER</label>
                                                     </div>
                                                     <div class="col-md-6">
@@ -169,12 +150,12 @@
                                                             *ngIf="history.is_lalitkala_teacher; then YES; else NO">
                                                         </ng-container>
                                                         <ng-template #YES>
-                                                            <div class="col-md-6">
+                                                            <div>
                                                             YES
                                                             </div>
                                                         </ng-template>
                                                         <ng-template #NO>
-                                                            <div class="col-md-6">
+                                                            <div>
                                                             NO
                                                             </div>
                                                         </ng-template>
@@ -195,7 +176,42 @@
                                              Payment summery
                                              </div>  
                                         </ng-template> 
-                                      NA
+                                        <div class="tab-height">
+                                            <div *ngFor="let payment of paysummary" >
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>LAST PAYMENT DATE</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{payment.payment_date.substring(0, 10)}}</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>PAYMENT AMOUNT </label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{payment.pay_amount}}</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>PAY MONTH FROM</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{payment.pay_month_from.substring(0, 10)}}</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>PAY MONTH TO</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>{{payment.pay_month_to.substring(0, 10)}}</p>
+                                                    </div> 
+                                                    <div class="col-md-6">
+                                                        <label>   </label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>  </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </mat-tab>
                                 </mat-tab-group> 
                     </div>

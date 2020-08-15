@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Profile} from "../Profile";
 import {ProfileHistory} from "../ProfileHistory";
+import {PaymentSummary} from "../PaymentSummary";
 @Injectable({
   providedIn: 'root'
 })
@@ -46,6 +47,13 @@ export class ProfileService {
     const v_profile_id  = {profile_id: profile_id};
     console.log("v_profile_id :"+ v_profile_id)
     return this.http.post<ProfileHistory[]>(this.urlString + '/profilehistory',v_profile_id);
+}
+
+getPaymentSummary(profile_id: string): Observable<PaymentSummary[]> {
+     
+  const v_profile_id  = {profile_id: profile_id};
+  console.log("v_profile_id :"+ v_profile_id)
+  return this.http.post<PaymentSummary[]>(this.urlString + '/getPaymentSummary',v_profile_id);
 }
 
 

@@ -60,6 +60,14 @@ app.post('/profilehistory', (req, res) => {
     return db.getprofileprofilehist(req.body.profile_id, res);  // res.json(data);
 })
 
+app.post('/getPaymentSummary', (req, res) => {
+    console.log('getPaymentSummary REQ') ;
+    console.log(req.body.profile_id) ;
+    console.log('getPaymentSummary RES') ;
+    console.log(res.body) ;
+    return db.getPaymentSummary(req.body.profile_id, res);  // res.json(data);
+})
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

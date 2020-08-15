@@ -58,8 +58,24 @@ var getprofileprofilehist = (profile_id,res) => {
     res.status(200).json(result.rows);
   });
 }
+
+var getPaymentSummary = (profile_id,res) => {
+  const getPaymentSummary = 'SELECT * FROM master.payment_summery_view WHERE profile_id = $1';
+  console.log("db.js console profile_id: "+profile_id);
+  client.query(getPaymentSummary, [profile_id], (err, result, callback) => {
+    if (err) {
+        console.log(err);
+        return null;
+
+    }
+    console.log("db.js console profile_id results : "+result.rows);
+    res.status(200).json(result.rows);
+  });
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
-                   'getprofileprofilehist': getprofileprofilehist
+                   'getprofileprofilehist': getprofileprofilehist,
+                   'getPaymentSummary': getPaymentSummary
                   };
