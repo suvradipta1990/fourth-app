@@ -24,6 +24,8 @@ export class Profile {
         public updated_by: number,
         public is_deleted:boolean,
         public user_id:number,
-        public email:String){}
+        public email:String,
+        public DOJ:String,
+        public is_student: boolean){}
   }
   export * from './Profile';

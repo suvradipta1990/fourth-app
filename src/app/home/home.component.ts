@@ -77,7 +77,9 @@ export class HomeComponent implements OnInit {
           data[0].updated_by,
           data[0].is_deleted,
           data[0].user_id,
-          data[0].email);
+          data[0].email,
+          data[0].doj,
+          data[0].is_student);
 
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);

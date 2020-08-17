@@ -358,7 +358,8 @@ input[type=submit]:placeholder {
 }
 
 .center{
-  margin: auto;
+ 
+  text-align: center;
 }
 :host {
   display: flex;

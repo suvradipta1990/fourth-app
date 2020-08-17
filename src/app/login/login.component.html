@@ -4,34 +4,21 @@
 
 <div id="id01" class="wrapper">
   <div class ="center">
-       <table>
-           <tr>
-            <td width="200px"> </td>
-            <td> </td>
-       </tr>
-           <tr>
-            <td> </td>
+       <table width=100%>
+          <tr>
+              <input type="text"class="fadeIn second" [(ngModel)]="userName" required name="userName" placeholder="username/mobile number*">
+          </tr> 
+          <tr>
             <td>
-                <input type="text"class="fadeIn second" [(ngModel)]="userName" required name="userName" placeholder="username/mobile number*">
+              <input type="password"class="fadeIn second" [(ngModel)]="password" required placeholder="password*" >
             </td>
-             <td> </td>
-            </tr> 
-           <tr>
-            <td> </td>
-            <td><input type="password"class="fadeIn second" [(ngModel)]="password" required placeholder="password*" ></td>
-              <td> </td>
-            </tr> 
-            <tr>
-                <td> </td>
-               <td><input id="loginbtn" type="submit" (click)="login()" class="fadeIn second" rel="next" href='home' value="Log In"></td> 
-            <!--   <td><button  class="fadeIn second " [routerLink]="'home'">Log In</button ></td>--> 
-               <td> </td>
-            </tr>
-            <tr> 
-                <td> </td>
-                <td><a class="underlineHover" href="#">Forgot Password?</a></td>
-                <td> </td>
-            </tr>
+          </tr> 
+          <tr>
+            <td><input id="loginbtn" type="submit" (click)="login()" class="fadeIn second" rel="next" href='home' value="Log In"></td> 
+          </tr>
+          <tr> 
+            <td><a class="underlineHover" href="#">Forgot Password?</a></td>
+          </tr>
     </table>
     
 

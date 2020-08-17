@@ -31,6 +31,8 @@ export class ProfileService {
   updated_by: number;
   is_deleted:boolean
   user_id:number;
+  DOJ: Date;
+  is_student: boolean;
 
   // private users : User[] = [];
    private urlString: string = 'http://localhost:3000';

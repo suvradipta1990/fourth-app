@@ -1,226 +1,225 @@
-<!-- <div class="row topnav-right"> -->
- <input id="logoutbtn" type="submit" (click)="logout()" 
-         class="topnav-right" href='home' value="Log out">
-<!-- </div> -->
-<div class="center">
-    <h1><p>Welcome {{profile.first_name}}</p></h1>
-        <ul ng-if=this.is_admin>
-            <h2>Logged in as Admin</h2>
-        </ul>  
+<div class="profilehaed">
+    <div class="col-md-6">
+        <h1><p>Welcome {{profile.first_name}}</p></h1>
     </div>
-    <div class="container emp-profile"> 
-        <form method="post">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                        <!-- <img src="../../images/profile_image/1.jpg" alt=""/> -->
-                        <div class="file btn btn-lg btn-primary">
-                            Click here to Change Photo
-                            <input type="file" name="file"/>
-                        </div>
+    <div class="col-md-6">
+         <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+        </div>
+</div>
+
+<div class="container emp-profile"> 
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                    <!-- <img src="../../images/profile_image/1.jpg" alt=""/> -->
+                    <div class="file btn btn-lg btn-primary">
+                        Click here to Change Photo
+                        <input type="file" name="file"/>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                                <h2>
-                                    <p>{{profile.first_name}}</p>
-                                </h2>
-                                <h4>
-                                    Student
-                                </h4>
-                                <p class="proile-rating">RANKINGS : <span>NA</span></p>
-                                <mat-tab-group>
-                                    <mat-tab >
-                                        <div class="tab-height">
-                                            <ng-template mat-tab-label>
-                                                <div class="tab-heading">
-                                                    Basic Info
-                                                </div>  
-                                            </ng-template> 
-                                            <div tab-height>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>User Name</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{this.username}}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Name</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Email</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{profile.email}}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Phone</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{profile.mobile_number}}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Date Of Birth</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{profile.date_of_birth}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    
-                                    <mat-tab>
-                                        <div class="tab-height">
-                                            <ng-template mat-tab-label>
-                                                <div class="tab-heading">
-                                                    Parents Details
-                                                    </div> 
-                                            </ng-template>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Fathers Name</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>{{profile.fathers_name}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Mothers Name</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{profile.mothers_name}}</p>
-                                                    </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="tab-heading">
-                                              Profile History
-                                            </div> 
-                                        </ng-template>
-                                        <div class="tab-height">
-                                            <div *ngFor="let history of profilehist" >
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>TEACHERS NAME</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{history.teachers_name}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>FROM DATE </label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{history.practise_from.substring(0, 10)}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>TO DATE</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{history.practise_till.substring(0, 10)}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>DURATION</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>NA</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>IS LALITKALA TEACHER</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <ng-container
-                                                            *ngIf="history.is_lalitkala_teacher; then YES; else NO">
-                                                        </ng-container>
-                                                        <ng-template #YES>
-                                                            <div>
-                                                            YES
-                                                            </div>
-                                                        </ng-template>
-                                                        <ng-template #NO>
-                                                            <div>
-                                                            NO
-                                                            </div>
-                                                        </ng-template>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>   </label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>  </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="tab-heading">
-                                             Payment summery
-                                             </div>  
-                                        </ng-template> 
-                                        <div class="tab-height">
-                                            <div *ngFor="let payment of paysummary" >
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>LAST PAYMENT DATE</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{payment.payment_date.substring(0, 10)}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>PAYMENT AMOUNT </label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{payment.pay_amount}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>PAY MONTH FROM</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{payment.pay_month_from.substring(0, 10)}}</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label>PAY MONTH TO</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>{{payment.pay_month_to.substring(0, 10)}}</p>
-                                                    </div> 
-                                                    <div class="col-md-6">
-                                                        <label>   </label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>  </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                </mat-tab-group> 
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                 </div>
             </div>
-        </form>           
-    </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h2>
+                                <p>{{profile.first_name}}</p>
+                            </h2>
+                            <h4>
+                                Student
+                            </h4>
+                            <p class="proile-rating">RANKINGS : <span>NA</span></p>
+                            <mat-tab-group>
+                                <mat-tab >
+                                    <div class="tab-height">
+                                        <ng-template mat-tab-label>
+                                            <div class="tab-heading">
+                                                Basic Info
+                                            </div>  
+                                        </ng-template> 
+                                        <div tab-height>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>User Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{this.username}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.email}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.mobile_number}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Date Of Birth</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.date_of_birth}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-tab>
+                                
+                                <mat-tab>
+                                    <div class="tab-height">
+                                        <ng-template mat-tab-label>
+                                            <div class="tab-heading">
+                                                Parents Details
+                                                </div> 
+                                        </ng-template>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Fathers Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{profile.fathers_name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Mothers Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.mothers_name}}</p>
+                                                </div>
+                                        </div>
+                                        
+                                    </div>
+                                </mat-tab>
+                                <mat-tab>
+                                    <ng-template mat-tab-label>
+                                        <div class="tab-heading">
+                                            Profile History
+                                        </div> 
+                                    </ng-template>
+                                    <div class="tab-height">
+                                        <div *ngFor="let history of profilehist" >
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>TEACHERS NAME</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{history.teachers_name}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>FROM DATE </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{history.practise_from.substring(0, 10)}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>TO DATE</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{history.practise_till.substring(0, 10)}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>DURATION</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>NA</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>IS LALITKALA TEACHER</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <ng-container
+                                                        *ngIf="history.is_lalitkala_teacher; then YES; else NO">
+                                                    </ng-container>
+                                                    <ng-template #YES>
+                                                        <div>
+                                                        YES
+                                                        </div>
+                                                    </ng-template>
+                                                    <ng-template #NO>
+                                                        <div>
+                                                        NO
+                                                        </div>
+                                                    </ng-template>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>   </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>  </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-tab>
+                                <mat-tab>
+                                    <ng-template mat-tab-label>
+                                        <div class="tab-heading">
+                                            Payment summery
+                                            </div>  
+                                    </ng-template> 
+                                    <div class="tab-height">
+                                        <div *ngFor="let payment of paysummary" >
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>LAST PAYMENT DATE</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{payment.payment_date.substring(0, 10)}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>PAYMENT AMOUNT </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{payment.pay_amount}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>PAY MONTH FROM</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{payment.pay_month_from.substring(0, 10)}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>PAY MONTH TO</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{payment.pay_month_to.substring(0, 10)}}</p>
+                                                </div> 
+                                                <div class="col-md-6">
+                                                    <label>   </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>  </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-tab>
+                            </mat-tab-group> 
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+            </div>
+        </div>
+    </form>           
+</div>
     
     
