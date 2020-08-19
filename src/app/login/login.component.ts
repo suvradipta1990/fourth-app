@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit, OnDestroy {
          localStorage.setItem('isLoggedIn', "true");
          localStorage.setItem('user_id', this.user.user_id.toString());
          localStorage.setItem('user_name', this.userName);
-
+         localStorage.setItem('is_admin', data[0].is_admin);
           this.router.navigate(["home"]);
         }else {
           alert("Invalid credentials");

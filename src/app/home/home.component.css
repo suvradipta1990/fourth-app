@@ -141,24 +141,30 @@ body{
   justify-content: space-between;
 }
 
-.logo {
-  overflow: hidden;
+input[type=submit] {
+  background-color: #0942bd;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
   text-align: center;
-  position: relative;
-  height: 60px;
-  background-color: white;
-  color: #083588;
-  font-family: Arial;
-}
-.profilehaed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: caption;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .logoutbutton {
-  background-color: #0057b9;
+  background-color: #1b7ceb;
   border: none;
   color: white;
   padding: 10px 22px;
@@ -168,4 +174,34 @@ body{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.header-div {
+  background-color: lightblue;    
+  height: 110px;
+}
+
+.header-welcome-div {   
+  text-align: center;
+  justify-content: center;
+
+}
+
+.header-logout-div {   
+  text-align: right;
+  justify-content: right;
+}
+
+input[type=button] {
+  background-color: #0a2d79;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Arial;
+  margin: 5px;
+  width: 10%;
+  border: 1px solid #f6f6f6;
 }

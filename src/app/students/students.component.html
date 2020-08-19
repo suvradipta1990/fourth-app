@@ -1,15 +1,16 @@
-<p>students works!</p>
-<div class='form-group wrapper comment row'>
-    <h1 style="color:rgb(16, 2, 66);">Search for Student Profile</h1>
-    <table>
-        <tr>
-            <td><input class=" fadeIn second col-sm-12" type="text" name="firstname" placeholder="Search by First Name"></td>
-            <td><input class=" fadeIn second col-sm-12" type="text" name="lastname" placeholder="Search by Last Name"></td>
-        </tr>
-        <tr>
-            <td><input class=" fadeIn second col-sm-12" type="text" name="mobileno" placeholder="Search by Mobile no"></td>
-            <td><input class=" fadeIn second col-sm-12" type="text" name="regno" placeholder="Search by Regn No"></td>
-        </tr>
-        </table>
-        <input type="submit" class="fadeIn second col-sm-4" value="Search">
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
 </div>
+<div class="container">
+    <input type="text" placeholder="Search By First Name" [(ngModel)]="firstname" name="firstname" id="firstname">
+    <input type="text" placeholder="Search By Last Name" [(ngModel)]="lastname" name="lastname" id="lastname">
+    <input type="text" placeholder="Search By Mobile No" [(ngModel)]="mobileno" name="mobileno" id="mobileno">
+    <input type="text" placeholder="Search By REGN No" [(ngModel)]="regno" name="regno" id="regno">
+    <hr>
+    <button type="submit" (click)="searchstudent()" class="registerbtn">Search</button>
+  </div>

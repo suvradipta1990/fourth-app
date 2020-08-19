@@ -1,10 +1,10 @@
-<div class="profilehaed">
-    <div class="col-md-6">
-        <h1><p>Welcome {{profile.first_name}}</p></h1>
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
     </div>
-    <div class="col-md-6">
-         <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
-        </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
 </div>
 
 <div class="container emp-profile"> 

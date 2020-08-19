@@ -152,11 +152,12 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border: 1px solid #051258;
 }
 
 input[type=text]:placeholder {
   color: #cccccc;
+  
 }
 
 input[type=password] {
@@ -171,7 +172,7 @@ input[type=password] {
   font-family: caption;
   margin: 5px;
   width: 100%;
-  border: 2px solid #f6f6f6;
+  border: 1px solid #051258;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -183,11 +184,12 @@ input[type=password] {
 
 input[type=password]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border: 1px solid #051258;
 }
 
 input[type=password]:placeholder {
   color: #cccccc;
+  border: 1px solid #051258;
 }
 
 input[type=date] {
@@ -201,7 +203,7 @@ input[type=date] {
   font-size: 16px;
   margin: 5px;
   width: 100%;
-  border: 2px solid #f6f6f6;
+  border: 1px solid #051258;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -218,6 +220,7 @@ input[type=date]:focus {
 
 input[type=date]:placeholder {
   color: #cccccc;
+  border: 1px solid #051258;
 }
 
 
@@ -234,7 +237,7 @@ input[type=submit] {
   font-family: caption;
   margin: 5px;
   width: 100%;
-  border: 2px solid #f6f6f6;
+  border: none;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -413,13 +416,14 @@ input[type=text], input[type=password] {
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: none;
+  border: 1px solid #051258;
   background: #f1f1f1;
 }
 
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+  border: 2px solid #1f1e1e;
 }
 
 /* Overwrite default styles of hr */
@@ -453,4 +457,26 @@ a {
 .signin {
   background-color: #ffffff;
   text-align: center;
+}
+
+input[type=submit] {
+  background-color: #0942bd;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: caption;
+  margin: 5px;
+  width: 100%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 }

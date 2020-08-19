@@ -34,13 +34,16 @@ export class HomeComponent implements OnInit {
     public  profile: Profile;
     public  profilehist: ProfileHistory[];
     public  paysummary: PaymentSummary[];
-  prof_id: string;
+    public myProfile :string="";
+    public loggedInUser: string="";
+    prof_id: string;
   constructor(private router: Router,
     public authService: AuthService,
     private profileService: ProfileService) { }
 
   ngOnInit(): void {
     this.currDiv = 1;
+    this.loggedInUser = localStorage.getItem('user_name');
 
  alert(localStorage.getItem('user_id'));
 
@@ -80,9 +83,10 @@ export class HomeComponent implements OnInit {
           data[0].email,
           data[0].doj,
           data[0].is_student);
-
+          this.myProfile = data[0].first_name;
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);
+          localStorage.setItem('first_name',this.myProfile);
           
           console.log("profile_id for profile history");
           console.log(this.profile_id);
