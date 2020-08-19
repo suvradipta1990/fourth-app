@@ -68,6 +68,22 @@ app.post('/getPaymentSummary', (req, res) => {
     return db.getPaymentSummary(req.body.profile_id, res);  // res.json(data);
 })
 
+app.post('/register', (req, res) => {
+    console.log('register REQ') ;
+    console.log(req.body) ;
+    console.log('register RES') ;
+    console.log(res.body) ;
+    return db.register(req.body.firstname,
+                       req.body.lastname,
+                       req.body.mobilenumber,
+                       req.body.emailid,
+                       req.body.password,
+                       req.body.dateofbirth,
+                       req.body.oldregnno,
+                       req.body.confirmpassword,
+                    res);  // res.json(data);
+})
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

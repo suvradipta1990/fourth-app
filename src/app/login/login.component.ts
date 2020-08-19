@@ -21,12 +21,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     public userName :string = "";
     public password :string= "";
-   // public user:string;
     login() : void {
       this.loginService.login(this.userName, this.password)
       .subscribe((data) => {
-        if(data != null && data.length>0) {
-       //   console.log(data[0].user_id);    
+        if(data != null && data.length>0) {  
 
           this.user = new User(data[0].user_id,
                        data[0].username,

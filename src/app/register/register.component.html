@@ -8,6 +8,7 @@
   <div>
 
     <!-- Login Form -->
+  <div> 
     <form>
     <table>
         <tr>
@@ -16,39 +17,27 @@
             <td> </td>
         </tr>
         <tr>
-         <td><input type="text" id="firstname" class="fadeIn second" name="firstname" placeholder="First Name*"></td>
-         <td><input type="text" id="lastname" class="fadeIn second" name="lastname" placeholder="Last Name*"></td>
+         <td><input type="text" id="firstname" class="fadeIn second" [(ngModel)]="firstname" name="firstname" placeholder="First Name*"></td>
+         <td><input type="text" id="lastname" class="fadeIn second"  [(ngModel)]="lastname" name="lastname" placeholder="Last Name*"></td>
         </tr>
         <tr>
-          <td><input type="text" id="mobilenumber" class="fadeIn second" name="mobilenumber" placeholder="Mobile no*"></td>
-          <td><input type="text" id="emailid" class="fadeIn second" name="emailid" placeholder="Email"></td>
+          <td><input type="text" id="mobilenumber" class="fadeIn second" [(ngModel)]="mobilenumber" pattern="[0-9]*" name="mobilenumber" placeholder="Mobile no*"></td>
+          <td><input type="text" id="emailid" class="fadeIn second" [(ngModel)]="emailid" name="email" placeholder="Email*"></td>
         </tr>
         <tr>
-            <td><input type="password" id="password" class="fadeIn second" name="password" placeholder="Create a password*"></td>
-            <td><input type="text" id="confirmpassword" class="fadeIn second" name="confirmpassword" placeholder="Confirm password*"></td>
+            <td><input type="password" id="password" class="fadeIn second" [(ngModel)]="password" name="password" placeholder="Create a password*"></td>
+            <td><input type="text" id="confirmpassword" class="fadeIn second" [(ngModel)]="confirmpassword" name="confirmpassword" placeholder="Confirm password*"></td>
         </tr>
         <tr>
-            <td><input type="date" class="fadeIn second " value="Date Of Birth">Date Of Birth*</td>
-            <td><input type="date" class="fadeIn second" name="Dateofjoinning" >Date of joinning*</td>
+            <td><input type="date" class="fadeIn second " [(ngModel)]="dateofbirth">Date Of Birth*</td>
+            <td><input type="text" class="fadeIn second" [(ngModel)]="oldregnno" name="oldregnno"  placeholder="Registration No(if Any)"></td>
         </tr>
         <tr>
-             <td><input type="submit" class="fadeIn second" value="Register"></td>
+             <td><input type="submit" class="fadeIn second" (click)="register()" value="Register"></td>
              <td><input type="submit" class="fadeIn second" (click)="logout()" value="Cancel"></td>
         </tr>           
     </table>
     </form>
   </div>
+  </div>
 </div>
-<script>
-    // Get the modal
-    var modal = document.getElementById('id01');
-    
-    // When the user clicks anywhere outside of the modal, close it
-    //calling <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" href='/dashboard'>&times;</span>
-  
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    </script>

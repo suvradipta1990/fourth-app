@@ -73,9 +73,39 @@ var getPaymentSummary = (profile_id,res) => {
   });
 }
 
+var register = (firstname,
+                lastname,
+                mobilenumber,
+                emailid,
+                password,   
+                dateofbirth,
+                oldregnno,
+                confirmpassword,
+              res) => {
+  const register = 'SELECT * from MASTER.REGISTRATION ($1, $2, $3, $4,$5,$6,$7,$8)';
+  console.log("db.js console profile_id: "+firstname);
+  client.query(register, [firstname,
+                          lastname,
+                          mobilenumber,
+                          emailid,
+                          password,
+                          dateofbirth,
+                          oldregnno,
+                          confirmpassword], 
+                          (err, result, callback) => {
+if (err) {
+        console.log(err);
+        return null;
+    }
+    console.log("db.js console REGISTER results : "+result.rows);
+    res.status(200).json(result.rows);
+  });
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
                    'getprofileprofilehist': getprofileprofilehist,
-                   'getPaymentSummary': getPaymentSummary
+                   'getPaymentSummary': getPaymentSummary,
+                   'register': register
                   };

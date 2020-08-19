@@ -344,4 +344,8 @@ html {
   #icon {
     width:60%;
   }
+
+  .form-height{
+    height: 30px;
+  }
   
