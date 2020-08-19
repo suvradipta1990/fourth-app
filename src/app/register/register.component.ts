@@ -21,8 +21,9 @@ export class RegisterComponent  {
   public confirmpassword :string= "";
   public dateofbirth :string;
   public oldregnno :string= "";
-  dialog: any;
   public regNo :string;
+  public dateofjoin :string="";
+  dialog: any;
 
   constructor(private router: Router, 
      private registerService: RegisterService
@@ -54,7 +55,8 @@ export class RegisterComponent  {
                                     this.password, 
                                     this.dateofbirth, 
                                     this.oldregnno, 
-                                    this.confirmpassword)
+                                    this.confirmpassword,
+                                    this.dateofjoin)
       .subscribe((data) => {
         if(data != null && data.length>0) {  
           this.regNo=data[0].registration;

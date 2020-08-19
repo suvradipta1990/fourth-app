@@ -81,6 +81,7 @@ app.post('/register', (req, res) => {
                        req.body.dateofbirth,
                        req.body.oldregnno,
                        req.body.confirmpassword,
+                       req.body.dateofjoin,
                     res);  // res.json(data);
 })
 

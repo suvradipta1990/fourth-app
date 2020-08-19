@@ -21,12 +21,14 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   register(firstname: string,lastname: string,mobilenumber: string,emailid: string,password: string,
-          dateofbirth: string,oldregnno: string,confirmpassword: string): Observable<any> {
+          dateofbirth: string,oldregnno: string,confirmpassword: string,
+          dateofjoin:string): Observable<any> {
       console.log(dateofbirth);
       const user  = {firstname: firstname,lastname : lastname,
                      mobilenumber: mobilenumber,emailid : emailid,
                      password: password,dateofbirth: dateofbirth,
-                     oldregnno : oldregnno,confirmpassword : confirmpassword};
+                     oldregnno : oldregnno,confirmpassword : confirmpassword,
+                     dateofjoin : dateofjoin};
                      
       return this.http.post<any>(this.urlString + '/register',user);
   }
