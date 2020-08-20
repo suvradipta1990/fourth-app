@@ -104,10 +104,25 @@ if (err) {
   });
 }
 
+var getpedingreg = (req,res) => {
+const getpedingreg = 'SELECT * from master.t_pending_regitration_approval where is_deleted=false and length(trim(regn_no))>0 order by id';
+console.log("db.js console getpedingreg: ");
+client.query(getpedingreg,
+            (err, result, callback) => {
+if (err) {
+console.log(err);
+return null;
+}
+console.log("db.js console REGISTER results : "+result.rows);
+res.status(200).json(result.rows);
+});
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
                    'getprofileprofilehist': getprofileprofilehist,
                    'getPaymentSummary': getPaymentSummary,
-                   'register': register
+                   'register': register,
+                   'getpedingreg' : getpedingreg
                   };

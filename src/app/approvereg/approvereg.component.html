@@ -1,0 +1,79 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="main-div">
+    <div class="center">
+        <h3 >Total Pending Count:{{this.count}}</h3>
+    </div>
+    <div class="div-block" *ngFor="let regis of pendingreg" >
+            <div class="row">
+                <div class="col-md-6">
+                    <label>S.NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.id}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>REGISTRATION NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.regn_no}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>EXISTING REGISTRATION NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.old_regn_no}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>NAME</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.firstname}} {{regis.lastname}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>MOBILE NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.mobilenumber}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>EMAIL</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.emailid}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>DATE OF JOINNING</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.dateofjoinning | date}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>REGISTRATION DATE</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{regis.created_date | date}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>ACTIONS: </label>
+                </div>
+                <div class="col-md-6">
+                    <input id="approvereg" type="button" class="aprvbutton"  href='approvereg' value="APPROVE">
+                    <input id="approvereg" type="button" class="decbutton"  href='approvereg' value="DECLINE">
+                </div>
+                
+                <div class="col-md-6">
+                    <label>   </label>
+                </div>
+                <div class="col-md-6">
+                    <p>  </p>
+                </div>
+            </div>
+    </div>
+</div>

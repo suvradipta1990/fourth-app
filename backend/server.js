@@ -85,6 +85,14 @@ app.post('/register', (req, res) => {
                     res);  // res.json(data);
 })
 
+app.get('/pendingreg', (req, res) => {
+    console.log('pendingreg REQ') ;
+    console.log(req.body) ;
+    console.log('pendingreg RES') ;
+    console.log(res.body) ;
+    return db.getpedingreg(req,res);  // res.json(data);
+})
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

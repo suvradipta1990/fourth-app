@@ -1,0 +1,54 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="student-section">
+     <table class="col-md-3">
+         <tr>
+            <td class="row">
+                <h2>STUDENT SECTION</h2>
+                <button type="submit"  class="registerbtn">Create Student</button>
+                <button type="submit"  class="registerbtn">Delete Student</button>
+            </td>
+        </tr>
+     </table>
+     <table class="col-md-3">
+        <tr>
+            <td class="row">
+                <h2>APPROVAL SECTION</h2>
+            </td>
+            <td class="row">
+               <button type="submit" (click)="getappregpage()" class="registerbtn">Approve Registration</button>
+            </td>
+            <td class="row">
+               <button type="submit"  class="registerbtn">Approve Payment</button>
+            </td>
+        </tr>
+     </table>
+     <table class="col-md-3">
+        <tr>
+           <td class="row">
+               <h2>AUDITION SECTION</h2>
+               <button type="submit"  class="registerbtn">Create Audition</button>
+               <button type="submit"  class="registerbtn">Delete Audition</button>
+           </td>
+       </tr>
+    </table>
+    <table class="col-md-3">
+        <tr>
+            <td class="row">
+                <h2>APPROVAL SECTION</h2>
+            </td>
+            <td class="row">
+               <button type="submit"  class="registerbtn">Approve Registration</button>
+            </td>
+            <td class="row">
+               <button type="submit"  class="registerbtn">Approve Payemnt</button>
+            </td>
+        </tr>
+     </table>
+</div>

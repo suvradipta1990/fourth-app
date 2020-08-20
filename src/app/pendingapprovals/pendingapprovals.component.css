@@ -1,0 +1,55 @@
+
+.header-div {
+    background-color: lightblue;    
+    height: 110px;
+  }
+  .header-welcome-div {   
+    text-align: center;
+    justify-content: center;
+  
+  }
+  .header-logout-div {   
+    text-align: right;
+    justify-content: right;
+  }
+  
+  input[type=button] {
+    background-color: #0a2d79;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial;
+    margin: 5px;
+    width: 10%;
+    border: 1px solid #f6f6f6;
+  }
+  .registerbtn {
+    background-color: #0b57e2;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: 2px solid #000103;;
+    cursor: pointer;
+    width: 90%;
+    height: 30%;
+    opacity: 0.9;
+  }
+
+  .student-section{
+   padding-left: 20px; 
+    width: 100%;
+    margin: auto;
+  }
+
+  .approval-section{
+    display: flex;
+    margin: left;
+    width: 30%;
+    height: 20%;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+  }

@@ -8,7 +8,9 @@ import { StudentsComponent } from './students/students.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth.guard';
- 
+import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
+import { ApproveregComponent } from './approvereg/approvereg.component';
+import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -16,6 +18,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent,canActivate: [AuthGuard] },
   { path: 'students', component: StudentsComponent,canActivate: [AuthGuard] },
+  { path: 'pendingapprovals', component: PendingapprovalsComponent,canActivate: [AuthGuard] },
+  { path: 'approvereg', component: ApproveregComponent,canActivate: [AuthGuard] },
+  { path: 'approvepayment', component: ApprovepaymentComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

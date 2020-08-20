@@ -15,6 +15,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ApproveregComponent } from './approvereg/approvereg.component';
+import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
+import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    StudentsComponent
+    StudentsComponent,
+    ApproveregComponent,
+    ApprovepaymentComponent,
+    PendingapprovalsComponent
   ],
   imports: [
     BrowserModule,
