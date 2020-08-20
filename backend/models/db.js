@@ -82,8 +82,9 @@ var register = (firstname,
                 oldregnno,
                 confirmpassword,
                 dateofjoin,
+                gender,
               res) => {
-  const register = 'SELECT * from MASTER.REGISTRATION ($1, $2, $3, $4,$5,$6,$7,$8,$9)';
+  const register = 'SELECT * from MASTER.REGISTRATION ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10)';
   console.log("db.js console profile_id: "+firstname);
   client.query(register, [firstname,
                           lastname,
@@ -93,7 +94,8 @@ var register = (firstname,
                           dateofbirth,
                           oldregnno,
                           confirmpassword,
-                          dateofjoin], 
+                          dateofjoin,
+                          gender], 
                           (err, result, callback) => {
 if (err) {
         console.log(err);

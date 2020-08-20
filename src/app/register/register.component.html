@@ -17,10 +17,10 @@
         <input type="text" placeholder="Enter Last Name" [(ngModel)]="lastname" name="lastname" id="lastname" required>
         
         <label for="email"><b>Email*</b></label>
-        <input type="text" placeholder="Enter Email" [(ngModel)]="emailid" name="emailid" id="emailid" required>
+        <input type="email" placeholder="Enter Email" [(ngModel)]="emailid" name="emailid" id="emailid" required>
       
         <label for="mobilenumber"><b>Mobile Number*</b></label>
-        <input type="text" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber" name="mobilenumber" id="mobilenumber" required>
+        <input type="number" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber" name="mobilenumber" id="mobilenumber" required>
       
         <label for="dateofbirth"><b>Date Of Birth*</b></label>
         <input type="date" placeholder="Date f Birth" [(ngModel)]="dateofbirth" name="dateofbirth" id="dateofbirth" required>
@@ -30,7 +30,22 @@
     
         <label for="oldregnno"><b>Registration No(If Already Lalitkala Student)</b></label>
         <input type="text" placeholder="Enter Registration No" [(ngModel)]="oldregnno" name="oldregnno" id="oldregnno" required>
-      
+        
+        <!-- <label for="radio"><b>Gender</b></label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female </label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other </label><br> -->
+        <label for="gender" ><b>Gender</b></label><br>
+        <div style="width:200%;">
+          <select id="gender" [(ngModel)]="gender" name="gender">
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option  value="OTHER">Other</option>
+          </select><br><br>
+        </div>
         <label for="password"><b>Password*</b></label>
         <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" required>
     

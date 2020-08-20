@@ -22,13 +22,13 @@ export class RegisterService {
 
   register(firstname: string,lastname: string,mobilenumber: string,emailid: string,password: string,
           dateofbirth: string,oldregnno: string,confirmpassword: string,
-          dateofjoin:string): Observable<any> {
+          dateofjoin:string,gender:string): Observable<any> {
       console.log(dateofbirth);
       const user  = {firstname: firstname,lastname : lastname,
                      mobilenumber: mobilenumber,emailid : emailid,
                      password: password,dateofbirth: dateofbirth,
                      oldregnno : oldregnno,confirmpassword : confirmpassword,
-                     dateofjoin : dateofjoin};
+                     dateofjoin : dateofjoin,gender : gender};
                      
       return this.http.post<any>(this.urlString + '/register',user);
   }
