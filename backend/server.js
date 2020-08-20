@@ -93,6 +93,17 @@ app.get('/pendingreg', (req, res) => {
     return db.getpedingreg(req,res);  // res.json(data);
 })
 
+app.post('/approve_reject_reg', (req, res) => {
+    console.log('approve_reject_reg REQ') ;
+    console.log(req.body) ;
+    console.log('approve_reject_reg RES') ;
+    console.log(res.body) ;
+    return db.approve_reject_reg(req.body.p_approve_del,
+                                            req.body.p_id,
+                                            req.body.p_remarks,
+                                        res);  // res.json(data); 
+}) 
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

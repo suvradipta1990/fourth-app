@@ -71,9 +71,9 @@ export class HomeComponent implements OnInit {
           data[0].mobile_number,
           data[0].contact_number,
           data[0].fathers_name,
-          data[0].fathers_conact_number,
+          data[0].fathers_contact_no,
           data[0].mothers_name,
-          data[0].mothers_number,
+          data[0].mothers_contact_no,
           data[0].created_date,
           data[0].created_by,
           data[0].updated_date,
@@ -82,7 +82,10 @@ export class HomeComponent implements OnInit {
           data[0].user_id,
           data[0].email,
           data[0].doj,
-          data[0].is_student);
+          data[0].is_student,
+          data[0].father_occupation,
+          data[0].mother_occupation);
+          
           this.myProfile = data[0].first_name;
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);

@@ -118,11 +118,29 @@ res.status(200).json(result.rows);
 });
 }
 
+var approve_reject_reg = (p_approve_del,p_id,p_remarks,res) => {
+  const app_reject_reg = 'SELECT  approve_decline_registration from master.approve_decline_registration ($1,$2,$3)';
+  console.log("db.js console approve_reject_reg: ");
+  client.query(app_reject_reg,
+                [p_approve_del,
+                  p_id,
+                  p_remarks],
+              (err, result, callback) => {
+  if (err) {
+  console.log(err);
+  return null;
+  }
+  console.log("db.js console REGISTER APPROVE results : "+result.rows);
+  res.status(200).json(result.rows);
+  });
+  }
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
                    'getprofileprofilehist': getprofileprofilehist,
                    'getPaymentSummary': getPaymentSummary,
                    'register': register,
-                   'getpedingreg' : getpedingreg
+                   'getpedingreg' : getpedingreg,
+                   'approve_reject_reg' : approve_reject_reg
                   };

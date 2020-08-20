@@ -64,8 +64,8 @@
                     <label>ACTIONS: </label>
                 </div>
                 <div class="col-md-6">
-                    <input id="approvereg" type="button" class="aprvbutton"  href='approvereg' value="APPROVE">
-                    <input id="approvereg" type="button" class="decbutton"  href='approvereg' value="DECLINE">
+                    <input id="approvereg" type="button" (click)="approve_reg(regis.id)" class="aprvbutton"  value="APPROVE">
+                    <input id="approvereg" type="button" (click)="reject_reg(regis.id)" class="decbutton"  value="REJECT">
                 </div>
                 
                 <div class="col-md-6">
@@ -77,3 +77,5 @@
             </div>
     </div>
 </div>
+<!-- "
+ -->

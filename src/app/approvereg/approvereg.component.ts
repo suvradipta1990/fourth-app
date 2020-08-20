@@ -15,6 +15,7 @@ export class ApproveregComponent implements OnInit {
   public  pendingreg: Approvereg[];
   public loggedInUser: string="";
   public count :number;
+  public result :string;
   constructor(private router: Router,
     public authService: AuthService,
     private approveregService: ApproveregService) { }
@@ -37,6 +38,40 @@ export class ApproveregComponent implements OnInit {
         }
       });
     }
+
+    approve_reg(p_id:number){
+      const is_approve=1;
+      this.approveregService.approve_rej_reg(is_approve,p_id,null)
+      .subscribe((data) => {
+        if(data != null ) {
+          console.log('approve_rej_reg');
+          this.result=data[0].approve_decline_registration;
+            console.log(this.result);
+            alert(this.result);
+            this.ngOnInit();
+            this.router.navigate(["/approvereg"]);
+          }else {
+            console.log(this.result);
+          }
+        });
+      }
+
+      reject_reg(p_id:number){
+        const is_approve=0;
+        this.approveregService.approve_rej_reg(is_approve,p_id,null)
+        .subscribe((data) => {
+          if(data != null ) {
+            console.log('approve_rej_reg');
+             this.result=data[0].approve_decline_registration;
+              console.log(this.result);
+              alert(this.result);
+              this.ngOnInit();
+              this.router.navigate(["/approvereg"]);
+            }else {
+              console.log(this.result);
+            }
+          });
+        }
 
     logout(){
       localStorage.setItem('isLoggedIn', "false");

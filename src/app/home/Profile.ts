@@ -15,9 +15,9 @@ export class Profile {
         public mobile_number:String,
         public contact_number:String,
         public fathers_name:String,
-        public fathers_conact_number:String,
+        public fathers_contact_no:String,
         public mothers_name:String,
-        public mothers_number:String,
+        public mothers_contact_no:String,
         public created_date:String,
         public created_by:String,
         public updated_date:Date,
@@ -26,6 +26,8 @@ export class Profile {
         public user_id:number,
         public email:String,
         public DOJ:String,
-        public is_student: boolean){}
+        public is_student: boolean,
+        public father_occupation:string,
+        public mother_occupation:string){}
   }
   export * from './Profile';

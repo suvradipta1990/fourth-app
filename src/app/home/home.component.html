@@ -23,18 +23,19 @@
             <div class="col-md-6">
                 <div class="profile-head">
                             <h2>
-                                <p>{{profile.first_name}}</p>
+                                <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
                             </h2>
-                            <h4>
-                                Student
-                            </h4>
-                            <p class="proile-rating">RANKINGS : <span>NA</span></p>
+                            <p><label>USER NAME: </label><span> {{this.username}}</span></p>
+                            <p><label>REGISTRATION NO: </label><span> {{profile.regn_no}}</span></p>
+                            <p><label>MOBILE NUMBER: </label><span> {{profile.mobile_number}}</span></p>
+                            <p><label>DATE OF BIRTH: </label><span> {{profile.date_of_birth | date}}</span></p>
+                            <p><label>EMAIL: </label><span> {{profile.email}}</span></p>
                             <mat-tab-group>
                                 <mat-tab >
                                     <div class="tab-height">
                                         <ng-template mat-tab-label>
                                             <div class="tab-heading">
-                                                Basic Info
+                                                Address
                                             </div>  
                                         </ng-template> 
                                         <div tab-height>
@@ -44,38 +45,6 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p>{{this.username}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Name</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Email</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>{{profile.email}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Phone</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>{{profile.mobile_number}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Date Of Birth</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>{{profile.date_of_birth}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,13 +65,38 @@
                                             <div class="col-md-6">
                                                 <p>{{profile.fathers_name}}</p>
                                             </div>
+                                            <div class="col-md-6">
+                                                <label>Fathers Occupation</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{profile.father_occupation}}</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Fathers Contact No</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{profile.fathers_contact_no}}</p>
+                                            </div>
                                         </div>
+                                        <hr>
                                         <div class="row">
                                                 <div class="col-md-6">
                                                     <label>Mothers Name</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p>{{profile.mothers_name}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Mothers Occupation</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.mother_occupation}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>mothers Contact No</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{profile.mothers_contact_no}}</p>
                                                 </div>
                                         </div>
                                         
@@ -127,13 +121,13 @@
                                                     <label>FROM DATE </label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{history.practise_from.substring(0, 10)}}</p>
+                                                    <p>{{history.practise_from | date}}</p>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label>TO DATE</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{history.practise_till.substring(0, 10)}}</p>
+                                                    <p>{{history.practise_till | date}}</p>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label>DURATION</label>
