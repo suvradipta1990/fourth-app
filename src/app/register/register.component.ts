@@ -24,6 +24,23 @@ export class RegisterComponent  {
   public regNo :string;
   public dateofjoin :string="";
   public gender :string="";
+  public subject :string="";
+
+  public fathersname :string="";
+  public fathersoccupation :string="";
+  public mothersname :string="";
+  public mothersoccupation :string="";
+  public fathersnumber :string="";
+  public mothersnumber :string="";
+
+  public addresstype :string="";
+  public country :string="";
+  public addressline1 :string="";
+  public addressline2 :string="";
+  public district :string="";
+  public city :string="";
+  public pincode :string="";
+  public aadhaar :string="";
   dialog: any;
 
   constructor(private router: Router, 
@@ -41,7 +58,7 @@ export class RegisterComponent  {
 
   register() : void {
     console.log("Date Of Birth");
-    console.log(this.dateofbirth);
+    console.log(this.gender);
     if(this.firstname == null || this.firstname == "" || this.lastname == null || this.lastname == "" ||
      this.mobilenumber == null || this.mobilenumber == "" || this.emailid == null || this.emailid == "" ||
      this.password == null || this.password == "" || this.confirmpassword == null || this.confirmpassword == "" ){
@@ -58,7 +75,21 @@ export class RegisterComponent  {
                                     this.oldregnno, 
                                     this.confirmpassword,
                                     this.dateofjoin,
-                                    this.gender)
+                                    this.gender,
+                                    this.fathersnumber,
+                                    this.mothersnumber,
+                                    this.addresstype,
+                                    this.addressline1,
+                                    this.addressline2,
+                                    this.district,
+                                    this.city,
+                                    this.pincode,
+                                    this.aadhaar,
+                                    this.subject,
+                                    this.fathersname,
+                                    this.mothersname,
+                                    this.fathersoccupation,
+                                    this.mothersoccupation)
       .subscribe((data) => {
         if(data != null && data.length>0) {  
           this.regNo=data[0].registration;

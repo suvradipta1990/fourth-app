@@ -83,6 +83,20 @@ app.post('/register', (req, res) => {
                        req.body.confirmpassword,
                        req.body.dateofjoin,
                        req.body.gender,
+                       req.body.fathersnumber,
+                       req.body.mothersnumber,
+                       req.body.addresstype,
+                       req.body.addressline1,
+                       req.body.addressline2,
+                       req.body.district,
+                       req.body.city,
+                       req.body.pincode,
+                       req.body.aadhaar,
+                       req.body.subject,
+                       req.body.fathersname,
+                       req.body.mothersname,
+                       req.body.fathersoccupation,
+                       req.body.mothersoccupation,
                     res);  // res.json(data);
 })
 

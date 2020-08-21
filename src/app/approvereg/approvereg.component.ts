@@ -16,6 +16,7 @@ export class ApproveregComponent implements OnInit {
   public loggedInUser: string="";
   public count :number;
   public result :string;
+  public remakrs :string="";
   constructor(private router: Router,
     public authService: AuthService,
     private approveregService: ApproveregService) { }
@@ -23,6 +24,7 @@ export class ApproveregComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
     this.getallpendingreg();
+    this.remakrs="";
   }
 
   getallpendingreg(){
@@ -58,7 +60,7 @@ export class ApproveregComponent implements OnInit {
 
       reject_reg(p_id:number){
         const is_approve=0;
-        this.approveregService.approve_rej_reg(is_approve,p_id,null)
+        this.approveregService.approve_rej_reg(is_approve,p_id,this.remakrs)
         .subscribe((data) => {
           if(data != null ) {
             console.log('approve_rej_reg');
