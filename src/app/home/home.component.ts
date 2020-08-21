@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit {
           this.myProfile = data[0].first_name;
           this.profile_id =data[0].profile_id;
           console.log("profile_id fetched:" +this.profile_id);
-          localStorage.setItem('first_name',this.myProfile);
+          localStorage.setItem('profile_id', this.profile_id);
           
           console.log("profile_id for profile history");
           console.log(this.profile_id);
