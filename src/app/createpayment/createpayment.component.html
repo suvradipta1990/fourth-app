@@ -1,0 +1,66 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div id="id01" class="wrapper">
+    <h1>Fees Book</h1>
+    <p>Please fill in this form after making payment Online</p>
+    <div> 
+      <form >
+        <div class="container">
+          <hr>
+          <label for="regn_no"><b>Student Registration No*</b></label>
+          <input type="text" placeholder="Enter Registration No" [(ngModel)]="regn_no" name="regn_no" id="regn_no" required>
+          
+          <br><br>
+          <label for="officename"><b>Business/Office Name*</b></label>
+          <input type="text" placeholder="Enter Business/Office Name" [(ngModel)]="officename" name="officename" id="officename" required>
+          
+          <br><br>
+          <label for="transacid"><b>Transaction Id/Reference Id*</b></label>
+          <input type="text" placeholder="Enter Transaction Id" [(ngModel)]="transacid" name="transacid" id="transacid" required>
+        
+          <br><br>
+          <label for="radio"><b>LALITKALA'S TEACHER NAME*</b></label><br>
+          <input type="radio" id="jayantasarkar" name="teacher" [(ngModel)]="teacher" value="SRI JAYANTA SARKAR">&nbsp;
+          <label for="jayantasarkar">SRI JAYANTA SARKAR</label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="simaantasarkar" name="teacher" [(ngModel)]="teacher" value="SRI SIMAANTA SARKAR">&nbsp;
+          <label for="simaantasarkar">SRI SIMAANTA SARKAR </label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="mithudasgupta" name="teacher" [(ngModel)]="teacher" value="SMT MITHU DASGUPTA">&nbsp;
+          <label for="mithudasgupta">SMT MITHU DASGUPTA </label>&nbsp;&nbsp;&nbsp;<br>
+          <input type="radio" id="bhaswatisenroy" name="teacher" [(ngModel)]="teacher" value="SMT BHASWATI SENGUPTA ROY">&nbsp;
+          <label for="bhaswatisenroy">SMT BHASWATI SENGUPTA ROY </label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="trishitaganguly" name="teacher" [(ngModel)]="teacher" value="MISS TRISHITA GANGULY">&nbsp;
+          <label for="trishitaganguly">MISS TRISHITA GANGULY</label>
+          
+          <br><br>
+          <label for="paymonthfrom"><b>Payment Month From*(select 1st day of month)</b></label>
+          <input type="date" placeholder="select 1st day of month " [(ngModel)]="paymonthfrom" name="paymonthfrom" id="paymonthfrom" required>
+        
+          <br><br>
+          <label for="paymonthto"><b>Payment Month To*(Select last day of month)</b></label>
+          <input type="date" placeholder="Select last day of month" [(ngModel)]="paymonthto" name="paymonthto" id="paymonthto" required>
+        
+          <br><br>
+          <label for="permonthfees"><b>Fees Per Month*</b></label>
+          <input type="number" placeholder="Enter Fees Amount Per Month" [(ngModel)]="permonthfees" name="permonthfees" id="payamount" required>
+        
+          <br><br>
+          <label for="payamount"><b>Paying Amount*</b></label>
+          <input type="number" placeholder="Enter Payment Amount" [(ngModel)]="payamount" name="payamount" id="payamount" required>
+        
+          <br><br>
+          <label for="transacslip"><b>Transaction Slip*</b></label>
+          <input type="file" placeholder="select your file" [(ngModel)]="transacslip" name="transacslip" id="transacslip" required>
+          
+          <br><br>
+          <button type="submit"  (click)="createPayment()" class="registerbtn">Make Payment</button>
+          <!-- <button type="submit" (click)="logout()" class="registerbtn">Cancel</button> -->
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,239 @@
+.wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 50%;
+    min-height: 100px;
+    padding: 20px;
+    background-color: rgb(52, 196, 52);
+  }
+  .container {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #0b57e2;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+
+
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+  .mat-tab-label{
+    min-width:100px !important;
+    padding: 15px 32px;
+     
+        color:rgb(7, 5, 5);
+        font-weight: 700;
+  }
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+  .mat-tab-label{
+    font-size: 100px;
+    background: rgba(5, 5, 5, 0.986);
+  }
+  .mat-tab-link {
+    color: rgb(8, 0, 0);
+  }
+  .tab-heading{
+    background: rgba(5, 5, 5, 0.986);
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+  }
+  .tab-height{
+    height: 170px;
+  }
+  
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+  input[type=date] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 100%;
+    border: 1px solid #0d0d0d;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=date]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=date]:placeholder {
+    color: #cccccc;
+  }
+  
+  input[type=submit] {
+    background-color: #0942bd;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  .logoutbutton {
+    background-color: #1b7ceb;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .header-div {
+    background-color: lightblue;    
+    height: 110px;
+  }
+  
+  .header-welcome-div {   
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  .header-logout-div {   
+    text-align: right;
+    justify-content: right;
+  }
+  
+  input[type=button] {
+    background-color: #0a2d79;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial;
+    margin: 5px;
+    width: 10%;
+    border: 1px solid #f6f6f6;
+  }
+
+  input[type=text] {
+    background-color: #f6f6f6;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 1px solid #270505;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=text]:focus {
+    background-color: #fff;
+    
+  }
+  
+  input[type=text]:placeholder {
+    color: #180505;
+  }
+
+  input[type=number] {
+    background-color: #f6f6f6;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 1px solid #270505;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=number]:focus {
+    background-color: #fff;
+    
+  }
+  
+  input[type=number]:placeholder {
+    color: #180505;
+  }

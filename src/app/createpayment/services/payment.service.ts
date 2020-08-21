@@ -1,0 +1,29 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PaymentService {
+  private urlString: string = 'http://localhost:3000';
+
+  constructor(private http: HttpClient) { }
+
+  createPayment(profile_id: string,officename: string,
+                transacid: string,teacher: string,
+                paymonthfrom: string,paymonthto: string,
+                payamount: number,isadmin:string,
+                regn_no:string,transacslip: string): Observable<any> {
+          console.log(profile_id);
+
+          const user  = {profile_id: profile_id,officename : officename,
+                          transacid: transacid,teacher : teacher,
+                          paymonthfrom: paymonthfrom,paymonthto: paymonthto,
+                          payamount : payamount,isadmin : isadmin,
+                          regn_no : regn_no,transacslip : transacslip};
+                        
+          return this.http.post<any>(this.urlString + '/createpayment',user);
+    }
+}
