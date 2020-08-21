@@ -73,6 +73,20 @@ var getPaymentSummary = (profile_id,res) => {
   });
 }
 
+var getAddress = (profile_id,res) => {
+  const getAddressqry = 'SELECT * FROM master.t_address WHERE profile_id = $1 and is_deleted =false';
+  console.log("db.js console profile_id: "+profile_id);
+  client.query(getAddressqry, [profile_id], (err, result, callback) => {
+    if (err) {
+        console.log(err);
+        return null;
+
+    }
+    console.log("db.js console getAddress results : "+result.rows);
+    res.status(200).json(result.rows);
+  });
+}
+
 var register = (firstname,
                 lastname,
                 mobilenumber,
@@ -170,6 +184,7 @@ module.exports = {'client': client,
                    'getprofile': getprofile,
                    'getprofileprofilehist': getprofileprofilehist,
                    'getPaymentSummary': getPaymentSummary,
+                   'getAddress' : getAddress,
                    'register': register,
                    'getpedingreg' : getpedingreg,
                    'approve_reject_reg' : approve_reject_reg

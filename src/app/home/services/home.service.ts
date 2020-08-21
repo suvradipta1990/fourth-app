@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {Profile} from "../Profile";
 import {ProfileHistory} from "../ProfileHistory";
 import {PaymentSummary} from "../PaymentSummary";
+import {Address} from "../Address";
 @Injectable({
   providedIn: 'root'
 })
@@ -56,6 +57,13 @@ getPaymentSummary(profile_id: string): Observable<PaymentSummary[]> {
   const v_profile_id  = {profile_id: profile_id};
   console.log("v_profile_id :"+ v_profile_id)
   return this.http.post<PaymentSummary[]>(this.urlString + '/getPaymentSummary',v_profile_id);
+}
+
+getAddress(profile_id: string): Observable<Address[]> {
+     
+  const v_profile_id  = {profile_id: profile_id};
+  console.log("v_profile_id :"+ v_profile_id)
+  return this.http.post<Address[]>(this.urlString + '/getAddress',v_profile_id);
 }
 
 

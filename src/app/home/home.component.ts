@@ -5,6 +5,7 @@ import { ProfileService } from "./services/home.service";
 import {Profile} from "./Profile";
 import {ProfileHistory} from "./ProfileHistory";
 import {PaymentSummary} from "./PaymentSummary";
+import {Address} from "./Address";
 import { LoginComponent } from '../login/login.component';
 export * from './home.component';
 
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
     public  profile: Profile;
     public  profilehist: ProfileHistory[];
     public  paysummary: PaymentSummary[];
+    public  address :Address[];
     public myProfile :string="";
     public loggedInUser: string="";
     prof_id: string;
@@ -95,6 +97,7 @@ export class HomeComponent implements OnInit {
           console.log(this.profile_id);
           this.getProfileHistory(this.profile_id);
           this.getPaymentSummary(this.profile_id);
+          this.getAddress(this.profile_id);
       }else {
         alert("Profile not found"); 
       }
@@ -126,6 +129,19 @@ export class HomeComponent implements OnInit {
           }
         });
       }
+
+      getAddress(profile_id: string){
+        this.profileService.getAddress(profile_id)
+        .subscribe((data) => {
+          if(data != null ) {
+            console.log('getAddress');
+             this.address=data;
+              console.log(this.address);
+            }else {
+              console.log(this.address);
+            }
+          });
+        }
 
       calculateDiff(from_date :Date,to_date:Date) {
         var date1:any = new Date(from_date);

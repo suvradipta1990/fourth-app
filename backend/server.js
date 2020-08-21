@@ -68,6 +68,14 @@ app.post('/getPaymentSummary', (req, res) => {
     return db.getPaymentSummary(req.body.profile_id, res);  // res.json(data);
 })
 
+app.post('/getAddress', (req, res) => {
+    console.log('getAddress REQ') ;
+    console.log(req.body.profile_id) ;
+    console.log('getAddress RES') ;
+    console.log(res.body) ;
+    return db.getAddress(req.body.profile_id, res);  // res.json(data);
+})
+
 app.post('/register', (req, res) => {
     console.log('register REQ') ;
     console.log(req.body) ;

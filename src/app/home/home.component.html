@@ -31,20 +31,63 @@
                             <p><label>DATE OF BIRTH: </label><span> {{profile.date_of_birth | date}}</span></p>
                             <p><label>EMAIL: </label><span> {{profile.email}}</span></p>
                             <mat-tab-group>
-                                <mat-tab >
+                                <mat-tab>
+                                    <ng-template mat-tab-label>
+                                        <div class="tab-heading">
+                                            Address
+                                        </div> 
+                                    </ng-template>
                                     <div class="tab-height">
-                                        <ng-template mat-tab-label>
-                                            <div class="tab-heading">
-                                                Address
-                                            </div>  
-                                        </ng-template> 
-                                        <div tab-height>
+                                        <div *ngFor="let addr of address" >
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>User Name</label>
+                                                    <label>Address Type</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>{{this.username}}</p>
+                                                    <p>{{addr.address_type}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Address Line 1:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.adddress_line_1}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Address Line 2:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.adddress_line_2}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>City:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.city}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>District:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.district}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Pincode:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.pincode}}</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Country:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{addr.country}}</p>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <label>   </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>  </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,6 +202,7 @@
                                                 <div class="col-md-6">
                                                     <p>  </p>
                                                 </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
