@@ -127,6 +127,24 @@ app.post('/approve_reject_reg', (req, res) => {
                                         res);  // res.json(data); 
 }) 
 
+app.post('/createpayment', (req, res) => {
+    console.log('approve_reject_reg REQ') ;
+    console.log(req.body) ;
+    console.log('approve_reject_reg RES') ;
+    console.log(res.body) ;
+    return db.create_payment(req.body.profile_id,
+                                req.body.officename,
+                                req.body.transacid,
+                                req.body.teacher,
+                                req.body.paymonthfrom,
+                                req.body.paymonthto,
+                                req.body.payamount,
+                                req.body.isadmin,
+                                req.body.regn_no,
+                                req.body.transacslip,
+                            res);  // res.json(data); 
+})
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

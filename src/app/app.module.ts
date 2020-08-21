@@ -18,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
+import { CreatepaymentComponent } from './createpayment/createpayment.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.c
     StudentsComponent,
     ApproveregComponent,
     ApprovepaymentComponent,
-    PendingapprovalsComponent
+    PendingapprovalsComponent,
+    CreatepaymentComponent
   ],
   imports: [
     BrowserModule,

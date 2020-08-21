@@ -2,7 +2,7 @@
 /* BASIC */
 
 html {
-    background-color: #56baed;
+    background-color: #073247;
   }
   
   body {
@@ -37,7 +37,7 @@ html {
     align-items: center;
     flex-direction: column; 
     justify-content: center;
-    width: 50%;
+    width: 70%;
     min-height: 100px;
     padding: 20px;
   }

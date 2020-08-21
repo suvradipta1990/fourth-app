@@ -11,6 +11,7 @@ import { AuthGuard } from './auth.guard';
 import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
 import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
+import { CreatepaymentComponent } from './createpayment/createpayment.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'pendingapprovals', component: PendingapprovalsComponent,canActivate: [AuthGuard] },
   { path: 'approvereg', component: ApproveregComponent,canActivate: [AuthGuard] },
   { path: 'approvepayment', component: ApprovepaymentComponent,canActivate: [AuthGuard] },
+  { path: 'createpayment', component: CreatepaymentComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 
