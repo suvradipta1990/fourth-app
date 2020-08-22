@@ -1,6 +1,11 @@
 const express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser'); 
+// const multipart = require('connect-multiparty');
+// const profileimage = multipart({
+//     uploadDir: './uploads/profile'
+// });
+
 var session = require('express-session');
 var db = require('./models/db.js');
 const { response } = require('express');
@@ -23,9 +28,6 @@ app.get('/', (req, res) => {
     res.json('Hello World, ');
 });
 
-
-//hostname -> context path -> version -> api path
-// localhost:3000/Latika/v1/login
 app.get('/my-custom-url', function(req, res) {
     console.dir(req)
     res.json('Hello World,my-custom-url ' + req);
@@ -144,6 +146,25 @@ app.post('/createpayment', (req, res) => {
                                 req.body.transacslip,
                             res);  // res.json(data); 
 })
+
+app.get('/pendingpayment', (req, res) => {
+    console.log('pendingpayment REQ') ;
+    console.log(req.body) ;
+    console.log('pendingpayment RES') ;
+    console.log(res.body) ;
+    return db.getpendingpayment(req,res);  // res.json(data);
+})
+
+app.post('/approve_reject_payment', (req, res) => {
+    console.log('approve_reject_payment REQ') ;
+    console.log(req.body) ;
+    console.log('approve_reject_payment RES') ;
+    console.log(res.body) ;
+    return db.approve_reject_payment(req.body.p_approve_del,
+                                            req.body.p_id,
+                                            req.body.p_remarks,
+                                        res);  // res.json(data); 
+}) 
 
 
 app.listen(3000, () => {

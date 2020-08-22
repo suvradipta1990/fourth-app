@@ -1,0 +1,114 @@
+input[type=submit] {
+    background-color: #0942bd;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  .logoutbutton {
+    background-color: #0a2d79;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .header-div {
+    background-color: lightblue;    
+    height: 110px;
+  }
+  
+  .header-welcome-div {   
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  .header-logout-div {   
+    text-align: right;
+    justify-content: right;
+  }
+  
+  input[type=button] {
+    /* background-color: #0a2d79; */
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial;
+    margin: 5px;
+    width: 120px;
+    border: 1px solid #f6f6f6;
+  }
+  .main-div{
+    height: 10px;
+    margin: auto;
+    justify-content: center;
+ }
+
+ .wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px;
+  }
+  .aprvbutton {
+    background-color: #1bb807;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .decbutton {
+    background-color: #b80505;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .div-block{
+      border-bottom: 1px solid #596fec;
+      margin: auto;
+      justify-content: center;
+      width: 80%;
+  }
+  .center{
+      text-align: center;
+  }

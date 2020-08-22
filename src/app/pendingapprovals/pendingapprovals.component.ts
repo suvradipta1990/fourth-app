@@ -31,6 +31,10 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/approvereg"]);
   }
 
+  getapppaymentpage(){
+    this.router.navigate(["/approvepayment"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

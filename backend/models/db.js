@@ -212,6 +212,37 @@ var login = (user, pwd,res) => {
               });
     }
 
+    var getpendingpayment = (req,res) => {
+        const getPendingPayQry = 'SELECT * from master.t_pending_payment_approval where is_deleted=false  order by pending_payment_id';
+        console.log("db.js console getPendingPayQry: ");
+        client.query(getPendingPayQry,
+                    (err, result, callback) => {
+        if (err) {
+        console.log(err);
+        return null;
+        }
+        console.log("db.js console REGISTER results : "+result.rows);
+        res.status(200).json(result.rows);
+        });
+    }
+
+    var approve_reject_payment = (p_approve_del,p_id,p_remarks,res) => {
+      const approve_reject_payQry = 'SELECT  approve_reject_payment from master.approve_reject_payment ($1,$2,$3)';
+      console.log("db.js console approve_reject_payQry: ");
+      client.query(approve_reject_payQry,
+                    [p_approve_del,
+                      p_id,
+                      p_remarks],
+                  (err, result, callback) => {
+      if (err) {
+      console.log(err);
+      return null;
+      }
+      console.log("db.js console REGISTER APPROVE results : "+result.rows);
+      res.status(200).json(result.rows);
+      });
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -221,5 +252,7 @@ module.exports = {'client': client,
                    'register': register,
                    'getpedingreg' : getpedingreg,
                    'approve_reject_reg' : approve_reject_reg,
-                   'create_payment' : create_payment
+                   'create_payment' : create_payment,
+                   'getpendingpayment' : getpendingpayment,
+                   'approve_reject_payment' : approve_reject_payment
                   };

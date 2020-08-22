@@ -34,6 +34,7 @@ export class CreatepaymentComponent implements OnInit {
   public regn_no: string="";
   public create_payment_result: string;
   public  paysummary: PaymentSummary[];
+  //public transacslip :any;
 
   constructor(private router: Router,
     public authService: AuthService,
