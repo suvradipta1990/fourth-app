@@ -7,6 +7,9 @@
     </div>
 </div>
 <div class="main-div">
+  <div class="center">
+    <h3 >No of Students Found: {{this.count}}</h3>
+  </div>
   <ng-container
       *ngIf="this.count; then YES; else NO">
   </ng-container>
