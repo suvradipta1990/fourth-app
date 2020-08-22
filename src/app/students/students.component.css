@@ -91,7 +91,6 @@ html {
   
   input[type=button], input[type=submit], input[type=reset]  {
     background-color: #56baed;
-    border: none;
     color: white;
     padding: 15px 80px;
     text-align: center;
@@ -113,6 +112,7 @@ html {
   
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: #39ace7;
+    border: 1px solid #0a0101;
   }
   
   input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -125,7 +125,7 @@ html {
   
   input[type=text] {
     background-color: #f6f6f6;
-    border: none;
+    border: 1px solid #2e0909;
     color: #0d0d0d;
     padding: 15px 32px;
     text-align: center;
@@ -135,24 +135,12 @@ html {
     font-family: caption;
     margin: 5px;
     width: 100%;
-    border: 2px solid #f6f6f6;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
+
   }
   
-  input[type=text]:focus {
-    background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
-  }
   
-  input[type=text]:placeholder {
-    color: #cccccc;
-  }
+  
+
 
   input[type=password] {
     background-color: #f6f6f6;
@@ -376,7 +364,7 @@ input[type=text], input[type=password] {
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: none;
+  border: 1px  solid #0d0d0d;
   background: #f1f1f1;
 }
 
@@ -401,6 +389,7 @@ hr {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  border: 1px solid #010f1b;
 }
 
 .registerbtn:hover {
@@ -456,5 +445,56 @@ input[type=button] {
   font-family: Arial;
   margin: 5px;
   width: 10%;
-  border: 1px solid #f6f6f6;
+  border: 1px solid #0a0101;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
 }

@@ -24,10 +24,13 @@ export class Profile {
         public updated_by: number,
         public is_deleted:boolean,
         public user_id:number,
-        public email:String,
-        public DOJ:String,
+        public email:string,
+        public DOJ:string,
         public is_student: boolean,
         public father_occupation:string,
-        public mother_occupation:string){}
+        public mother_occupation:string,
+        public gender:string,
+        public aadhaar_number:string,
+        public subject:string){}
   }
   export * from './Profile';

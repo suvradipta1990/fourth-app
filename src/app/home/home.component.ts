@@ -86,7 +86,10 @@ export class HomeComponent implements OnInit {
           data[0].doj,
           data[0].is_student,
           data[0].father_occupation,
-          data[0].mother_occupation);
+          data[0].mother_occupation,
+          data[0].gender,
+          data[0].aadhaar_number,
+          data[0].subject);
           
           this.myProfile = data[0].first_name;
           this.profile_id =data[0].profile_id;

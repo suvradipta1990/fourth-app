@@ -227,21 +227,55 @@ var login = (user, pwd,res) => {
     }
 
     var approve_reject_payment = (p_approve_del,p_id,p_remarks,res) => {
-      const approve_reject_payQry = 'SELECT  approve_reject_payment from master.approve_reject_payment ($1,$2,$3)';
-      console.log("db.js console approve_reject_payQry: ");
-      client.query(approve_reject_payQry,
-                    [p_approve_del,
-                      p_id,
-                      p_remarks],
+        const approve_reject_payQry = 'SELECT  approve_reject_payment from master.approve_reject_payment ($1,$2,$3)';
+        console.log("db.js console approve_reject_payQry: ");
+        client.query(approve_reject_payQry,
+                      [p_approve_del,
+                        p_id,
+                        p_remarks],
+                    (err, result, callback) => {
+        if (err) {
+        console.log(err);
+        return null;
+        }
+        console.log("db.js console REGISTER APPROVE results : "+result.rows);
+        res.status(200).json(result.rows);
+        });
+  }
+
+  var search_student = (firstname,lastname,mobileno,regno,res) => {
+    const search_studentQry = 'SELECT  * from master.search_student ($1,$2,$3,$4)';
+    console.log("db.js console search_studentQry: ");
+    client.query(search_studentQry,
+                  [firstname,
+                    lastname,
+                    mobileno,
+                    regno],
+                (err, result, callback) => {
+    if (err) {
+    console.log(err);
+    return null;
+    }
+    console.log("db.js console search_student results : "+result.rows);
+    res.status(200).json(result.rows);
+    });
+  }
+    var update_fees = (regn_no,fees,discounted_fees,res) => {
+      const update_feesQry = 'SELECT  * from master.update_fees ($1,$2,$3)';
+      console.log("db.js console update_feesQry: ");
+      client.query(update_feesQry,
+                  [regn_no,
+                    fees,
+                    discounted_fees],
                   (err, result, callback) => {
       if (err) {
       console.log(err);
       return null;
       }
-      console.log("db.js console REGISTER APPROVE results : "+result.rows);
+      console.log("db.js console update_fees results : "+result.rows);
       res.status(200).json(result.rows);
       });
-}
+  }
 
 module.exports = {'client': client,
                   'login': login,
@@ -254,5 +288,7 @@ module.exports = {'client': client,
                    'approve_reject_reg' : approve_reject_reg,
                    'create_payment' : create_payment,
                    'getpendingpayment' : getpendingpayment,
-                   'approve_reject_payment' : approve_reject_payment
+                   'approve_reject_payment' : approve_reject_payment,
+                   'search_student' : search_student,
+                   'update_fees' : update_fees
                   };

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {LoginComponent} from '../login/login.component';
 import { AuthService } from '../auth.service';
-
+import { StudentsService } from "./services/students.service";
+import {Profile} from "../home/Profile";
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
@@ -16,7 +17,11 @@ export class StudentsComponent implements OnInit {
   public regno :string="";
   public loggedInUser :string="";
   public isadmin :string="false";
-  constructor(private router: Router,public authService: AuthService)  { }
+  public profile:Profile[];
+  public count:number;
+  constructor(private router: Router,
+              public authService: AuthService,
+              public studentsService: StudentsService)  { }
 
   ngOnInit(): void {
     this.isadmin = localStorage.getItem('is_admin').toString();
@@ -28,8 +33,12 @@ export class StudentsComponent implements OnInit {
   }
 
   searchstudent(){
-    // to do
-  }
+      this.router.navigate(["/searchstudent"]);
+      localStorage.setItem('searchbyfirstname', this.firstname);
+      localStorage.setItem('searchbylastname', this.lastname);
+      localStorage.setItem('searchbymobileno',this.mobileno);
+      localStorage.setItem('searchbyregno', this.regno);
+    }
 
   logout(){
     localStorage.setItem('isLoggedIn', "false");

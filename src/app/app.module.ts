@@ -19,6 +19,7 @@ import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
 import { CreatepaymentComponent } from './createpayment/createpayment.component';
+import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CreatepaymentComponent } from './createpayment/createpayment.component'
     ApproveregComponent,
     ApprovepaymentComponent,
     PendingapprovalsComponent,
-    CreatepaymentComponent
+    CreatepaymentComponent,
+    SearchstudentComponent
   ],
   imports: [
     BrowserModule,

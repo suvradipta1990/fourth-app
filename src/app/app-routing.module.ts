@@ -12,6 +12,7 @@ import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.c
 import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 import { CreatepaymentComponent } from './createpayment/createpayment.component';
+import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'approvereg', component: ApproveregComponent,canActivate: [AuthGuard] },
   { path: 'approvepayment', component: ApprovepaymentComponent,canActivate: [AuthGuard] },
   { path: 'createpayment', component: CreatepaymentComponent,canActivate: [AuthGuard] },
+  { path: 'searchstudent', component: SearchstudentComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 
