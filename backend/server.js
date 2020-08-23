@@ -187,7 +187,54 @@ app.get('/my-custom-url', function(req, res) {
                                 req.body.fees,
                                 req.body.discounted_fees,
                                 res);  // res.json(data); 
+    })
+    
+    
+    app.post('/search_student', (req, res) => {
+        console.log('search_student REQ') ;
+        console.log(req.body) ;
+        console.log('search_student RES') ;
+        console.log(res.body) ;
+        return db.search_student(req.body.firstname,
+                                req.body.lastname,
+                                req.body.mobileno,
+                                req.body.regno,
+                                res);  // res.json(data); 
     }) 
+
+    app.post('/updateProfile', (req, res) => {
+        console.log('updateProfile REQ') ;
+        console.log(req.body) ;
+        console.log('updateProfile RES') ;
+        console.log(res.body) ;
+           return db.update_profile(req.body.profile_id,
+                                    req.body.regno,
+                                    req.body.oldregnno,
+                                    req.body.firstname,
+                                    req.body.middlename,
+                                    req.body.lastname,
+                                    req.body.dateofbirth,
+                                    req.body.mobilenumber,
+                                    req.body.fathersname,
+                                    req.body.fathersnumber,
+                                    req.body.mothersname,
+                                    req.body.mothersnumber,
+                                    req.body.emailid,
+                                    req.body.dateofjoin,
+                                    req.body.fathersoccupation,
+                                    req.body.mothersoccupation,
+                                    req.body.gender,
+                                    req.body.aadhaar,
+                                    req.body.subject,
+                                    req.body.country,
+                                    req.body.addressline1,
+                                    req.body.addressline2,
+                                    req.body.district,
+                                    req.body.city,
+                                    req.body.pincode,
+                                    req.body.address_type,
+                                res);  // res.json(data); 
+    })
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

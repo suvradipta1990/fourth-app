@@ -7,7 +7,7 @@ import {ProfileHistory} from "./ProfileHistory";
 import {PaymentSummary} from "./PaymentSummary";
 import {Address} from "./Address";
 import { LoginComponent } from '../login/login.component';
-export * from './home.component';
+
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,9 @@ export * from './home.component';
 })
 
 export class HomeComponent implements OnInit {
+  static getprofile(user_id: string) {
+    throw new Error("Method not implemented.");
+  }
    
   username: string;
    public profile_id: string;
@@ -38,7 +41,18 @@ export class HomeComponent implements OnInit {
     public  address :Address[];
     public myProfile :string="";
     public loggedInUser: string="";
+    
+    public teachername :string="";
+    public pfromdate :string="";
+    public ptilldate :string="";
+
+    public newteachername :string="";
+    public newpfromdate :string="";
+    public newptilldate :string="";
+    
+    public addnew:boolean;
     prof_id: string;
+
   constructor(private router: Router,
     public authService: AuthService,
     private profileService: ProfileService) { }
@@ -54,7 +68,7 @@ export class HomeComponent implements OnInit {
     this.is_admin = localStorage.getItem('is_admin'); 
     this.getprofile(this.user_id);
   }
-  getprofile(user_id: string) : void {
+  public getprofile(user_id: string) : void {
     console.log("inside getprofile "+ user_id);
     this.profileService.getprofile(user_id)
     .subscribe((data) => {
@@ -66,7 +80,7 @@ export class HomeComponent implements OnInit {
           data[0].first_name,
           data[0].middle_name,
           data[0].last_name,
-          data[0].date_of_birth.substring(0, 10),
+          data[0].date_of_birth,
           data[0].age,
           data[0].fees,
           data[0].discounted_fees,
@@ -162,4 +176,18 @@ export class HomeComponent implements OnInit {
       LoginComponent.logout();
     }
 
+    editprofile(profile_id:number){
+      this.router.navigate(["/editprofile"]);
+    }
+
+    insert_delete_histroy(is_delete:boolean,history_id:string,
+                          teachername:string,pfromdate:string,ptilldate:string){
+      //to do
+  }
+
+    addnewteacher(){
+      this.addnew=true;
+    }
+
 }
+export * from './home.component';

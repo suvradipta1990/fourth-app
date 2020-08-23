@@ -8,7 +8,7 @@ export class Profile {
         public first_name:string,
         public middle_name:String,
         public last_name:String,
-        public date_of_birth:String,
+        public date_of_birth:string,
         public age:number,
         public fees: number,
         public discounted_fees: number,

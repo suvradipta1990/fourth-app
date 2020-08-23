@@ -13,6 +13,7 @@ import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 import { CreatepaymentComponent } from './createpayment/createpayment.component';
 import { SearchstudentComponent } from './searchstudent/searchstudent.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'approvepayment', component: ApprovepaymentComponent,canActivate: [AuthGuard] },
   { path: 'createpayment', component: CreatepaymentComponent,canActivate: [AuthGuard] },
   { path: 'searchstudent', component: SearchstudentComponent,canActivate: [AuthGuard] },
+  { path: 'editprofile', component: EditprofileComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

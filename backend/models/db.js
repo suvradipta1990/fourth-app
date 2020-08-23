@@ -277,6 +277,72 @@ var login = (user, pwd,res) => {
       });
   }
 
+  var update_profile = (profile_id,
+                        regno,
+                        oldregnno,
+                        firstname,
+                        middlename,
+                        lastname,
+                        dateofbirth,
+                        mobilenumber,
+                        fathersname,
+                        fathersnumber,
+                        mothersname,
+                        mothersnumber,
+                        emailid,
+                        dateofjoin,
+                        fathersoccupation,
+                        mothersoccupation,
+                        gender,
+                        aadhaar,
+                        subject,
+                        country,
+                        addressline1,
+                        addressline2,
+                        district,
+                        city,
+                        pincode,
+                        address_type,
+                      res) => {
+    const update_profileQry = 'SELECT  * from master.update_profile ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26)';
+    console.log("db.js console update_profileQry: ");
+    client.query(update_profileQry,
+                [profile_id,
+                  regno,
+                  oldregnno,
+                  firstname,
+                  middlename,
+                  lastname,
+                  dateofbirth,
+                  mobilenumber,
+                  fathersname,
+                  fathersnumber,
+                  mothersname,
+                  mothersnumber,
+                  emailid,
+                  dateofjoin,
+                  fathersoccupation,
+                  mothersoccupation,
+                  gender,
+                  aadhaar,
+                  subject,
+                  country,
+                  addressline1,
+                  addressline2,
+                  district,
+                  city,
+                  pincode,
+                  address_type],
+                (err, result, callback) => {
+    if (err) {
+    console.log(err);
+    return null;
+    }
+    console.log("db.js console update_profile results : "+result.rows);
+    res.status(200).json(result.rows);
+    });
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -290,5 +356,6 @@ module.exports = {'client': client,
                    'getpendingpayment' : getpendingpayment,
                    'approve_reject_payment' : approve_reject_payment,
                    'search_student' : search_student,
-                   'update_fees' : update_fees
+                   'update_fees' : update_fees,
+                   'update_profile' : update_profile
                   };

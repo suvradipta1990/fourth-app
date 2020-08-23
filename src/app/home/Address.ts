@@ -6,9 +6,9 @@ export class Address {
         public address_type:string,
         public adddress_line_1:string,
         public adddress_line_2:string,
-        public district:String,
-        public city:String,
-        public country:String,
+        public district:string,
+        public city:string,
+        public country:string,
         public pincode:number){}
   }
   export * from './Address';

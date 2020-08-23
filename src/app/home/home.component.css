@@ -54,6 +54,7 @@ body{
   border-radius: 1.5rem;
   width: 70%;
   padding: 2%;
+  font: bold;
   font-weight: 600;
   color: #6c757d;
   cursor: pointer;
@@ -149,10 +150,10 @@ input[type=submit] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 13px;
   font-family: caption;
   margin: 5px;
-  width: 100%;
+  width: 80%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -204,5 +205,15 @@ input[type=button] {
   margin: 5px;
   width: 10%;
   border: 1px solid #f6f6f6;
+}
+
+.profile-hist-btn{
+  border: none;
+  border-radius: 1.5rem;
+  width: 50%;
+  padding: 2%;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
 }
 
