@@ -1,0 +1,29 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div id="id01" class="wrapper">
+    <label>Add Your Learning History here {{this.profile_id}}</label><br><br>
+        <div class="container">
+            <hr>           
+            <label for="firstname"><b>Teacher Name*</b></label>
+            <input type="text" placeholder="Enter Teacher Name" [(ngModel)]="teachername" name="teachername" id="teachername" required>
+            
+            <br><br>
+            <label for="practisefrom"><b>Learning From Date*</b></label>
+            <input type="date" placeholder="From Date" [(ngModel)]="practisefrom" name="practisefrom" id="practisefrom" required>
+            
+            <br><br>
+            <label for="practisetill"><b>Learning Till Date*</b></label>
+            <input type="date" placeholder="Till Date" [(ngModel)]="practisetill" name="practisetill" id="practisetill" required>
+
+            <hr>       
+            <button type="submit" (click)="add_history()" class="registerbtn">Add</button>
+            <button type="submit" (click)="cancel()" class="registerbtn">Back/Cancel</button>
+            
+        </div>
+</div>

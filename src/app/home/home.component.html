@@ -147,7 +147,7 @@
                         <mat-tab>
                             <ng-template mat-tab-label>
                                 <div class="tab-heading">
-                                    Profile History
+                                    Teacher History
                                 </div> 
                             </ng-template>
                             <div class="tab-height">
@@ -175,7 +175,7 @@
                                             <label>DURATION</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>NA</p>
+                                            <p>{{history.period_of_practice}}</p>
                                         </div>
                                         <div class="col-md-6">
                                             <label>IS LALITKALA TEACHER</label>
@@ -260,6 +260,8 @@
             </div>
             <div class="col-md-2">
                 <input type="submit" class="profile-edit-btn" (click)="editprofile(profile.profile_id)"  name="btnAddMore" value="Edit Profile"/>
+                <input type="submit" class="profile-edit-btn" (click)="edithist(profile.profile_id)"  name="btnAddMore" value="Edit Teacher History"/>
+            
             </div>
         </div>
     </form>           

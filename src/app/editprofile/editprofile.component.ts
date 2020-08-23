@@ -3,11 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { EditprofileService } from "./services/editprofile.service";
 import {Profile} from "../home/Profile";
-import {ProfileHistory} from "../home/ProfileHistory";
-import {PaymentSummary} from "../home/PaymentSummary";
 import {Address} from "../home/Address";
 import { LoginComponent } from '../login/login.component';
-import { HomeComponent } from '../home/home.component';
 import { ProfileService } from '../home/services/home.service';
 
 @Component({

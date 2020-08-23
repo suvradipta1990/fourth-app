@@ -14,6 +14,7 @@ import { ApprovepaymentComponent } from './approvepayment/approvepayment.compone
 import { CreatepaymentComponent } from './createpayment/createpayment.component';
 import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { AddhistoryComponent } from './addhistory/addhistory.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'createpayment', component: CreatepaymentComponent,canActivate: [AuthGuard] },
   { path: 'searchstudent', component: SearchstudentComponent,canActivate: [AuthGuard] },
   { path: 'editprofile', component: EditprofileComponent,canActivate: [AuthGuard] },
+  { path: 'addhistory', component: AddhistoryComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

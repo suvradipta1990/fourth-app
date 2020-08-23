@@ -179,10 +179,10 @@ export class HomeComponent implements OnInit {
     editprofile(profile_id:number){
       this.router.navigate(["/editprofile"]);
     }
+  
 
-    insert_delete_histroy(is_delete:boolean,history_id:string,
-                          teachername:string,pfromdate:string,ptilldate:string){
-      //to do
+    edithist(profile_id:number){
+      this.router.navigate(["/addhistory"]); 
   }
 
     addnewteacher(){

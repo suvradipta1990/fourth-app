@@ -6,10 +6,10 @@ export class ProfileHistory {
         public teachers_name:string,
         public practise_from:string,
         public practise_till:string,
-        public period_of_practice:String,
+        public period_of_practice:string,
         public is_lalitkala_teacher:boolean,
-        public created_date:String,
-        public created_by:String,
+        public created_date:string,
+        public created_by:string,
         public updated_date:Date,
         public updated_by: number,
         public is_deleted:boolean){}

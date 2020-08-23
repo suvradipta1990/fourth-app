@@ -21,6 +21,7 @@ import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.c
 import { CreatepaymentComponent } from './createpayment/createpayment.component';
 import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
+import { AddhistoryComponent } from './addhistory/addhistory.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
     PendingapprovalsComponent,
     CreatepaymentComponent,
     SearchstudentComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    AddhistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -236,6 +236,21 @@ app.get('/my-custom-url', function(req, res) {
                                 res);  // res.json(data); 
     })
 
+    app.post('/add_history', (req, res) => {
+        console.log('search_student REQ') ;
+        console.log(req.body) ;
+        console.log('search_student RES') ;
+        console.log(res.body) ;
+        return db.add_teacher_history(req.body.teachername,
+                                    req.body.practisefrom,
+                                    req.body.practisetill,
+                                    req.body.is_lalitkala_teacher,
+                                    req.body.is_delete,
+                                    req.body.history_id,
+                                    req.body.profile_id,
+                                    res);  // res.json(data); 
+    }) 
+
 app.listen(3000, () => {
     console.log('App running in port 3000');
 })

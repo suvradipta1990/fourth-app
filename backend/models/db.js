@@ -260,13 +260,13 @@ var login = (user, pwd,res) => {
     res.status(200).json(result.rows);
     });
   }
-    var update_fees = (regn_no,fees,discounted_fees,res) => {
+  var update_fees = (regn_no,fees,discounted_fees,res) => {
       const update_feesQry = 'SELECT  * from master.update_fees ($1,$2,$3)';
       console.log("db.js console update_feesQry: ");
       client.query(update_feesQry,
                   [regn_no,
-                    fees,
-                    discounted_fees],
+                   fees,
+                   discounted_fees],
                   (err, result, callback) => {
       if (err) {
       console.log(err);
@@ -304,44 +304,67 @@ var login = (user, pwd,res) => {
                         pincode,
                         address_type,
                       res) => {
-    const update_profileQry = 'SELECT  * from master.update_profile ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26)';
-    console.log("db.js console update_profileQry: ");
-    client.query(update_profileQry,
-                [profile_id,
-                  regno,
-                  oldregnno,
-                  firstname,
-                  middlename,
-                  lastname,
-                  dateofbirth,
-                  mobilenumber,
-                  fathersname,
-                  fathersnumber,
-                  mothersname,
-                  mothersnumber,
-                  emailid,
-                  dateofjoin,
-                  fathersoccupation,
-                  mothersoccupation,
-                  gender,
-                  aadhaar,
-                  subject,
-                  country,
-                  addressline1,
-                  addressline2,
-                  district,
-                  city,
-                  pincode,
-                  address_type],
-                (err, result, callback) => {
-    if (err) {
-    console.log(err);
-    return null;
-    }
-    console.log("db.js console update_profile results : "+result.rows);
-    res.status(200).json(result.rows);
-    });
-}
+      const update_profileQry = 'SELECT  * from master.update_profile ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26)';
+      console.log("db.js console update_profileQry: ");
+      client.query(update_profileQry,
+                  [profile_id,
+                    regno,
+                    oldregnno,
+                    firstname,
+                    middlename,
+                    lastname,
+                    dateofbirth,
+                    mobilenumber,
+                    fathersname,
+                    fathersnumber,
+                    mothersname,
+                    mothersnumber,
+                    emailid,
+                    dateofjoin,
+                    fathersoccupation,
+                    mothersoccupation,
+                    gender,
+                    aadhaar,
+                    subject,
+                    country,
+                    addressline1,
+                    addressline2,
+                    district,
+                    city,
+                    pincode,
+                    address_type],
+                  (err, result, callback) => {
+      if (err) {
+      console.log(err);
+      return null;
+      }
+      console.log("db.js console update_profile results : "+result.rows);
+      res.status(200).json(result.rows);
+      });
+  }
+
+  var add_teacher_history = (teachername,practisefrom,practisetill,
+                             is_lalitkala_teacher,is_delete,history_id,profile_id,
+                         res) => {
+        const add_teacher_historyQry = 'SELECT  * from master.add_del_history ($1,$2,$3,$4,$5,$6,$7)';
+        console.log("db.js console add_teacher_historyQry: ");
+        client.query(add_teacher_historyQry,
+                    [teachername,
+                    practisefrom,
+                    practisetill,
+                    is_lalitkala_teacher,
+                    is_delete,
+                    history_id,
+                    profile_id],
+                    (err, result, callback) => {
+        if (err) {
+        console.log(err);
+        return null;
+        }
+        console.log("db.js console add_del_history results : "+result.rows);
+        res.status(200).json(result.rows);
+        });
+  }
 
 module.exports = {'client': client,
                   'login': login,
@@ -357,5 +380,6 @@ module.exports = {'client': client,
                    'approve_reject_payment' : approve_reject_payment,
                    'search_student' : search_student,
                    'update_fees' : update_fees,
-                   'update_profile' : update_profile
+                   'update_profile' : update_profile,
+                   'add_teacher_history' : add_teacher_history
                   };
