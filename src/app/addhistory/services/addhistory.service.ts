@@ -11,7 +11,7 @@ export class AddhistoryService {
     constructor(private http: HttpClient) { }
 
 
-    add_history(teachername: string,
+    add_del_history(teachername: string,
                practisefrom: Date,
                practisetill: Date,
                is_lalitkala_teacher: boolean,

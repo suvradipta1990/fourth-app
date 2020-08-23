@@ -7,6 +7,7 @@ import {ProfileHistory} from "../home/ProfileHistory";
 import {PaymentSummary} from "../home/PaymentSummary";
 import {Address} from "../home/Address";
 import { LoginComponent } from '../login/login.component';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-searchstudent',
@@ -26,6 +27,7 @@ export class SearchstudentComponent implements OnInit {
   public test_name: string="";
   public discounted_fees: number;
   public fees: number;
+  public  homeComponent: HomeComponent;
  public update_fee: string;
   constructor(private router: Router,
     public authService: AuthService,
@@ -80,8 +82,9 @@ export class SearchstudentComponent implements OnInit {
         });
       }
 
-      view_profile(profile_id:number){
-            //to do
+      view_profile(user_id:string){
+        localStorage.setItem('view_student_profile', user_id);
+             this.router.navigate(["/view-profile"]);
         }
 
   logout(){

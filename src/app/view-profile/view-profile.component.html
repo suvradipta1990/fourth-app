@@ -25,7 +25,6 @@
                     <h2>
                         <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
                     </h2>
-                    <p><label>USER NAME: </label><span> {{this.username}}</span></p>
                     <p><label>REGISTRATION NO: </label><span> {{profile.regn_no}}</span></p>
                     <p><label>MOBILE NUMBER: </label><span> {{profile.mobile_number}}</span></p>
                     <p><label>DATE OF BIRTH: </label><span> {{profile.date_of_birth | date}}</span></p>
@@ -201,12 +200,6 @@
                                         <div class="col-md-6">
                                             <p>  </p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label>Action</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><input type="submit" class="profile-hist-btn" (click)="delete_histroy(history.history_id)"  name="deletehist" value="Delete"/></p>
-                                        </div>
                                         <hr>
                                     </div>
                                 </div>
@@ -259,9 +252,7 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" (click)="editprofile(profile.profile_id)"  name="btnAddMore" value="Edit Profile"/>
-                <input type="submit" class="profile-edit-btn" (click)="edithist(profile.profile_id)"  name="btnAddMore" value="Edit Teacher History"/>
-            
+                <input type="submit" class="profile-edit-btn" (click)="back()" name="btnAddMore" value="Back"/>
             </div>
         </div>
     </form>           

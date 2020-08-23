@@ -70,7 +70,7 @@
                           <label>ACTIONS: </label>
                       </div>
                       <div class="col-md-6">
-                          <input id="approvereg" type="button" class="aprvbutton" (click)="view_profile(profile.profile_id)" value="View Profile">
+                          <input id="approvereg" type="button" class="aprvbutton" target="_blank" (click)="view_profile(profile.user_id)" value="View Profile">
                           <input id="approvereg" type="button" class="backbutton" (click)="back()" value="Back">
                           <input id="approvereg" type="button" class="aprvbutton" (click)="updatefees(profile.regn_no,this.fees,this.discounted_fees)" value="Update Fees">
                       </div>

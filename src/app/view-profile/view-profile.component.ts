@@ -1,26 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { ProfileService } from "./services/home.service";
-import {Profile} from "./Profile";
-import {ProfileHistory} from "./ProfileHistory";
-import {PaymentSummary} from "./PaymentSummary";
-import {Address} from "./Address";
+import { ProfileService } from "../home/services/home.service";
+import {Profile} from "../home/Profile";
+import {ProfileHistory} from "../home/ProfileHistory";
+import {PaymentSummary} from "../home/PaymentSummary";
+import {Address} from "../home/Address";
 import { LoginComponent } from '../login/login.component';
 import {AddhistoryService} from '../addhistory/services/addhistory.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-view-profile',
+  templateUrl: './view-profile.component.html',
+  styleUrls: ['./view-profile.component.css']
 })
+export class ViewProfileComponent implements OnInit {
 
-export class HomeComponent implements OnInit {
-  static getprofile(user_id: string) {
-    throw new Error("Method not implemented.");
-  }
-   
-    username: string;
+  username: string;
     public profile_id: string;
     user_id: string;
     is_admin: string;
@@ -30,10 +26,10 @@ export class HomeComponent implements OnInit {
     public profiletab :string = "";
     public parentstab :string= "";
     public diffDays :any;
-    public  profile: Profile;
-    public  profilehist: ProfileHistory[];
-    public  paysummary: PaymentSummary[];
-    public  address :Address[];
+    public profile: Profile;
+    public profilehist: ProfileHistory[];
+    public paysummary: PaymentSummary[];
+    public address :Address[];
     public myProfile :string="";
     public loggedInUser: string="";
     
@@ -41,29 +37,23 @@ export class HomeComponent implements OnInit {
     public pfromdate :string="";
     public ptilldate :string="";
 
-    public newteachername :string="";
-    public newpfromdate :string="";
-    public newptilldate :string="";
-    
-    public addnew:boolean;
     public result: string;
 
   constructor(private router: Router,
     public authService: AuthService,
-    private profileService: ProfileService,
-    public addhistoryService: AddhistoryService) { }
+    private profileService: ProfileService) { }
 
   ngOnInit(): void {
+
     this.currDiv = 1;
     this.loggedInUser = localStorage.getItem('user_name');
-
+    this.user_id = localStorage.getItem('view_student_profile');
     alert(localStorage.getItem('user_id'));
-
     this.username = localStorage.getItem('user_name');
-    this.user_id = localStorage.getItem('user_id');
     this.is_admin = localStorage.getItem('is_admin'); 
     this.getprofile(this.user_id);
   }
+
   public getprofile(user_id: string) : void {
     console.log("inside getprofile "+ user_id);
     this.profileService.getprofile(user_id)
@@ -154,55 +144,20 @@ export class HomeComponent implements OnInit {
               console.log(this.address);
             }
           });
+      }
+    
+        logout(){
+          localStorage.setItem('isLoggedIn', "false");
+          localStorage.removeItem('user_id');
+          localStorage.removeItem('profile_id');
+          localStorage.clear();
+          this.router.navigate(["/"]);
+          LoginComponent.logout();
+        }
+    
+        back(){
+          console.log("back button clicked");
+          this.router.navigate(["/searchstudent"]);
         }
 
-      calculateDiff(from_date :Date,to_date:Date) {
-        var date1:any = new Date(from_date);
-        var date2:any = new Date(to_date);
-        this.diffDays = Math.floor((date2 - date1) / (1000 * 60 * 60 * 24));
-        return this.diffDays;
-    }
-
-    logout(){
-      localStorage.setItem('isLoggedIn', "false");
-      localStorage.removeItem('user_id');
-      localStorage.removeItem('profile_id');
-      localStorage.clear();
-      this.router.navigate(["/"]);
-      LoginComponent.logout();
-    }
-
-    editprofile(profile_id:number){
-      this.router.navigate(["/editprofile"]);
-    }
-  
-
-    edithist(profile_id:number){
-      this.router.navigate(["/addhistory"]); 
-  }
-
-  delete_histroy(history_id:number){
-     var practisefrom:Date;
-     var practisetill:Date;
-     var is_lalitkala_teacher:boolean;
-     const is_delete:number=1;
-     this.addhistoryService.add_del_history(this.teachername,practisefrom,practisetill,
-                                            is_lalitkala_teacher,is_delete,history_id,
-                                            this.profile_id)
-                .subscribe((data) => {
-                  if(data != null ) {
-                  console.log('update profile result');
-                  this.result = data[0].add_del_history;
-                  console.log(this.result);
-                  alert(this.result); 
-                  this.ngOnInit();
-                  this.router.navigate(['/home']);
-                  }
-                  else {
-                    console.log(this.result);
-                    }
-              });
-    }
-
 }
-export * from './home.component';

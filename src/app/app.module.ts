@@ -22,6 +22,7 @@ import { CreatepaymentComponent } from './createpayment/createpayment.component'
 import { SearchstudentComponent } from './searchstudent/searchstudent.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { AddhistoryComponent } from './addhistory/addhistory.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AddhistoryComponent } from './addhistory/addhistory.component';
     CreatepaymentComponent,
     SearchstudentComponent,
     EditprofileComponent,
-    AddhistoryComponent
+    AddhistoryComponent,
+    ViewProfileComponent
   ],
   imports: [
     BrowserModule,

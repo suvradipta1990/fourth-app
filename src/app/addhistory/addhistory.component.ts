@@ -49,9 +49,9 @@ export class AddhistoryComponent implements OnInit {
   }
 
   add_history(){
-    this.addhistoryService.add_history(this.teachername,this.practisefrom,this.practisetill,
-                                       this.is_lalitkala_teacher,this.is_delete,this.history_id,
-                                       this.profile_id)
+    this.addhistoryService.add_del_history(this.teachername,this.practisefrom,this.practisetill,
+                                          this.is_lalitkala_teacher,this.is_delete,this.history_id,
+                                          this.profile_id)
                           .subscribe((data) => {
                           if(data != null ) {
                           console.log('update profile result');
