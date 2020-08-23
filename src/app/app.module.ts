@@ -23,6 +23,8 @@ import { SearchstudentComponent } from './searchstudent/searchstudent.component'
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { AddhistoryComponent } from './addhistory/addhistory.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { UpdateProfilePicComponent } from './update-profile-pic/update-profile-pic.component';
+import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     SearchstudentComponent,
     EditprofileComponent,
     AddhistoryComponent,
-    ViewProfileComponent
+    ViewProfileComponent,
+    UpdateProfilePicComponent,
+    PaymentDefaulterComponent
   ],
   imports: [
     BrowserModule,

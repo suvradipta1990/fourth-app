@@ -251,6 +251,15 @@ app.get('/my-custom-url', function(req, res) {
                                     res);  // res.json(data); 
     }) 
 
+    app.post('/getallpaymentdefaulter', (req, res) => {
+        console.log('getallpaymentdefaulter REQ') ;
+        console.log(req.body) ;
+        console.log('getallpaymentdefaulter RES') ;
+        console.log(res.body) ;
+        return db.get_payment_defaulter(req.body.no_of_months,
+                                       res);  // res.json(data); 
+    }) 
+
 app.listen(3000, () => {
     console.log('App running in port 3000');
 })

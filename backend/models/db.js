@@ -366,6 +366,22 @@ var login = (user, pwd,res) => {
         });
   }
 
+  var get_payment_defaulter = (no_of_month,
+                              res) => {
+          const get_payment_defaulterQry = 'SELECT  * from master.get_payment_defaulter ($1)';
+          console.log("db.js console get_payment_defaulter: ");
+          client.query(get_payment_defaulterQry,
+                      [no_of_month],
+                  (err, result, callback) => {
+                      if (err) {
+                        console.log(err);
+                        return null;
+                      }
+          console.log("db.js console add_del_history results : "+result.rows);
+          res.status(200).json(result.rows);
+          });
+    }
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -381,5 +397,6 @@ module.exports = {'client': client,
                    'search_student' : search_student,
                    'update_fees' : update_fees,
                    'update_profile' : update_profile,
-                   'add_teacher_history' : add_teacher_history
+                   'add_teacher_history' : add_teacher_history,
+                   'get_payment_defaulter' :get_payment_defaulter
                   };

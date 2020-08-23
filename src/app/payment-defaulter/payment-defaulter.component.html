@@ -1,0 +1,92 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="main-div">
+  <div class="center">
+      <h3 >Total Defaulter:{{this.count}}</h3>
+  </div>
+  <div class="div-block" *ngFor="let payment of paymentSummary" >
+          <div class="row">
+
+              <div class="col-md-6">
+                  <label>REGISTRATION NO</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.regn_no}}</p>
+              </div>
+
+              <div class="col-md-6">
+                  <label>NAME</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.first_name}} {{payment.middle_name}} {{payment.last_name}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>MOBILE NO</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.mobile_number}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>EMAIL</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.email}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Last Payment Date</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.payment_date | date}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Fees  Payble Per  Month</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.discounted_fees}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Pay Aoumnt</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.pay_amount}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Pay From</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.pay_month_from | date}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Pay Till</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.pay_month_to | date}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label>Payment Due For</label>
+              </div>
+              <div class="col-md-6">
+                  <p>{{payment.payment_due_for}} Months</p>
+              </div>
+              <div class="col-md-6">
+                <label>Total Amount Due</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{payment.total_amount_due}} Rs</p>
+            </div>
+              
+              <div class="col-md-6">
+                  <label>   </label>
+              </div>
+              <div class="col-md-6">
+                  <p>  </p>
+              </div>
+          </div>
+  </div>
+</div>
