@@ -163,23 +163,17 @@ export class HomeComponent implements OnInit {
         return this.diffDays;
     }
 
-    logout(){
-      localStorage.setItem('isLoggedIn', "false");
-      localStorage.removeItem('user_id');
-      localStorage.removeItem('profile_id');
-      localStorage.clear();
-      this.router.navigate(["/"]);
-      LoginComponent.logout();
-    }
-
     editprofile(profile_id:number){
       this.router.navigate(["/editprofile"]);
     }
-  
 
     edithist(profile_id:number){
       this.router.navigate(["/addhistory"]); 
-  }
+    }
+
+    uploadProfilePhoto(profile_id:number){
+       this.router.navigate(["/update-profile-photo"]);
+    }
 
   delete_histroy(history_id:number){
      var practisefrom:Date;
@@ -202,6 +196,15 @@ export class HomeComponent implements OnInit {
                     console.log(this.result);
                     }
               });
+    }
+
+    logout(){
+      localStorage.setItem('isLoggedIn', "false");
+      localStorage.removeItem('user_id');
+      localStorage.removeItem('profile_id');
+      localStorage.clear();
+      this.router.navigate(["/"]);
+      LoginComponent.logout();
     }
 
 }

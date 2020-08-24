@@ -1,0 +1,23 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+
+<div class="background-image">
+    <div id="id01" class="wrapper">
+      <p><b>Upload Your Profile Photo</b></p>
+      <div class="container">
+ 
+        <label for="regnno"><b>Enter Registration No*</b></label>
+        <input type="text" placeholder="Enter Registration No" [(ngModel)]="regnno" name="regnno" id="regnno" required>
+        <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">
+            <input type="file" (change)="fileChange($event)" placeholder="Upload Your Photo" [(ngModel)]="photo" name="photo" id="photo" aria-describedby="inputGroupFileAddon01" required>
+        </form>
+        <button type="submit" (click)="UploadPhoto()" class="registerbtn">Upload Photo</button>
+      </div>
+    </div>
+  </div>

@@ -64,7 +64,7 @@
             <input type="text" placeholder="Address Line 2" [(ngModel)]="addressline2" name="addressline2" id="addressline2" required>
             <input type="text" placeholder="District" [(ngModel)]="district" name="district" id="district" required>
             <input type="text" placeholder="City*" [(ngModel)]="city" name="city" id="city" required>
-            <input type="number" placeholder="Pincode" [(ngModel)]="pincode" name="pincode" id="pincode" required>
+            <input type="number" placeholder="Pincode*" [(ngModel)]="pincode" name="pincode" id="pincode" required>
             
             <br><br>
             <label for="subject"><b>Subject*</b></label><br>
@@ -72,14 +72,16 @@
             <label for="vocal">Vocal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
             <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="MUSIC INSTRUMENT">&nbsp;
+            <label for="Dance">MUSIC INSTRUMENT </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
             <br><br>
             <label for="fathersname"><b>Fathers Name*</b></label>
-            <input type="text" placeholder="Enter Fathers Name" [(ngModel)]="fathersname" name="fathersname" id="fathersname" required>
+            <input type="text" placeholder="Enter Fathers Name*" [(ngModel)]="fathersname" name="fathersname" id="fathersname" required>
             
             <br><br>
             <label for="fathersoccupation"><b>Fathers Occupation*</b></label>
-            <input type="text" placeholder="Enter Fathers Occupation(Enter NA if not working)" [(ngModel)]="fathersoccupation" name="fathersoccupation" id="fathersoccupation" required>
+            <input type="text" placeholder="Enter Fathers Occupation(Enter NA if not working)*" [(ngModel)]="fathersoccupation" name="fathersoccupation" id="fathersoccupation" required>
             
             <br><br>
             <label for="fathersnumber"><b>Fathers Contact No</b></label>
@@ -87,11 +89,11 @@
             
             <br><br>
             <label for="mothersname"><b>Mothers Name*</b></label>
-            <input type="text" placeholder="Enter Mothers Name" [(ngModel)]="mothersname" name="mothersname" id="mothersname" required>
+            <input type="text" placeholder="Enter Mothers Name*" [(ngModel)]="mothersname" name="mothersname" id="mothersname" required>
             
             <br><br>
             <label for="mothersoccupation"><b>Mothers Occupation*</b></label>
-            <input type="text" placeholder="Enter Mothers Occupation(Enter NA if not working)" [(ngModel)]="mothersoccupation" name="mothersoccupation" id="fathersoccupation" required>
+            <input type="text" placeholder="Enter Mothers Occupation(Enter NA if not working)*" [(ngModel)]="mothersoccupation" name="mothersoccupation" id="fathersoccupation" required>
             
             <br><br>
             <label for="mothersnumber"><b>Mothers Contact No</b></label>

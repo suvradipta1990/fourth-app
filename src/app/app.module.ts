@@ -15,6 +15,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { FileUploadModule } from 'ng2-file-upload';
 import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
 import { PendingapprovalsComponent } from './pendingapprovals/pendingapprovals.component';
@@ -27,6 +28,7 @@ import { UpdateProfilePicComponent } from './update-profile-pic/update-profile-p
 import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profile-photo.component';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     UpdateProfilePicComponent,
     PaymentDefaulterComponent,
     ForgetPasswordComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    UpdateProfilePhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     MatTabsModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FileUploadModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
