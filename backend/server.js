@@ -260,6 +260,29 @@ app.get('/my-custom-url', function(req, res) {
                                        res);  // res.json(data); 
     }) 
 
+
+
+    app.post('/foregetpwdvalidity', (req, res) => {
+        console.log('foregetpwdvalidity REQ') ;
+        console.log(req.body) ;
+        console.log('foregetpwdvalidity RES') ;
+        console.log(res.body) ;
+        return db.forget_pwd_validation(req.body.regnno,
+                                        req.body.SecurityQues,
+                                        req.body.answer,
+                                       res);  // res.json(data); 
+    }) 
+
+    app.post('/updatepassword', (req, res) => {
+        console.log('updatepassword REQ') ;
+        console.log(req.body) ;
+        console.log('updatepassword RES') ;
+        console.log(res.body) ;
+        return db.update_password(req.body.regnno,
+                                  req.body.password,
+                               res);  // res.json(data); 
+    }) 
+
 app.listen(3000, () => {
     console.log('App running in port 3000');
 })

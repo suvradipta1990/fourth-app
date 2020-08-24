@@ -18,6 +18,7 @@ import { AddhistoryComponent } from './addhistory/addhistory.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'view-profile', component: ViewProfileComponent,canActivate: [AuthGuard] },
   { path: 'payment-defaulter', component: PaymentDefaulterComponent,canActivate: [AuthGuard] },
   { path: 'forget-password', component: ForgetPasswordComponent },
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: '**', redirectTo: '' }
 ];
 

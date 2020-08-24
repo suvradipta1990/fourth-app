@@ -382,6 +382,44 @@ var login = (user, pwd,res) => {
           });
     }
 
+    var forget_pwd_validation = (regnno,
+                                  SecurityQues,
+                                  answer,
+                                  res) => {
+          const forget_pwd_validationQry = 'SELECT  * from master.forget_pwd_validation ($1,$2,$3)';
+                    console.log("db.js console forget_pwd_validation: ");
+                    client.query(forget_pwd_validationQry,
+                               [regnno,
+                                SecurityQues,
+                                answer],
+                    (err, result, callback) => {
+                    if (err) {
+                    console.log(err);
+                    return null;
+                    }
+                    console.log("db.js console forget_pwd_validation results : "+result.rows);
+                    res.status(200).json(result.rows);
+           });
+      }
+
+      var update_password = (regnno,
+                            password,
+                            res) => {
+      const update_passwordQry = 'SELECT  * from master.update_password ($1,$2)';
+                    console.log("db.js console update_password: ");
+            client.query(update_passwordQry,
+                        [regnno,
+                        password],
+                (err, result, callback) => {
+                if (err) {
+                   console.log(err);
+                   return null;
+                 }
+            console.log("db.js console update_password results : "+result.rows);
+            res.status(200).json(result.rows);
+        });
+      }
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -398,5 +436,7 @@ module.exports = {'client': client,
                    'update_fees' : update_fees,
                    'update_profile' : update_profile,
                    'add_teacher_history' : add_teacher_history,
-                   'get_payment_defaulter' :get_payment_defaulter
+                   'get_payment_defaulter' :get_payment_defaulter,
+                   'forget_pwd_validation' : forget_pwd_validation,
+                   'update_password' : update_password
                   };

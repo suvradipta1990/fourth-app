@@ -23,7 +23,7 @@ export class CreatepaymentComponent implements OnInit {
   public loggedInUser: string="";
   public profile_id: string="";
   public  isadmin: string="";
-  public officename: string="";
+  public officename: string="LALITKALA";
   public transacslip: string="";
   public transacid: string="";
   public teacher: string="";
