@@ -40,12 +40,13 @@ html {
     width: 60%;
     min-height: 100px;
     padding: 20px;
+    
   }
   
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #fff;
+    /* background: #fff; */
     padding: 30px;
     width: 100%;
     max-width: 450px;
@@ -84,7 +85,7 @@ html {
   
   input[type=button], input[type=submit], input[type=reset]  {
     background-color: #56baed;
-    border: none;
+    border: 2px solid #fff;
     color: white;
     padding: 15px 80px;
     text-align: center;
@@ -358,7 +359,7 @@ html {
   /* Add padding to containers */
   .container {
     padding: 16px;
-    background-color: white;
+    /* background-color: white; */
   }
   
   /* Full-width input fields */
@@ -388,10 +389,12 @@ html {
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #fff;
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
   }
   
   .registerbtn:hover {
@@ -405,8 +408,9 @@ html {
   
   /* Set a grey background color and center the text of the "sign in" section */
   .signin {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     text-align: center;
+    font-size: large;
   }
 
   input[type=number] {
@@ -482,4 +486,11 @@ html {
     left: 0;
     right: 0;
     z-index: 99;
+  }
+
+  .background-image{
+    background-image: url("../images/backgroud-images/register_page_background.jpg");
+    width: 100%;
+    height: 100%;
+     padding: 120px 70px; 
   }

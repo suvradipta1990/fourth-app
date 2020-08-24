@@ -25,6 +25,7 @@ import { AddhistoryComponent } from './addhistory/addhistory.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { UpdateProfilePicComponent } from './update-profile-pic/update-profile-pic.component';
 import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter
     AddhistoryComponent,
     ViewProfileComponent,
     UpdateProfilePicComponent,
-    PaymentDefaulterComponent
+    PaymentDefaulterComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -53,11 +53,11 @@
   .content {
     display: flex;
     margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
+    padding: 15px 16px;
+    max-width: 800px;
     flex-direction: column;
     align-items: center;
-    enable-background: accumulate;
+    /* background-image: url("../images/lalitkala_logo.jpg"); */
 
   }
 
@@ -79,7 +79,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
-    background-image: url("../../images/coverphoto.jpg");
+    
   }
 
   .card {
@@ -171,7 +171,7 @@
   }
 
   .terminal::before {
-    content: "\2022 \2022 \2022";
+    /* content: "\2022 \2022 \2022"; */
     position: absolute;
     top: 0;
     left: 0;
@@ -325,4 +325,23 @@
     border-radius: 0 0 10px 10px;
   }
 
+  .logo{
+    background-image: url("../images/backgroud-images/lalitkala_logo.jpg");
+    width: 225px;
+    height: 225px;
+    border: blue;
+  }
   
+  .stylish-font{
+      font-size: bold;
+      text-decoration-color: cornsilk;
+      
+  }
+
+  .background-image{
+    background-image: url("../images/backgroud-images/dashboard_background.jpg");
+    width: 100%;
+    height: 100%;
+    padding: 120px 120px;
+
+  }

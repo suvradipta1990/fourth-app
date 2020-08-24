@@ -1,20 +1,23 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<div id="id01" class="wrapper">
-  <h1>Login</h1>
-  <p>Please fill in this form to Login to your account.</p>
-  <div class="container">
-    <hr>
-    <label for="userName"><b>Username/RegistrationNo*</b></label>
-    <input type="text" placeholder="Enter Registration No" [(ngModel)]="userName" name="userName" id="userName" required>
 
-    <label for="password"><b>Password*</b></label>
-    <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" required>
-    <hr>
-    <button type="submit" (click)="login()" class="registerbtn">Login</button>
+  <div class="background-image">
+    <div id="id01" class="wrapper">
+      <h1><b>Login</b></h1>
+      <p><b>Please fill in this form to Login to your account.</b></p>
+      <div class="container">
+
+        <label for="userName"><b>Username/RegistrationNo*</b></label>
+        <input type="text" placeholder="Enter Registration No" [(ngModel)]="userName" name="userName" id="userName" required>
+
+        <label for="password"><b>Password*</b></label>
+        <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" required>
+
+        <button type="submit" (click)="login()" class="registerbtn">Login</button>
+      </div>
+      <div class="signin">
+          <p><b>Forgot Password? <a href="/forget-password">Click Here</a>.</b></p>
+      </div>
+    </div>
   </div>
-  <div class="signin">
-      <p>Forgot Password? <a href="/login">Click Here</a>.</p>
-  </div>
-</div>

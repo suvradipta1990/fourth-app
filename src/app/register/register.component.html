@@ -2,118 +2,119 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<div class="background-image">
+    <div id="id01" class="wrapper">
+      <h1><b>Register</b></h1>
+      <p><b>Please fill in this form to create an account.</b></p>
+      <div> 
+        <form >
+          <div class="container">
+            <hr>
+            <label for="firstname"><b>First Name*</b></label>
+            <input type="text" placeholder="Enter First Name and Middle name(if any)" [(ngModel)]="firstname" name="firstname" id="firstname" required>
+            
+            <br><br>
+            <label for="lastname"><b>Last Name*</b></label>
+            <input type="text" placeholder="Enter Last Name" [(ngModel)]="lastname" name="lastname" id="lastname" required>
+            
+            <br><br>
+            <label for="email"><b>Email*</b></label>
+            <input type="email" placeholder="Enter Email" [(ngModel)]="emailid" name="emailid" id="emailid" required>
+          
+            <br><br>
+            <label for="mobilenumber"><b>Mobile Number*</b></label>
+            <input type="number" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber" name="mobilenumber" id="mobilenumber" required>
+            
+            <br><br>
+            <label for="aadhaar"><b>Aadhaar No</b></label>
+            <input type="number" placeholder="Enter Aadhaar No" [(ngModel)]="aadhaar" name="aadhaar" id="aadhaar" required>
+            
 
-<div id="id01" class="wrapper">
-  <h1>Register</h1>
-  <p>Please fill in this form to create an account.</p>
-  <div> 
-    <form >
-      <div class="container">
-        <hr>
-        <label for="firstname"><b>First Name*</b></label>
-        <input type="text" placeholder="Enter First Name and Middle name(if any)" [(ngModel)]="firstname" name="firstname" id="firstname" required>
+            <label for="dateofbirth"><b>Date Of Birth*</b></label>
+            <input type="date" placeholder="Date f Birth" [(ngModel)]="dateofbirth" name="dateofbirth" id="dateofbirth" required>
+          
+            <br><br>
+            <label for="dateofjoin"><b>Date Of Joinning(If Already Lalitkala Student)</b></label>
+            <input type="date" placeholder="Date Of Joinning" [(ngModel)]="dateofjoin" name="dateofjoin" id="dateofjoin" required>
         
-        <br><br>
-        <label for="lastname"><b>Last Name*</b></label>
-        <input type="text" placeholder="Enter Last Name" [(ngModel)]="lastname" name="lastname" id="lastname" required>
-        
-        <br><br>
-        <label for="email"><b>Email*</b></label>
-        <input type="email" placeholder="Enter Email" [(ngModel)]="emailid" name="emailid" id="emailid" required>
-      
-        <br><br>
-        <label for="mobilenumber"><b>Mobile Number*</b></label>
-        <input type="number" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber" name="mobilenumber" id="mobilenumber" required>
-        
-        <br><br>
-        <label for="aadhaar"><b>Aadhaar No</b></label>
-        <input type="number" placeholder="Enter Aadhaar No" [(ngModel)]="aadhaar" name="aadhaar" id="aadhaar" required>
-        
+            <br><br>
+            <label for="oldregnno"><b>Registration No(If Already Lalitkala Student)</b></label>
+            <input type="text" placeholder="Enter Registration No" [(ngModel)]="oldregnno" name="oldregnno" id="oldregnno" required>
+            
+            <br><br>
+            <label for="radio"><b>Gender</b></label><br>
+            <input type="radio" id="male" name="gender" [(ngModel)]="gender" value="male">&nbsp;
+            <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="female" name="gender" [(ngModel)]="gender" value="female">&nbsp;
+            <label for="female">Female </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="other" name="gender" [(ngModel)]="gender" value="other">&nbsp;
+            <label for="other">Other </label>
+            
+            <br><br>
+            <label for="addresstype"><b>Address Type*</b></label><br>
+            <input type="radio" id="per" name="per" [(ngModel)]="addresstype" value="Permanent">&nbsp;
+            <label for="per">Permanent</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="current" name="current" [(ngModel)]="addresstype" value="Current">&nbsp;
+            <label for="addresstype">Current </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <br><br>
+            <label for="address"><b>Address*</b></label><br>
+            <input type="text" placeholder="Country*" [(ngModel)]="country" name="country" id="country" required>
+            <input type="text" placeholder="Address Line 1*" [(ngModel)]="addressline1" name="addressline1" id="addressline1" required>
+            <input type="text" placeholder="Address Line 2" [(ngModel)]="addressline2" name="addressline2" id="addressline2" required>
+            <input type="text" placeholder="District" [(ngModel)]="district" name="district" id="district" required>
+            <input type="text" placeholder="City*" [(ngModel)]="city" name="city" id="city" required>
+            <input type="number" placeholder="Pincode" [(ngModel)]="pincode" name="pincode" id="pincode" required>
+            
+            <br><br>
+            <label for="subject"><b>Subject*</b></label><br>
+            <input type="radio" id="vocal" name="vocal" [(ngModel)]="subject" value="VOCAL">&nbsp;
+            <label for="vocal">Vocal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
+            <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <br><br>
+            <label for="fathersname"><b>Fathers Name*</b></label>
+            <input type="text" placeholder="Enter Fathers Name" [(ngModel)]="fathersname" name="fathersname" id="fathersname" required>
+            
+            <br><br>
+            <label for="fathersoccupation"><b>Fathers Occupation*</b></label>
+            <input type="text" placeholder="Enter Fathers Occupation(Enter NA if not working)" [(ngModel)]="fathersoccupation" name="fathersoccupation" id="fathersoccupation" required>
+            
+            <br><br>
+            <label for="fathersnumber"><b>Fathers Contact No</b></label>
+            <input type="number" placeholder="Enter Fathers Contact No" [(ngModel)]="fathersnumber" name="fathersnumber" id="fathersnumber" required>
+            
+            <br><br>
+            <label for="mothersname"><b>Mothers Name*</b></label>
+            <input type="text" placeholder="Enter Mothers Name" [(ngModel)]="mothersname" name="mothersname" id="mothersname" required>
+            
+            <br><br>
+            <label for="mothersoccupation"><b>Mothers Occupation*</b></label>
+            <input type="text" placeholder="Enter Mothers Occupation(Enter NA if not working)" [(ngModel)]="mothersoccupation" name="mothersoccupation" id="fathersoccupation" required>
+            
+            <br><br>
+            <label for="mothersnumber"><b>Mothers Contact No</b></label>
+            <input type="number" placeholder="Enter Mothers Contact No" [(ngModel)]="mothersnumber" name="mothersnumber" id="mothersnumber" required>
 
-        <label for="dateofbirth"><b>Date Of Birth*</b></label>
-        <input type="date" placeholder="Date f Birth" [(ngModel)]="dateofbirth" name="dateofbirth" id="dateofbirth" required>
-      
-        <br><br>
-        <label for="dateofjoin"><b>Date Of Joinning(If Already Lalitkala Student)</b></label>
-        <input type="date" placeholder="Date Of Joinning" [(ngModel)]="dateofjoin" name="dateofjoin" id="dateofjoin" required>
-    
-        <br><br>
-        <label for="oldregnno"><b>Registration No(If Already Lalitkala Student)</b></label>
-        <input type="text" placeholder="Enter Registration No" [(ngModel)]="oldregnno" name="oldregnno" id="oldregnno" required>
+            <br><br>
+            <label for="password"><b>Password*</b></label>
+            <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" required>
+            
+            <br><br>
+            <label for="confirmpassword"><b>Confirm Password*</b></label>
+            <input type="text" placeholder="Confirm Password" [(ngModel)]="confirmpassword" name="confirmpassword" id="confirmpassword" required>
+            <hr>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
         
-        <br><br>
-        <label for="radio"><b>Gender</b></label><br>
-        <input type="radio" id="male" name="gender" [(ngModel)]="gender" value="male">&nbsp;
-        <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="female" name="gender" [(ngModel)]="gender" value="female">&nbsp;
-        <label for="female">Female </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="other" name="gender" [(ngModel)]="gender" value="other">&nbsp;
-        <label for="other">Other </label>
-        
-        <br><br>
-        <label for="addresstype"><b>Address Type*</b></label><br>
-        <input type="radio" id="per" name="per" [(ngModel)]="addresstype" value="Permanent">&nbsp;
-        <label for="per">Permanent</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="current" name="current" [(ngModel)]="addresstype" value="Current">&nbsp;
-        <label for="addresstype">Current </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <br><br>
-        <label for="address"><b>Address*</b></label><br>
-        <input type="text" placeholder="Country*" [(ngModel)]="country" name="country" id="country" required>
-        <input type="text" placeholder="Address Line 1*" [(ngModel)]="addressline1" name="addressline1" id="addressline1" required>
-        <input type="text" placeholder="Address Line 2" [(ngModel)]="addressline2" name="addressline2" id="addressline2" required>
-        <input type="text" placeholder="District" [(ngModel)]="district" name="district" id="district" required>
-        <input type="text" placeholder="City*" [(ngModel)]="city" name="city" id="city" required>
-        <input type="number" placeholder="Pincode" [(ngModel)]="pincode" name="pincode" id="pincode" required>
-        
-        <br><br>
-        <label for="subject"><b>Subject*</b></label><br>
-        <input type="radio" id="vocal" name="vocal" [(ngModel)]="subject" value="VOCAL">&nbsp;
-        <label for="vocal">Vocal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
-        <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <br><br>
-        <label for="fathersname"><b>Fathers Name*</b></label>
-        <input type="text" placeholder="Enter Fathers Name" [(ngModel)]="fathersname" name="fathersname" id="fathersname" required>
-        
-        <br><br>
-        <label for="fathersoccupation"><b>Fathers Occupation*</b></label>
-        <input type="text" placeholder="Enter Fathers Occupation(Enter NA if not working)" [(ngModel)]="fathersoccupation" name="fathersoccupation" id="fathersoccupation" required>
-        
-        <br><br>
-        <label for="fathersnumber"><b>Fathers Contact No</b></label>
-        <input type="number" placeholder="Enter Fathers Contact No" [(ngModel)]="fathersnumber" name="fathersnumber" id="fathersnumber" required>
-        
-        <br><br>
-        <label for="mothersname"><b>Mothers Name*</b></label>
-        <input type="text" placeholder="Enter Mothers Name" [(ngModel)]="mothersname" name="mothersname" id="mothersname" required>
-        
-        <br><br>
-        <label for="mothersoccupation"><b>Mothers Occupation*</b></label>
-        <input type="text" placeholder="Enter Mothers Occupation(Enter NA if not working)" [(ngModel)]="mothersoccupation" name="mothersoccupation" id="fathersoccupation" required>
-        
-        <br><br>
-        <label for="mothersnumber"><b>Mothers Contact No</b></label>
-        <input type="number" placeholder="Enter Mothers Contact No" [(ngModel)]="mothersnumber" name="mothersnumber" id="mothersnumber" required>
-
-        <br><br>
-        <label for="password"><b>Password*</b></label>
-        <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" required>
-        
-        <br><br>
-        <label for="confirmpassword"><b>Confirm Password*</b></label>
-        <input type="text" placeholder="Confirm Password" [(ngModel)]="confirmpassword" name="confirmpassword" id="confirmpassword" required>
-        <hr>
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    
-        <button type="submit" (click)="register()" class="registerbtn">Register</button>
-        <button type="submit" (click)="logout()" class="registerbtn">Cancel</button>
+            <button type="submit" (click)="register()" class="registerbtn">Register</button>
+            <button type="submit" (click)="logout()" class="registerbtn">Cancel</button>
+          </div>
+          
+          <div class="container signin">
+            <p><b>Already have an account? <a href="/login">Sign in</a>.</b></p>
+          </div>
+        </form>
       </div>
-      
-      <div class="container signin">
-        <p>Already have an account? <a href="/login">Sign in</a>.</p>
-      </div>
-    </form>
-  </div>
+    </div>
 </div>
