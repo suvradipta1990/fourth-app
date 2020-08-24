@@ -21,6 +21,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
   public regnno : string="";
   public uploadedFiles: Array < File > ;
 
+
   //public uploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
   private urlString: string = 'http://localhost:3000';
   
@@ -32,20 +33,25 @@ export class UpdateProfilePhotoComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
+    this.regnno = localStorage.getItem('regn_no');
   }
 
   fileChange(element:any) {
     this.uploadedFiles = element.target.files;
 }
 
-  UploadPhoto(){
+  UploadPhoto(regnno:string){
     let formData = new FormData();
         for (var i = 0; i < this.uploadedFiles.length; i++) {
+          alert(this.uploadedFiles[i].type);
             formData.append("uploads[]", this.uploadedFiles[i], this.uploadedFiles[i].name);
-        }
-
+            alert(formData); 
+         }
+        // const filename=regnno;
+        // const v_input_param ={formData :formData,regnno:filename};
         this.http.post<any>(this.urlString + '/uploadProfilePic',formData)
             .subscribe((response: any) => {
+
                 alert('response received is '+ response);
             })
   }

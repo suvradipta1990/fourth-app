@@ -2,10 +2,8 @@ const express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser'); 
  const multipart = require('connect-multiparty');
- const multipartMiddleware = multipart({
-    uploadDir: '../src/app/images/profile_image'
-});
-
+ const profileImage = multipart({ uploadDir: '../src/app/images/profile_image'});
+ const path = require('path');
 var session = require('express-session');
 var db = require('./models/db.js');
 const { response } = require('express');
@@ -283,11 +281,12 @@ app.get('/my-custom-url', function(req, res) {
                                res);  // res.json(data); 
     }) 
 
-    app.post('/uploadProfilePic', multipartMiddleware, (req, res) => {
-        res.json({
-            'message': 'File uploaded succesfully.'
-        });
+    app.post('/uploadProfilePic', profileImage, (req, res) => {
+        return res.send({
+                            'message': 'File uploaded succesfully.'
+                        });
     });
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');
