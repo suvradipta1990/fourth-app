@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     is_admin: string;
     currDiv:number;
 
-
+    public profilePicPath:string="../images/profile_image/";
     public profiletab :string = "";
     public parentstab :string= "";
     public diffDays :any;
@@ -106,7 +106,10 @@ export class HomeComponent implements OnInit {
           console.log("profile_id fetched:" +this.profile_id);
           localStorage.setItem('profile_id', this.profile_id);
           localStorage.setItem('regn_no', data[0].regn_no);
-          
+
+          this.profilePicPath=this.profilePicPath+data[0].regn_no+".jpg";
+          // alert( this.profilePicPath);
+
           console.log("profile_id for profile history");
           console.log(this.profile_id);
           this.getProfileHistory(this.profile_id);
