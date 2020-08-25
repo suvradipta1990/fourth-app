@@ -1,18 +1,19 @@
 const express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser'); 
- const multipart = require('connect-multiparty');
- const profileImage = multipart({ uploadDir: '../src/app/images/profile_image'});
- const path = require('path');
+const path = require('path');
+const app = express();
 var session = require('express-session');
 var db = require('./models/db.js');
 const { response } = require('express');
-//var user = require('./models/user.js');
+const multer = require('multer');
+const myImagePath ='../src/app/images/';
+
 db.client.on('connect', () => {
     console.log('connected to the db');
   });
   db.client.connect();
-const app = express();
+
 app.use(cors());
 
 // Body parser use JSON data
@@ -281,11 +282,25 @@ app.get('/my-custom-url', function(req, res) {
                                res);  // res.json(data); 
     }) 
 
-    app.post('/uploadProfilePic', profileImage, (req, res) => {
-        return res.send({
-                            'message': 'File uploaded succesfully.'
-                        });
+
+ /****************************Profile Photo Upload *************** */
+    var ProfilePhoto = multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, myImagePath + 'profile_image')
+        },
+        filename: (req, file, cb) => {
+            cb(null, file.originalname)
+        }
     });
+    const ProfilePhotoupload = multer({ storage: ProfilePhoto });
+
+    app.post('/uploadProfilePic', ProfilePhotoupload.single('uploads'), function(req,res) {
+    
+        console.log('storage location is ', req.hostname +'/' + req.file.path);
+        return res.send(req.file);
+    })
+
+/************************************************************ */   
 
 
 app.listen(3000, () => {

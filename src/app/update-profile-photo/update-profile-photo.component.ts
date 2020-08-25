@@ -20,7 +20,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
   public photo: File;
   public regnno : string="";
   public uploadedFiles: Array < File > ;
-
+  public filetype : string="";
 
   //public uploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
   private urlString: string = 'http://localhost:3000';
@@ -41,14 +41,16 @@ export class UpdateProfilePhotoComponent implements OnInit {
 }
 
   UploadPhoto(regnno:string){
+     var filename: string=regnno;
     let formData = new FormData();
         for (var i = 0; i < this.uploadedFiles.length; i++) {
-          alert(this.uploadedFiles[i].type);
-            formData.append("uploads[]", this.uploadedFiles[i], this.uploadedFiles[i].name);
-            alert(formData); 
+          alert(this.uploadedFiles[i].name);
+           var filetype=this.uploadedFiles[i].name;
+           this.checkFileType(filetype);
+           filename=filename+this.filetype;
+           alert(filename); 
+            formData.append("uploads", this.uploadedFiles[i], filename);
          }
-        // const filename=regnno;
-        // const v_input_param ={formData :formData,regnno:filename};
         this.http.post<any>(this.urlString + '/uploadProfilePic',formData)
             .subscribe((response: any) => {
 
@@ -64,4 +66,11 @@ export class UpdateProfilePhotoComponent implements OnInit {
     this.router.navigate(["/"]);
     LoginComponent.logout();
   }
+
+  checkFileType(filetype :string) : any{ 
+    alert ("File Name Recieve: "+filetype);
+      this.filetype=filetype.substring(filetype.lastIndexOf("."))
+      alert ("filetype.search: "+filetype.lastIndexOf("."));
+    }
+
 }
