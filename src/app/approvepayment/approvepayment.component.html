@@ -6,96 +6,110 @@
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
     </div>
 </div>
-<div class="main-div">
+<div class="main-div fixed-height">
     <div class="center">
         <h3 >Total Pending Count:  {{this.count}}</h3>
     </div>
-    <div class="div-block" *ngFor="let pay of pendingpayment" >
-        <div class="row">
-            <div class="col-md-6">
-                <label>S.NO</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.pending_payment_id}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>REGISTRATION NO</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.regn_no}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>NAME</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.first_name}} {{pay.middle_name}} {{pay.last_name}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Business Name</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.business_name}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Teacher Name</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.teachers_name}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Transaction Id</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.transaction_id}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Fees Per Month</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.discounted_fees}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Pay From </label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.pay_month_from | date}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Pay Till</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.pay_month_to | date}}</p>
-            </div>
-            
-            <div class="col-md-6">
-                <label>Total Amount Paid</label>
-            </div>
-            <div class="col-md-6">
-                <p>{{pay.pay_amount}}</p>
-            </div>
-            <div class="col-md-6">
-                <label>Reciept </label>
-            </div>
-            <div class="col-md-6">
-                <p>Clicke here to see reciept <a target="_blank"  href="{{this.feeRecieptRootDir}}{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg">{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg</a></p>
-            </div>
-            
-            <div class="col-md-6">
-                <label>ACTIONS: </label>
-            </div>
-            <div class="col-md-6">
-                <input id="approvereg" type="button" (click)="approve_payment(pay.pending_payment_id)" class="aprvbutton"  value="APPROVE">
-                <input id="approvereg" type="button" (click)="reject_payment(pay.pending_payment_id)" class="decbutton"  value="REJECT">
-            </div>
-            
-            <div class="col-md-6">
-                <label>   </label>
-            </div>
-            <div class="col-md-6">
-                <p>  </p>
+    <div class="fixed-height">
+        <div class="div-block" *ngFor="let pay of pendingpayment" >
+            <div class="row">
+                <div class="col-md-6">
+                    <label>S.NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.pending_payment_id}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Student photo</label>
+                </div>
+                <div class="profile-img">
+                    <img src="{{this.profilePicPath}}{{pay.regn_no}}.jpg" alt="Profile photo"/>
+                </div>
+                <div class="col-md-6">
+                    <label>REGISTRATION NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.regn_no}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>NAME</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.first_name}} {{pay.middle_name}} {{pay.last_name}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Business Name</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.business_name}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Teacher Name</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.teachers_name}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Transaction Id</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.transaction_id}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Fees Per Month</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.discounted_fees}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Pay From </label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.pay_month_from | date}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Pay Till</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.pay_month_to | date}}</p>
+                </div>
+                
+                <div class="col-md-6">
+                    <label>Total Amount Paid</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{pay.pay_amount}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Remarks</label>
+                </div>
+                <div class="col-md-6">
+                    <p><input type="text" placeholder="Enter remakrs if rejected" [(ngModel)]="remakrs" name="remakrs" id="remakrs"></p>
+                </div>
+                <div class="col-md-6">
+                    <label>Reciept </label>
+                </div>
+                <div class="col-md-6">
+                    <p>Clicke here to see reciept <a target="_blank"  href="{{this.feeRecieptRootDir}}{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg">{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg</a></p>
+                </div>
+                
+                <div class="col-md-6">
+                    <label>ACTIONS: </label>
+                </div>
+                <div class="col-md-6">
+                    <input id="approvereg" type="button" (click)="approve_payment(pay.pending_payment_id)" class="aprvbutton"  value="APPROVE">
+                    <input id="approvereg" type="button" (click)="reject_payment(pay.pending_payment_id)" class="decbutton"  value="REJECT">
+                </div>
+                
+                <div class="col-md-6">
+                    <label>   </label>
+                </div>
+                <div class="col-md-6">
+                    <p>  </p>
+                </div>
             </div>
         </div>
-</div>
+    </div>
 </div>   
 <!-- "
    

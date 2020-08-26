@@ -37,6 +37,7 @@ export class CreatepaymentComponent implements OnInit {
 
   public uploadedFiles: Array < File > ;
   public filetype : string="";
+  public reciept_attached : boolean=false;
 
   private urlString: string = 'http://localhost:3000';
 
@@ -58,35 +59,50 @@ export class CreatepaymentComponent implements OnInit {
 
   fileChange(element:any) {
     this.uploadedFiles = element.target.files;
+    this.reciept_attached=true;
 }
 
   createPayment(){
-    this.paymentService.createPayment(this.profile_id,
-                                      this.officename,
-                                      this.transacid,
-                                      this.teacher,
-                                      this.paymonthfrom,
-                                      this.paymonthto,
-                                      this.payamount,
-                                      this.isadmin,
-                                      this.regn_no,
-                                      this.transacslip)
-                .subscribe((data) => {
-                  if(data != null ) {  
-                    this.create_payment_result=data[0].create_payment;
-                    console.log(data);
-                    //this.openDialog(data);
-                    alert(this.create_payment_result);
-                    if(this.create_payment_result.lastIndexOf("SUCESSFULL")>0){
-                      this.UploadFeeReciept(this.regn_no,this.paymonthfrom);
-                      this.ngOnInit();
-                      this.router.navigate(["/createpayment"]);
-                    }
-                   
-                  }else {
-                    alert("Payment Creation Failed");
-                  }
-                });
+      if(this.transacid ==null ||
+        this.teacher=="" ||  this.teacher==null ||
+        this.paymonthfrom=="" || this.paymonthfrom==null ||
+        this.paymonthto==null ||
+        this.payamount==null ){
+          alert("Please Fill all the details");
+        }
+        else{
+          if(this.reciept_attached){
+              this.paymentService.createPayment(this.profile_id,
+                                                this.officename,
+                                                this.transacid,
+                                                this.teacher,
+                                                this.paymonthfrom,
+                                                this.paymonthto,
+                                                this.payamount,
+                                                this.isadmin,
+                                                this.regn_no,
+                                                this.transacslip)
+                          .subscribe((data) => {
+                            if(data != null ) {  
+                              this.create_payment_result=data[0].create_payment;
+                              console.log(data);
+                              //this.openDialog(data);
+                              alert(this.create_payment_result);
+                              if(this.create_payment_result.lastIndexOf("SUCESSFULL")>0){
+                                this.UploadFeeReciept(this.regn_no,this.paymonthfrom);
+                                this.ngOnInit();
+                                this.router.navigate(["/createpayment"]);
+                              }
+                            
+                            }else {
+                              alert("Payment Creation Failed");
+                            }
+                        });
+            }
+            else{
+                alert("Please attach transactio Slip");
+            }
+          }
   }
 
   getPaymentSummary(profile_id: string){
@@ -128,7 +144,6 @@ export class CreatepaymentComponent implements OnInit {
    checkFileType(filetype :string) : any{ 
     alert ("File Name Recieve: "+filetype);
       this.filetype=filetype.substring(filetype.lastIndexOf("."))
-
     }
 
 
