@@ -17,7 +17,8 @@ export class ApprovepaymentComponent implements OnInit {
   public count :number;
   public result :string;
   public remakrs :string="";
-
+  public feeRecieptRootDir ="assets/images/fees_transaction_image/";
+  
   constructor(private router: Router,
     public authService: AuthService,
     private approvepaymentService: ApprovepaymentService) { }

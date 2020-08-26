@@ -4,10 +4,7 @@ import {UpdateProfilePhotoService} from './services/update-profile-photo.service
 import { AuthService } from '../auth.service';
 import { LoginComponent } from '../login/login.component';
 import { HttpClient } from '@angular/common/http';
-import { FileUploader } from 'ng2-file-upload';
-//import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
-const uploadAPI = 'http://localhost:3000/upload'; // better use a service class
 
 @Component({
   selector: 'app-update-profile-photo',
@@ -22,7 +19,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
   public uploadedFiles: Array < File > ;
   public filetype : string="";
 
-  //public uploader = new FileUploader({ url: uploadAPI, itemAlias: 'file' });
+
   private urlString: string = 'http://localhost:3000';
   
   constructor(private router: Router,

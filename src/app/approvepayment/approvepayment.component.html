@@ -66,18 +66,20 @@
             <div class="col-md-6">
                 <p>{{pay.pay_month_to | date}}</p>
             </div>
-            <div class="col-md-6">
-                <label>REMARKS</label>
-            </div>
+            
             <div class="col-md-6">
                 <label>Total Amount Paid</label>
             </div>
             <div class="col-md-6">
                 <p>{{pay.pay_amount}}</p>
             </div>
-            <div class="col-md-1">
-                <p><input type="text" placeholder="Enter remakrs if rejected" [(ngModel)]="remakrs" name="remakrs" id="remakrs"></p>
+            <div class="col-md-6">
+                <label>Reciept </label>
             </div>
+            <div class="col-md-6">
+                <p>Clicke here to see reciept <a target="_blank"  href="{{this.feeRecieptRootDir}}{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg">{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg</a></p>
+            </div>
+            
             <div class="col-md-6">
                 <label>ACTIONS: </label>
             </div>

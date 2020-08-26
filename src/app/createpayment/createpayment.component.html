@@ -56,7 +56,10 @@
         
           <br><br>
           <label for="transacslip"><b>Transaction Slip*</b></label>
-          <input type="file" ng-src="data:image/jpeg;base64,this.transacslip" placeholder="select your file" [(ngModel)]="transacslip" name="transacslip" id="transacslip" required>
+
+          <form action="/uploadFeeReciept" method="post" enctype="multipart/form-data">
+            <input type="file" (change)="fileChange($event)" placeholder="select your file" [(ngModel)]="transacslip" name="transacslip" id="transacslip" aria-describedby="inputGroupFileAddon01" required>
+        </form>
           
           <br><br>
           <button type="submit"  (click)="createPayment()" class="registerbtn">Make Payment</button>

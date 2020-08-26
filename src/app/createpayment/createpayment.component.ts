@@ -8,7 +8,7 @@ import {PaymentSummary} from "../home/PaymentSummary";
 import {Address} from "../home/Address";
 import { LoginComponent } from '../login/login.component';
 import { PaymentService } from "./services/payment.service";
-import { HomeComponent } from '../home/home.component';
+import { HttpClient } from '@angular/common/http';
 
 export * from './createpayment.component';
 
@@ -34,12 +34,17 @@ export class CreatepaymentComponent implements OnInit {
   public regn_no: string="";
   public create_payment_result: string;
   public  paysummary: PaymentSummary[];
-  //public transacslip :any;
+
+  public uploadedFiles: Array < File > ;
+  public filetype : string="";
+
+  private urlString: string = 'http://localhost:3000';
 
   constructor(private router: Router,
     public authService: AuthService,
     private profileService: ProfileService,
-    private paymentService: PaymentService) { }
+    private paymentService: PaymentService,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
@@ -50,6 +55,10 @@ export class CreatepaymentComponent implements OnInit {
     console.log("fees book profile_id: " +this.profile_id);
     this.getPaymentSummary(this.profile_id);
   }
+
+  fileChange(element:any) {
+    this.uploadedFiles = element.target.files;
+}
 
   createPayment(){
     this.paymentService.createPayment(this.profile_id,
@@ -68,10 +77,14 @@ export class CreatepaymentComponent implements OnInit {
                     console.log(data);
                     //this.openDialog(data);
                     alert(this.create_payment_result);
-                    this.ngOnInit();
-                    this.router.navigate(["/createpayment"]);
+                    if(this.create_payment_result.lastIndexOf("SUCESSFULL")>0){
+                      this.UploadFeeReciept(this.regn_no,this.paymonthfrom);
+                      this.ngOnInit();
+                      this.router.navigate(["/createpayment"]);
+                    }
+                   
                   }else {
-                    alert("Registration Failed");
+                    alert("Payment Creation Failed");
                   }
                 });
   }
@@ -84,12 +97,38 @@ export class CreatepaymentComponent implements OnInit {
          this.paysummary=data;
          this.regn_no=this.paysummary[0].regn_no;
          this.permonthfees=this.paysummary[0].fees_payble_per_month;
-         this.paymonthfrom=this.paysummary[0].pay_month_to;
+         this.paymonthfrom=this.paysummary[0].pay_month_from;
+         this.paymonthto=this.paysummary[0].pay_month_to;
           console.log('data:  '+this.regn_no);
         }else {
           console.log(this.paysummary);
         }
       });
+    }
+
+    UploadFeeReciept(regnno:string,paymonthfrom :string){
+      var filename: string=regnno+'-'+paymonthfrom.substring(0,10);
+      
+     let formData = new FormData();
+         for (var i = 0; i < this.uploadedFiles.length; i++) {
+            var filetype=this.uploadedFiles[i].name;
+            this.checkFileType(filetype);
+            filename=filename+this.filetype;
+           //  alert(filename); 
+             formData.append("uploads", this.uploadedFiles[i], filename);
+          }
+         this.http.post<any>(this.urlString + '/uploadFeeReciept',formData)
+             .subscribe((response: any) => {
+ 
+                 alert('Payment And Reciept Sucessfully Uploaded');
+                 this.router.navigate(["/home"]);
+             })
+   }
+
+   checkFileType(filetype :string) : any{ 
+    alert ("File Name Recieve: "+filetype);
+      this.filetype=filetype.substring(filetype.lastIndexOf("."))
+
     }
 
 

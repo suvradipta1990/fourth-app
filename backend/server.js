@@ -136,6 +136,8 @@ app.get('/my-custom-url', function(req, res) {
                                             res);  // res.json(data); 
     }) 
 
+
+
     app.post('/createpayment', (req, res) => {
         console.log('approve_reject_reg REQ') ;
         console.log(req.body) ;
@@ -150,9 +152,25 @@ app.get('/my-custom-url', function(req, res) {
                                     req.body.payamount,
                                     req.body.isadmin,
                                     req.body.regn_no,
-                                    req.body.transacslip,
+                                    null,
                                 res);  // res.json(data); 
     })
+
+    /****************************Fee Reciept Upload *************** */
+    var FeeReciept = multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, myImagePath + 'fees_transaction_image')
+        },
+        filename: (req, file, cb) => {
+            cb(null, file.originalname)
+        }
+    });
+    const FeeRecieptupload = multer({ storage: FeeReciept });
+
+    app.post('/uploadFeeReciept', FeeRecieptupload.single('uploads'), function(req,res) {
+        console.log('storage location is ', req.hostname +'/' + req.file.path);
+        return res.send(req.file);
+    }) 
 
     app.get('/pendingpayment', (req, res) => {
         console.log('pendingpayment REQ') ;
@@ -184,6 +202,7 @@ app.get('/my-custom-url', function(req, res) {
                                 req.body.regno,
                                 res);  // res.json(data); 
     }) 
+
 
     app.post('/update_fees', (req, res) => {
         console.log('update_fees REQ') ;
@@ -303,8 +322,6 @@ app.get('/my-custom-url', function(req, res) {
     const ProfilePhotoupload = multer({ storage: ProfilePhoto });
 
     app.post('/uploadProfilePic', ProfilePhotoupload.single('uploads'), function(req,res) {
-     //   var imageAsBase64 = fs.readFileSync(req.file.path, 'base64');
-       // console.log('bytearray of file is: '+ imageAsBase64);
         console.log('storage location is ', req.hostname +'/' + req.file.path);
         return res.send(req.file);
     }) 

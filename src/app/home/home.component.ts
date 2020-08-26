@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     is_admin: string;
     currDiv:number;
 
-    public profilePicPath:string="../images/profile_image/";
+    public profilePicPath:string="assets/images/profile_image/";
     public profiletab :string = "";
     public parentstab :string= "";
     public diffDays :any;
