@@ -7,11 +7,12 @@
     width: 50%;
     min-height: 100px;
     padding: 20px;
-    background-color: rgb(52, 196, 52);
+    /* background-color: rgb(52, 196, 52); */
   }
   .container {
     padding: 16px;
-    background-color: white;
+    /* opacity: 100%; */
+    /* background-color: white; */
   }
   
   /* Full-width input fields */
@@ -236,4 +237,12 @@
   
   input[type=number]:placeholder {
     color: #180505;
+  }
+
+  .background-image{
+    background-image: url("/src/assets/images/backgroud-images/forget_password_background.jpg");
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+     padding: 120px 70px; 
   }

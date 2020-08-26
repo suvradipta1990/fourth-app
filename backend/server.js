@@ -7,7 +7,15 @@ var session = require('express-session');
 var db = require('./models/db.js');
 const { response } = require('express');
 const multer = require('multer');
-const myImagePath ='../src/app/images/';
+const myImagePath ='../src/assets/images/';
+
+var fs = require('fs');
+function base64_encode(file) {
+    // read binary data
+    var bitmap = fs.readFileSync(file);
+    // convert binary data to base64 encoded string
+    return new Buffer(bitmap).toString('base64');
+}
 
 db.client.on('connect', () => {
     console.log('connected to the db');
@@ -295,10 +303,11 @@ app.get('/my-custom-url', function(req, res) {
     const ProfilePhotoupload = multer({ storage: ProfilePhoto });
 
     app.post('/uploadProfilePic', ProfilePhotoupload.single('uploads'), function(req,res) {
-    
+     //   var imageAsBase64 = fs.readFileSync(req.file.path, 'base64');
+       // console.log('bytearray of file is: '+ imageAsBase64);
         console.log('storage location is ', req.hostname +'/' + req.file.path);
         return res.send(req.file);
-    })
+    }) 
 
 /************************************************************ */   
 
