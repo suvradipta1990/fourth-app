@@ -17,7 +17,7 @@
         <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">
             <input type="file" (change)="fileChange($event)" placeholder="Upload Your Photo" [(ngModel)]="photo" name="photo" id="photo" aria-describedby="inputGroupFileAddon01" required>
         </form>
-        <button type="submit" (click)="UploadPhoto(this.regnno)" class="registerbtn">Upload Photo</button>
+        <button type="submit" (click)="UploadProfilePhoto(this.regnno)" class="registerbtn">Upload Photo</button>
       </div>
     </div>
   </div>

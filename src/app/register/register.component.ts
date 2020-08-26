@@ -4,6 +4,7 @@ import { ProfileService } from "../home/services/home.service";
 import { LoginComponent } from '../login/login.component';
 import { RegisterService } from "./services/register.service";
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 
 export * from './register.component';
 @Component({
@@ -41,19 +42,26 @@ export class RegisterComponent  {
   public city :string="";
   public pincode :string="";
   public aadhaar :string="";
+  
+
+  public profilephoto: string="";
+  public uploadedFiles: Array < File > ;
+  public filetype : string="";
+  public reciept_attached : boolean=false;
+
+  private urlString: string = 'http://localhost:3000'; 
+
   dialog: any;
 
   constructor(private router: Router, 
-     private registerService: RegisterService
+     private registerService: RegisterService,
+     private http: HttpClient
      // ,public dialogRef: MatDialogRef<RegisterComponent>
      ) { }
-  logout(){
-    localStorage.setItem('isLoggedIn', "false");
-    localStorage.removeItem('user_id');
-    localStorage.removeItem('profile_id');
-    localStorage.clear();
-    this.router.navigate(["/"]);
-    LoginComponent.logout();
+
+  fileChange(element:any) {
+    this.uploadedFiles = element.target.files;
+    this.reciept_attached=true;
   }
 
   register() : void {
@@ -63,6 +71,9 @@ export class RegisterComponent  {
      this.mobilenumber == null || this.mobilenumber == "" || this.emailid == null || this.emailid == "" ||
      this.password == null || this.password == "" || this.confirmpassword == null || this.confirmpassword == "" ){
       alert("Please fill all mandatory fields");
+      if(!this.reciept_attached){
+        alert("Kindly Attach Your Photo");     
+      }
       this.router.navigate(["/register"]);
     }
     else{
@@ -96,12 +107,47 @@ export class RegisterComponent  {
           console.log(this.regNo);
           //this.openDialog(data);
           alert(this.regNo);
+          this.regNo=this.regNo.substring(this.regNo.lastIndexOf(":")+1)
+          this.UploadProfilePhoto(this.regNo);
           this.router.navigate(["/"]);
         }else {
           alert("Registration Failed");
         }
       });
     }
+  }
+
+  UploadProfilePhoto(regnno:string){
+    var filename: string=regnno;
+    
+   let formData = new FormData();
+       for (var i = 0; i < this.uploadedFiles.length; i++) {
+          var filetype=this.uploadedFiles[i].name;
+          this.checkFileType(filetype);
+          filename=filename+".jpg";
+         //  alert(filename); 
+           formData.append("uploads", this.uploadedFiles[i], filename);
+        }
+       this.http.post<any>(this.urlString + '/uploadProfilePic',formData)
+           .subscribe((response: any) => {
+
+               alert('Registered Sucessully,Your Registration No is: '+regnno);
+               this.router.navigate(["/home"]);
+           })
+ }
+
+ checkFileType(filetype :string) : any{ 
+  alert ("File Name Recieve: "+filetype);
+    this.filetype=filetype.substring(filetype.lastIndexOf("."))
+  }
+
+  logout(){
+    localStorage.setItem('isLoggedIn', "false");
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('profile_id');
+    localStorage.clear();
+    this.router.navigate(["/"]);
+    LoginComponent.logout();
   }
 
   // openDialog(regnNo:string): void {

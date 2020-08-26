@@ -73,7 +73,7 @@
             <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
             <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="OTHERS">&nbsp;
-            <label for="Dance">MUSIC INSTRUMENT </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="Dance">Music Instrument</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
             <br><br>
             <label for="fathersname"><b>Fathers Name*</b></label>
@@ -98,6 +98,12 @@
             <br><br>
             <label for="mothersnumber"><b>Mothers Contact No</b></label>
             <input type="number" placeholder="Enter Mothers Contact No" [(ngModel)]="mothersnumber" name="mothersnumber" id="mothersnumber" required>
+
+            <br><br>
+            <label for="profilephoto"><b>Upload Your Passport Size Photo*</b></label>
+            <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">
+              <input type="file" (change)="fileChange($event)" placeholder="select your file" [(ngModel)]="profilephoto" name="profilephoto" id="profilephoto" aria-describedby="inputGroupFileAddon01" required>
+            </form>
 
             <br><br>
             <label for="password"><b>Password*</b></label>

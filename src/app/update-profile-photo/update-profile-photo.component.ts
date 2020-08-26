@@ -37,7 +37,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
     this.uploadedFiles = element.target.files;
 }
 
-  UploadPhoto(regnno:string){
+  UploadProfilePhoto(regnno:string){
      var filename: string=regnno;
     let formData = new FormData();
         for (var i = 0; i < this.uploadedFiles.length; i++) {

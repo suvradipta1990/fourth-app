@@ -28,7 +28,9 @@ export class SearchstudentComponent implements OnInit {
   public discounted_fees: number;
   public fees: number;
   public  homeComponent: HomeComponent;
- public update_fee: string;
+  public update_fee: string;
+  public profilePicPath:string="assets/images/profile_image/";
+  
   constructor(private router: Router,
     public authService: AuthService,
     private searchstudentService: SearchstudentService) { }
