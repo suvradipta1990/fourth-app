@@ -44,17 +44,17 @@ export class UpdateProfilePhotoComponent implements OnInit {
      var filename: string=regnno;
     let formData = new FormData();
         for (var i = 0; i < this.uploadedFiles.length; i++) {
-          alert(this.uploadedFiles[i].name);
            var filetype=this.uploadedFiles[i].name;
            this.checkFileType(filetype);
            filename=filename+this.filetype;
-           alert(filename); 
+          //  alert(filename); 
             formData.append("uploads", this.uploadedFiles[i], filename);
          }
         this.http.post<any>(this.urlString + '/uploadProfilePic',formData)
             .subscribe((response: any) => {
 
-                alert('response received is '+ response);
+                alert('File Sucessfully Uploaded');
+                this.router.navigate(["/home"]);
             })
   }
 
@@ -70,7 +70,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
   checkFileType(filetype :string) : any{ 
     alert ("File Name Recieve: "+filetype);
       this.filetype=filetype.substring(filetype.lastIndexOf("."))
-      alert ("filetype.search: "+filetype.lastIndexOf("."));
+
     }
 
 }

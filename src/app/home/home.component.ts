@@ -118,7 +118,7 @@ export class HomeComponent implements OnInit {
       }else {
         alert("Profile not found"); 
       }
-    });
+    }); 
   }
 
   getProfileHistory(profile_id: string){
