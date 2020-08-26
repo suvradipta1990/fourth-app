@@ -9,7 +9,7 @@ import {Address} from "./Address";
 import { LoginComponent } from '../login/login.component';
 import {AddhistoryService} from '../addhistory/services/addhistory.service';
 
-@Component({
+@Component({ 
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
