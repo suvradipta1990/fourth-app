@@ -342,6 +342,13 @@ app.post('/createaudition', (req, res) => {
                                    res);  // res.json(data); 
 }) 
 
+app.get('/getUpcommingAud', (req, res) => {
+    console.log('getUpcommingAud REQ') ;
+    console.log(req.body) ;
+    console.log('getUpcommingAud RES') ;
+    console.log(res.body) ;
+    return db.get_upcomming_aud(req,res);  // res.json(data);
+})
 
 
 

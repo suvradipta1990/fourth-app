@@ -62,12 +62,12 @@
   }
 
   svg.material-icons {
-    height: 24px;
+    height: auto;
     width: auto;
   }
 
   svg.material-icons:not(:last-child) {
-    margin-right: 8px;
+    /* margin-right: 8px; */
   }
 
   .card svg.material-icons path {
@@ -85,16 +85,17 @@
   .card {
     border-radius: 4px;
     border: 1px solid rgb(59, 4, 4);
-    height: 50px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
+    height: 70px;
+    width: 220px;
+    margin:  8px 8px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-    line-height: 35px;
+    /* line-height: 35px; */
     background-color: rgb(21, 131, 11);
   }
 
@@ -244,9 +245,9 @@
   }
 
   .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
+    /* height: 25px;
+    width: 16px; */
+    margin-right: 2px;
   }
 
   svg#clouds {

@@ -21,11 +21,15 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profile-photo.component';
 import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
+import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
+import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'pre-audition-registration', component: PreAuditionRegistrationComponent },
+  { path: 'upcomming-auditions', component: UpcommingAuditionsComponent },
   { path: 'home', component: HomeComponent,canActivate: [AuthGuard] },
   { path: 'students', component: StudentsComponent,canActivate: [AuthGuard] },
   { path: 'pendingapprovals', component: PendingapprovalsComponent,canActivate: [AuthGuard] },

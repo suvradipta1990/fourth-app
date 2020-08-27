@@ -30,6 +30,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profile-photo.component';
 import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
+import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
+import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { CreateAudtionComponent } from './create-audtion/create-audtion.componen
     ForgetPasswordComponent,
     TermsAndConditionsComponent,
     UpdateProfilePhotoComponent,
-    CreateAudtionComponent
+    CreateAudtionComponent,
+    PreAuditionRegistrationComponent,
+    UpcommingAuditionsComponent
   ],
   imports: [
     BrowserModule,

@@ -59,6 +59,10 @@ export class RegisterComponent  {
      // ,public dialogRef: MatDialogRef<RegisterComponent>
      ) { }
 
+     ngOnInit() {
+
+     }
+
   fileChange(element:any) {
     this.uploadedFiles = element.target.files;
     this.reciept_attached=true;

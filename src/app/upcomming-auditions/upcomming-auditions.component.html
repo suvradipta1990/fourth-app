@@ -1,0 +1,52 @@
+<div class="wrapper audition-background-image">
+    <div class="center">
+        <h2><b>Upcomming Auditions:</b></h2>
+    </div>
+    <div class="audition-div">
+        <div class="div-block" *ngFor="let aud of auditions" >
+            <div class="col-md-4">
+                <div class="col-md-6">
+                    <label>S.NO</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{aud.audition_id}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Name</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{aud.audition_name}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Date Of Audition</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{aud.audition_date  | date}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Audition For</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{aud.subject}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Registration Fee</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{aud.reg_fee}}</p>
+                </div>
+                <div class="col-md-2">
+                    <label></label>
+                </div>
+                <div class="col-md-8">
+                    <input id="audreg" class="audregbtn" type="submit" (click)="aud_registration(aud.audition_id,aud.audition_name)"   value="Register">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="center">
+        <h2><b>Upcomming Events:</b></h2>
+    </div>
+</div>

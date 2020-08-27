@@ -1,12 +1,15 @@
 <div class="background-image">
     <div id="id01" class="wrapper">
-      <h1><b>Register</b></h1>
-      <p><b>Please fill in this form to create an account.</b></p>
+      <h1><b>Register For Audition</b></h1>
+      <p><b>Please fill in this form to Register for Audition</b></p>
       <div> 
         <form >
           <div class="container">
             <hr>
-           
+            <label for="audition_name"><b>Audtion No*</b></label>
+            <input type="text" placeholder="" [(ngModel)]="audition_name" name="audition_name" id="audition_name" readonly>
+            
+            <br><br>
             <label for="firstname"><b>First Name*</b></label>
             <input type="text" placeholder="Enter First Name and Middle name(if any)" [(ngModel)]="firstname" name="firstname" id="firstname" required>
             
@@ -114,10 +117,6 @@
         
             <button type="submit" (click)="register()" class="registerbtn">Register</button>
             <button type="submit" (click)="logout()" class="registerbtn">Cancel</button>
-          </div>
-          
-          <div class="container signin">
-            <p><b>Already have an account? <a href="/login">Sign in</a>.</b></p>
           </div>
         </form>
       </div>

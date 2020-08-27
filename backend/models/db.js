@@ -445,6 +445,21 @@ var login = (user, pwd,res) => {
         });
     }
 
+  
+    var get_upcomming_aud = (req,res) => {
+      const get_upcomming_audQry = 'SELECT * from audition.t_audition where reg_start_date<=current_date and reg_end_date>current_date and is_deleted=false  order by audition_date';
+      console.log("db.js console get_upcomming_audQry: ");
+      client.query(get_upcomming_audQry,
+                  (err, result, callback) => {
+      if (err) {
+      console.log(err);
+      return null;
+      }
+      console.log("db.js console REGISTER results : "+result.rows);
+      res.status(200).json(result.rows);
+      });
+  }
+
 
 
 
@@ -468,5 +483,6 @@ module.exports = {'client': client,
                    'get_payment_defaulter' :get_payment_defaulter,
                    'forget_pwd_validation' : forget_pwd_validation,
                    'update_password' : update_password,
-                   'create_audition' : create_audition
+                   'create_audition' : create_audition,
+                   'get_upcomming_aud' : get_upcomming_aud
                   };
