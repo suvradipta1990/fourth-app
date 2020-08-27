@@ -29,6 +29,7 @@ import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profile-photo.component';
+import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profi
     PaymentDefaulterComponent,
     ForgetPasswordComponent,
     TermsAndConditionsComponent,
-    UpdateProfilePhotoComponent
+    UpdateProfilePhotoComponent,
+    CreateAudtionComponent
   ],
   imports: [
     BrowserModule,

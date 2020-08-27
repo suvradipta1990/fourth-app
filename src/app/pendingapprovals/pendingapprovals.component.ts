@@ -39,6 +39,10 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/payment-defaulter"]);
   }
 
+  createAudition(){
+    this.router.navigate(["/create-audtion"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

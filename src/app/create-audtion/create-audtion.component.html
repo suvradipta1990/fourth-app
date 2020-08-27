@@ -1,0 +1,36 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="background-image">
+    <div id="id01" class="wrapper">
+      <h1><b>Create a New Audition</b></h1>
+      <div class="container"> 
+        <label for="dateofaud"><b>Date Of Audtion*</b></label><br>
+        <input type="date" (change)="datechange($event)" placeholder="Date Of Audtion" [(ngModel)]="dateofaud" name="dateofaud" id="dateofaud" required>
+      
+        <br><br>
+        <label for="subject"><b>Subject*</b></label><br>
+        <input type="radio" id="vocal" name="vocal" [(ngModel)]="subject" value="VOCAL">&nbsp;
+        <label for="vocal">Vocal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
+        <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="OTHERS">&nbsp;
+        <label for="Dance">Music Instrument</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <br><br>
+        <label for="audname"><b>Enter Audition Name*</b></label><br>
+        <input type="text" placeholder="Eg:-AUD-15-OCT-2020" [(ngModel)]="audname" name="audname" id="audname" readonly>
+        
+        <br><br>
+        <label for="regfee"><b>Enter Registration Fee*</b></label><br>
+        <input type="number" placeholder="200" [(ngModel)]="regfee" name="regfee" id="regfee" required>
+        
+        <button type="submit" (click)="createaudition()" class="registerbtn">Create</button>
+      </div>
+    </div>
+  </div>

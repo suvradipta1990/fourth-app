@@ -420,6 +420,35 @@ var login = (user, pwd,res) => {
         });
       }
 
+ /*****************************AUDITION MODULE************************************ */
+
+
+ var create_audition = (audname,
+                        dateofaud,
+                        subject,
+                        regfee,
+                        res) => {
+        const create_auditionQry = 'SELECT  * from master.create_audition ($1,$2,$3,$4)';
+        console.log("db.js console forget_pwd_validation: ");
+        client.query(create_auditionQry,
+                      [audname,
+                       dateofaud,
+                       subject,
+                       regfee],
+                      (err, result, callback) => {
+                  if (err) {
+                  console.log(err);
+                  return null;
+                  }
+              console.log("db.js console create_audition results : "+result.rows);
+              res.status(200).json(result.rows);
+        });
+    }
+
+
+
+
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -438,5 +467,6 @@ module.exports = {'client': client,
                    'add_teacher_history' : add_teacher_history,
                    'get_payment_defaulter' :get_payment_defaulter,
                    'forget_pwd_validation' : forget_pwd_validation,
-                   'update_password' : update_password
+                   'update_password' : update_password,
+                   'create_audition' : create_audition
                   };

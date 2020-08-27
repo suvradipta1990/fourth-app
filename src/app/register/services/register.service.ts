@@ -6,15 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-    // user_id: number;
-    // username: string;
-    // password: string;
-    // is_admin: boolean;
-    // created_date: string;
-    // created_by: number;
-    // updated_date: string;
-    // updated_by: number;
-    // is_deleted: boolean;
+  
 
    private urlString: string = 'http://localhost:3000';
 

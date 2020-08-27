@@ -328,6 +328,22 @@ app.get('/my-custom-url', function(req, res) {
 
 /************************************************************ */   
 
+/*****************************AUDITION MODULE******************************** */
+
+app.post('/createaudition', (req, res) => {
+    console.log('createaudition REQ') ;
+    console.log(req.body) ;
+    console.log('createaudition RES') ;
+    console.log(res.body) ;
+    return db.create_audition(req.body.audname,
+                                    req.body.dateofaud,
+                                    req.body.subject,
+                                    req.body.regfee,
+                                   res);  // res.json(data); 
+}) 
+
+
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

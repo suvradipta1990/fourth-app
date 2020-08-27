@@ -20,6 +20,7 @@ import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profile-photo.component';
+import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'update-profile-photo', component: UpdateProfilePhotoComponent,canActivate: [AuthGuard] },
+  { path: 'create-audtion', component: CreateAudtionComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 
