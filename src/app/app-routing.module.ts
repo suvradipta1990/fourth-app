@@ -23,6 +23,7 @@ import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profi
 import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
 import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
 import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
+import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'update-profile-photo', component: UpdateProfilePhotoComponent,canActivate: [AuthGuard] },
   { path: 'create-audtion', component: CreateAudtionComponent,canActivate: [AuthGuard] },
+  { path: 'get-aud-reg-list', component: GetAudRegListComponent,canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

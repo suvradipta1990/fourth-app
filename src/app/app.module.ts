@@ -24,7 +24,7 @@ import { SearchstudentComponent } from './searchstudent/searchstudent.component'
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { AddhistoryComponent } from './addhistory/addhistory.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
-import { UpdateProfilePicComponent } from './update-profile-pic/update-profile-pic.component';
+
 import { PaymentDefaulterComponent } from './payment-defaulter/payment-defaulter.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
@@ -32,6 +32,7 @@ import { UpdateProfilePhotoComponent } from './update-profile-photo/update-profi
 import { CreateAudtionComponent } from './create-audtion/create-audtion.component';
 import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
 import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
+import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
 
 
 @NgModule({
@@ -50,14 +51,14 @@ import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-aud
     EditprofileComponent,
     AddhistoryComponent,
     ViewProfileComponent,
-    UpdateProfilePicComponent,
     PaymentDefaulterComponent,
     ForgetPasswordComponent,
     TermsAndConditionsComponent,
     UpdateProfilePhotoComponent,
     CreateAudtionComponent,
     PreAuditionRegistrationComponent,
-    UpcommingAuditionsComponent
+    UpcommingAuditionsComponent,
+    GetAudRegListComponent
   ],
   imports: [
     BrowserModule,

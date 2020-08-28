@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 import { AuthService } from './auth.service';
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   title = 'fourth-app';
+
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("Lalitkala");
+  }
 }
  

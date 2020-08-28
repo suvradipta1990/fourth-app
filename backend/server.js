@@ -410,6 +410,17 @@ app.post('/uploadRegPic', AuditionFiles.single('uploads'), function(req,res) {
 }) 
 
 
+app.post('/getaudreglist', (req, res) => {
+    console.log('getaudreglist REQ') ;
+    console.log(req.body) ;
+    console.log('getaudreglist RES') ;
+    console.log(res.body) ;
+    return db.get_audreg_list(req.body.audname,
+                              req.body.apprejlist,
+                              res);  // res.json(data); 
+}) 
+
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

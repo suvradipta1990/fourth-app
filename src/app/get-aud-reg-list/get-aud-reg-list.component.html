@@ -1,0 +1,80 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+ <div class="background-image"> 
+    <div id="id01" class="wrapper">
+      <div class="container">
+        <label for="regnno"><b>Enter Audition Name*  </b></label>
+        <input type="text" placeholder="Eg-AUD-2025-06-30" [(ngModel)]="audname" name="audname" id="audname" required>
+        <button type="submit" (click)="getaudreglist(this.audname)" class="registerbtn">Get List</button>
+        <br><br>
+        <label for="radio"><b>Fliter By</b></label><br>
+        <input type="radio" id="selected" name="apprejlist" [(ngModel)]="apprejlist" value="selected">&nbsp;
+        <label for="selected">Selected</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="rejected" name="apprejlist" [(ngModel)]="apprejlist" value="rejected">&nbsp;
+        <label for="rejected">Rejected </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="all" name="apprejlist" [(ngModel)]="apprejlist" value="all">&nbsp;
+        <label for="all">All </label>      
+      </div>
+    </div>
+ </div>
+ <div class="div-block" *ngFor="let regis of audRegList" >
+    <div class="row">
+        <div class="col-md-6">
+            <label>CANDIDATE PHOTO</label>
+        </div>
+        <div class="profile-img">
+            <img src="{{this.profilePicPath}}{{regis.aud_regn_no}}.jpg" alt="Profile photo"/>
+        </div>
+        <div class="col-md-6">
+            <label>REGISTRATION NO</label>
+        </div>
+        <div class="col-md-6">
+            <p>{{regis.aud_regn_no}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>NAME</label>
+        </div>
+        <div class="col-md-6">
+            <p>{{regis.firstname}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>MOBILE NO</label>
+        </div>
+        <div class="col-md-6">
+            <p>{{regis.mobilenumber}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>EMAIL</label>
+        </div>
+        <div class="col-md-6">
+            <p>{{regis.emailid}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>REGISTRATION FEE RECIEPT </label>
+        </div>
+        <div class="col-md-6">
+            <p>Clicke here to see reciept <a target="_blank"  href="{{this.feeRecieptRootDir}}{{regis.aud_regn_no}}.jpg">AUD-FEE-{{regis.aud_regn_no}}.jpg</a></p>
+        </div>
+        <div class="col-md-6">
+            <label>ACTIONS: </label>
+        </div>
+        <div class="col-md-6">
+            <input id="approvereg" type="button" (click)="approve_reg(regis.id)" class="aprvbutton"  value="APPROVE">
+            <input id="approvereg" type="button" (click)="reject_reg(regis.id)" class="decbutton"  value="REJECT">
+        </div>
+        
+        <div class="col-md-6">
+            <label>   </label>
+        </div>
+        <div class="col-md-6">
+            <p>  </p>
+        </div>
+    </div>
+</div>
+

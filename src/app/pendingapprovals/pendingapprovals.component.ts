@@ -43,6 +43,10 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/create-audtion"]);
   }
 
+  getAudReglist(){
+    this.router.navigate(["/get-aud-reg-list"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

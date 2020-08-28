@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { PreAuditionRegistrationService } from "./services/pre-audition-registration.service";
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
+import {UpcommingAuditionsComponent} from "../upcomming-auditions/upcomming-auditions.component";
 
 @Component({
   selector: 'app-pre-audition-registration',
@@ -80,6 +81,7 @@ export class PreAuditionRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.audition_id=localStorage.getItem('audition_id');
+    console.log("Audition ID is :"+this.audition_id);
     this.audition_name=localStorage.getItem('audition_name');
   }
 

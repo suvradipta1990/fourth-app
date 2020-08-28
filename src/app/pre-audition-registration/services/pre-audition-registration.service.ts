@@ -27,7 +27,7 @@ export class PreAuditionRegistrationService {
                   musicinstrument : string, refperson : string)
         : Observable<any> {
 
-const v_input_param  = {faudition_id : audition_id, firstname : firstname, emailid : emailid, 
+const v_input_param  = {audition_id : audition_id, firstname : firstname, emailid : emailid, 
                         mobilenumber : mobilenumber, altmobilenumber : altmobilenumber, aadhaar : aadhaar, 
                         dateofbirth : dateofbirth, gender : gender,addresstype : addresstype,
                         addressline1 : addressline1,addressline2 : addressline2,

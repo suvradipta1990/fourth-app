@@ -546,6 +546,24 @@ var login = (user, pwd,res) => {
                 });
 }
 
+var get_audreg_list = (audname,
+                      apprejlist,
+                      res) => {
+            const create_auditionQry = 'SELECT  * from master.get_audreg_list ($1,$2)';
+            console.log("db.js console get_audreg_list: ");
+            client.query(create_auditionQry,
+                        [audname,
+                        apprejlist],
+                        (err, result, callback) => {
+                          if (err) {
+                           console.log(err);
+                           return null;
+                          }
+            console.log("db.js console get_audreg_list results : "+result.rows);
+            res.status(200).json(result.rows);
+      });
+  }
+
 
 
 module.exports = {'client': client,
@@ -569,5 +587,6 @@ module.exports = {'client': client,
                    'update_password' : update_password,
                    'create_audition' : create_audition,
                    'get_upcomming_aud' : get_upcomming_aud,
-                   'aud_registration' : aud_registration
+                   'aud_registration' : aud_registration,
+                   'get_audreg_list' : get_audreg_list
                   };
