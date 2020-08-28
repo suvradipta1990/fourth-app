@@ -350,6 +350,65 @@ app.get('/getUpcommingAud', (req, res) => {
     return db.get_upcomming_aud(req,res);  // res.json(data);
 })
 
+app.post('/pre-aud-register', (req, res) => {
+    console.log('register REQ') ;
+    console.log(req.body) ;
+    console.log('register RES') ;
+    console.log(res.body) ;
+    return db.aud_registration(req.body.audition_id, 
+                                req.body.firstname, 
+                                req.body.emailid, 
+                                req.body.mobilenumber, 
+                                req.body.altmobilenumber, 
+                                req.body.aadhaar, 
+                                req.body.dateofbirth, 
+                                req.body.gender,
+                                req.body.addresstype,
+                                req.body.addressline1,
+                                req.body.addressline2,
+                                req.body.district,
+                                req.body.city,
+                                req.body.pincode,
+                                req.body.subject,
+                                req.body.fathersname,
+                                req.body.fathersoccupation,
+                                req.body.fathersnumber,
+                                req.body.mothersname,
+                                req.body.mothersoccupation,
+                                req.body.mothersnumber,
+                                req.body.totalyrstrainning, 
+                                req.body.teacher1, 
+                                req.body.sdate1, 
+                                req.body.edate1, 
+                                req.body.teacher2, 
+                                req.body.sdate2, 
+                                req.body.edate2,
+                                req.body.teacher3, 
+                                req.body.sdate3, 
+                                req.body.edate3,
+                                req.body.certification,
+                                req.body.fammusic,
+                                req.body.membername,
+                                req.body.musicinstrument,
+                                req.body.refperson,
+                            res);  // res.json(data);
+})
+
+var AuditionFile = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, myImagePath + 'audition')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+});
+const AuditionFiles = multer({ storage: AuditionFile });
+
+app.post('/uploadRegPic', AuditionFiles.single('uploads'), function(req,res) {
+    console.log('storage location is ', req.hostname +'/' + req.file.path);
+    return res.send(req.file);
+}) 
+
 
 
 app.listen(3000, () => {

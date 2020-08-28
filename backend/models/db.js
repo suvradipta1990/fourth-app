@@ -461,6 +461,90 @@ var login = (user, pwd,res) => {
   }
 
 
+  var aud_registration = (audition_id, 
+                          firstname, 
+                          emailid, 
+                          mobilenumber, 
+                          altmobilenumber, 
+                          aadhaar, 
+                          dateofbirth, 
+                          gender,
+                          addresstype,
+                          addressline1,
+                          addressline2,
+                          district,
+                          city,
+                          pincode,
+                          subject,
+                          fathersname,
+                          fathersoccupation,
+                          fathersnumber,
+                          mothersname,
+                          mothersoccupation,
+                          mothersnumber,
+                          totalyrstrainning, 
+                          teacher1, 
+                          sdate1, 
+                          edate1, 
+                          teacher2, 
+                          sdate2, 
+                          edate2,
+                          teacher3, 
+                          sdate3, 
+                          edate3,
+                          certification,
+                          fammusic,
+                          membername,
+                          musicinstrument,
+                          refperson,
+                          res) => {
+                      const registerQry = 'SELECT * from MASTER.aud_registration ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29,$30,$31,$32,$33,$34,$35,$36)';
+                      console.log("db.js console profile_id: "+firstname);
+                      client.query(registerQry, [audition_id, 
+                                                firstname, 
+                                                emailid, 
+                                                mobilenumber, 
+                                                altmobilenumber, 
+                                                aadhaar, 
+                                                dateofbirth, 
+                                                gender,
+                                                addresstype,
+                                                addressline1,
+                                                addressline2,
+                                                district,
+                                                city,
+                                                pincode,
+                                                subject,
+                                                fathersname,
+                                                fathersoccupation,
+                                                fathersnumber,
+                                                mothersname,
+                                                mothersoccupation,
+                                                mothersnumber,
+                                                totalyrstrainning, 
+                                                teacher1, 
+                                                sdate1, 
+                                                edate1, 
+                                                teacher2, 
+                                                sdate2, 
+                                                edate2,
+                                                teacher3, 
+                                                sdate3, 
+                                                edate3,
+                                                certification,
+                                                fammusic,
+                                                membername,
+                                                musicinstrument,
+                                                refperson], 
+                (err, result, callback) => {
+                   if (err) {
+                     console.log(err);
+                     return null;
+                   }
+                  console.log("db.js console REGISTER results : "+result.rows);
+                  res.status(200).json(result.rows);
+                });
+}
 
 
 
@@ -484,5 +568,6 @@ module.exports = {'client': client,
                    'forget_pwd_validation' : forget_pwd_validation,
                    'update_password' : update_password,
                    'create_audition' : create_audition,
-                   'get_upcomming_aud' : get_upcomming_aud
+                   'get_upcomming_aud' : get_upcomming_aud,
+                   'aud_registration' : aud_registration
                   };
