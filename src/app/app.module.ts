@@ -33,6 +33,7 @@ import { CreateAudtionComponent } from './create-audtion/create-audtion.componen
 import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
 import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
 import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
+import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.comp
     CreateAudtionComponent,
     PreAuditionRegistrationComponent,
     UpcommingAuditionsComponent,
-    GetAudRegListComponent
+    GetAudRegListComponent,
+    ViewRegFormComponent
   ],
   imports: [
     BrowserModule,

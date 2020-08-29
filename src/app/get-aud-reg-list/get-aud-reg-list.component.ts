@@ -13,6 +13,7 @@ import { LoginComponent } from '../login/login.component';
 export class GetAudRegListComponent implements OnInit {
 
   public  audRegList: AudRegList[];
+  public  audForm: AudRegList[];
   public loggedInUser: string="";
   public count :number;
   public result :string;
@@ -44,6 +45,16 @@ export class GetAudRegListComponent implements OnInit {
         }
       });
     }
+
+    
+
+      view_form(id :string){
+         localStorage.setItem('audition_pk',id);
+         console.log("id :"+id);
+         console.log("view-form calling");
+         this.router.navigate(["/view-reg-form"]);
+        // this.router.navigate(["/view-reg-form"]);
+      }
 
 
   logout(){

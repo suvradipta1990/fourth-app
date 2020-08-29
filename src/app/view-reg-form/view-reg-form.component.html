@@ -1,0 +1,190 @@
+<div class="border-padding">
+    <div class="div-block" *ngFor="let regis of audForm" >
+        <div class="center">
+            <label>{{this.audname}} </label>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-md-6">
+                <label>CANDIDATE </label>
+            </div>
+            <div class="col-md-6 profile-img">
+                <img src="{{this.profilePicPath}}AUDITION-DP-{{regis.aud_regn_no}}.jpg" alt="Profile photo"/>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>REGISTRATION NO</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.aud_regn_no}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>NAME</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.firstname}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>MOBILE NO</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.mobilenumber}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>EMAIL</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.emailid}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>ALATERNATE MOBILE</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.altmobilenumber}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+            <label>DATE OF BIRTH</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.dateofbirth | date}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>GENDER</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.gender}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>ADDRESS</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.addressline1}}</p>
+                <p>{{regis.addressline2}}</p>
+                <p>{{regis.district}}</p>
+                <p>{{regis.city}}</p>
+                <p>{{regis.pincode}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>APPLIED FOR</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.subject}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>FATHERS NAME(OCCUPATION)</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.fathersname}}({{regis.fathersoccupation}})</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>MOTHERS NAME(OCCUPATION)</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.mothersname}}({{regis.mothersoccupation}})</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>TOTAL YRS OF TRAINNING</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.totalyrstrainning}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>TEACHER /INSTITUTE NAME [DURATION]</label>
+            </div>
+            <ng-container
+                *ngIf="regis.teacher1==''; then NO; else YES">
+            </ng-container>
+            <ng-template #YES>
+                <div class="col-md-6">
+                    <p>{{regis.teacher1}}[{{regis.sdate1 | date}} - {{regis.edate1 | date}}] </p>
+                </div>
+            </ng-template>
+            <ng-template #NO>
+                <div class="col-md-6">
+                    NA
+                </div>
+            </ng-template>
+            <br><br>
+            <div class="col-md-6">
+                <label>TEACHER /INSTITUTE NAME  [DURATION]</label>
+            </div>
+            <ng-container
+                *ngIf="regis.teacher2==''; then NO; else YES">
+            </ng-container>
+            <ng-template #YES>
+                <div class="col-md-6">
+                    <p>{{regis.teacher2}}[{{regis.sdate2 | date}} - {{regis.edate2 | date}}] </p>
+                </div>
+            </ng-template>
+            <ng-template #NO>
+                <div class="col-md-6">
+                    NA
+                </div>
+            </ng-template>
+            <br><br>
+            <div class="col-md-6">
+                <label>TEACHER /INSTITUTE NAME  [DURATION]</label>
+            </div>
+            <ng-container
+            *ngIf="regis.teacher3==''; then NO; else YES">
+        </ng-container>
+        <ng-template #YES>
+            <div class="col-md-6">
+                <p>{{regis.teacher3}}[{{regis.sdate3 | date}} - {{regis.edate3 | date}}] </p>
+            </div>
+        </ng-template>
+        <ng-template #NO>
+            <div class="col-md-6">
+                NA
+            </div>
+        </ng-template>
+        <br><br>
+            <div class="col-md-6">
+                <label>ANY CERTIFICATTION</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.certification}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>PERSON NAME IN FAMILY RELATED TO MUSIC</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.membername}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>MUSIC INSTRUMENT AT HOME</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.musicinstrument}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>REFERRED IN LALITKALA BY</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{regis.refperson}}</p>
+            </div>
+            <br><br>
+            <div class="col-md-6">
+                <label>   </label>
+            </div>
+            <div class="col-md-6">
+                <p>  </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -564,6 +564,22 @@ var get_audreg_list = (audname,
       });
   }
 
+  var get_aud_form = (id,
+                      res) => {
+            const get_aud_formQry = 'SELECT  * from audition.t_aud_registration where id= $1';
+            console.log("db.js console get_aud_form: ");
+            client.query(get_aud_formQry,
+                  [id],
+                  (err, result, callback) => {
+                    if (err) {
+                    console.log(err);
+                    return null;
+                    }
+            console.log("db.js console get_aud_form results : "+result.rows);
+            res.status(200).json(result.rows);
+      });
+}
+
 
 
 module.exports = {'client': client,
@@ -588,5 +604,6 @@ module.exports = {'client': client,
                    'create_audition' : create_audition,
                    'get_upcomming_aud' : get_upcomming_aud,
                    'aud_registration' : aud_registration,
-                   'get_audreg_list' : get_audreg_list
+                   'get_audreg_list' : get_audreg_list,
+                   'get_aud_form' : get_aud_form
                   };

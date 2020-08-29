@@ -420,6 +420,15 @@ app.post('/getaudreglist', (req, res) => {
                               res);  // res.json(data); 
 }) 
 
+app.post('/getAudRegForm', (req, res) => {
+    console.log('getAudRegForm REQ') ;
+    console.log(req.body) ;
+    console.log('getAudRegForm RES') ;
+    console.log(res.body) ;
+    return db.get_aud_form(req.body.id,
+                           res);  // res.json(data); 
+}) 
+
 
 
 app.listen(3000, () => {

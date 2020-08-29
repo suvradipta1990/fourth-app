@@ -19,4 +19,10 @@ export class GetAudRegListService {
     return this.http.post<AudRegList[]>(this.urlString + '/getaudreglist',v_input_param);
  }
 
+ view_form(id:string): Observable<AudRegList[]> {
+
+  const v_input_param  = {id: id};
+  return this.http.post<AudRegList[]>(this.urlString + '/getAudRegForm',v_input_param);
+}
+
 }

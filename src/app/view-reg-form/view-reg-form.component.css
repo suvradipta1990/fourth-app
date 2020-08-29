@@ -1,0 +1,31 @@
+.div-block{
+    padding-top: 10px;
+    padding-left: 5 px;
+    margin: auto;
+    justify-content: center;
+    width: 95%;
+
+    
+}
+
+.profile-img img{
+    width: 90px;
+    height: 120px;
+  }
+
+  .div-block img{
+    width: 100px;
+    height: 120px;
+    justify-content: center;
+  }
+
+  .center{
+       text-align: center;
+  }
+
+  .border-padding{
+       border: double;
+       width : 65%;
+       justify-content: center;
+       margin: auto;
+  }

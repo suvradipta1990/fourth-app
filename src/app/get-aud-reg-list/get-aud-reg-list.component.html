@@ -65,8 +65,9 @@
             <label>ACTIONS: </label>
         </div>
         <div class="col-md-6">
-            <input id="approvereg" type="button" (click)="approve_reg(regis.id)" class="aprvbutton"  value="APPROVE">
-            <input id="approvereg" type="button" (click)="reject_reg(regis.id)" class="decbutton"  value="REJECT">
+            <input id="approvereg" type="button" (click)="approve_reg(regis.id)" class="aprvbutton"  value="SELECTED">
+            <input id="approvereg" type="button" (click)="reject_reg(regis.id)" class="decbutton"  value="REJECTED">
+            <input id="view_form" type="button" target="_blank" (click)="view_form(regis.id)" class="aprvbutton"  value="View Form">
         </div>
         
         <div class="col-md-6">

@@ -24,6 +24,7 @@ import { CreateAudtionComponent } from './create-audtion/create-audtion.componen
 import { PreAuditionRegistrationComponent } from './pre-audition-registration/pre-audition-registration.component';
 import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
 import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
+import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -47,7 +48,9 @@ const routes: Routes = [
   { path: 'update-profile-photo', component: UpdateProfilePhotoComponent,canActivate: [AuthGuard] },
   { path: 'create-audtion', component: CreateAudtionComponent,canActivate: [AuthGuard] },
   { path: 'get-aud-reg-list', component: GetAudRegListComponent,canActivate: [AuthGuard] },
+  { path: 'view-reg-form', component: ViewRegFormComponent },
   { path: '**', redirectTo: '' }
+  
 ];
 
 
