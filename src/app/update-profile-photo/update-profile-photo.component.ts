@@ -43,7 +43,7 @@ export class UpdateProfilePhotoComponent implements OnInit {
         for (var i = 0; i < this.uploadedFiles.length; i++) {
            var filetype=this.uploadedFiles[i].name;
            this.checkFileType(filetype);
-           filename=filename+this.filetype;
+           filename=filename+".jpg";
           //  alert(filename); 
             formData.append("uploads", this.uploadedFiles[i], filename);
          }
