@@ -38,6 +38,7 @@ export class ViewProfileComponent implements OnInit {
     public ptilldate :string="";
 
     public result: string;
+    public profilePicPath:string="assets/images/profile_image/";
 
   constructor(private router: Router,
     public authService: AuthService,

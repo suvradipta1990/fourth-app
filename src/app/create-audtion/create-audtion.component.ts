@@ -29,6 +29,9 @@ export class CreateAudtionComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
     this.user_id = localStorage.getItem('user_id');
+    this.dateofaud=null;
+    this.subject=null;
+    this.audname  = "AUD";
   }
 
   createaudition() : void {
@@ -46,7 +49,6 @@ export class CreateAudtionComponent implements OnInit {
                 this.createaud_result=data[0].create_audition;
                 alert(this.createaud_result);
                 this.ngOnInit();
-                this.router.navigate(["/create-audition"]);
               }else {
                 alert("Unable to connect  database ");
               }

@@ -52,8 +52,8 @@ export class GetAudRegListComponent implements OnInit {
          localStorage.setItem('audition_pk',id);
          console.log("id :"+id);
          console.log("view-form calling");
-         this.router.navigate(["/view-reg-form"]);
-        // this.router.navigate(["/view-reg-form"]);
+         //this.router.navigate(["/view-reg-form"]);
+         this.router.navigate([]).then(result => {  window.open( "/view-reg-form", "_blank"); });
       }
 
 
