@@ -21,8 +21,14 @@ export class GetAudRegListService {
 
  view_form(id:string): Observable<AudRegList[]> {
 
-  const v_input_param  = {id: id};
-  return this.http.post<AudRegList[]>(this.urlString + '/getAudRegForm',v_input_param);
-}
+    const v_input_param  = {id: id};
+    return this.http.post<AudRegList[]>(this.urlString + '/getAudRegForm',v_input_param);
+  }
+
+  approve_reg(id :number,is_selected :number): Observable<any> {
+
+    const v_input_param  = {id: id,is_selected : is_selected};
+    return this.http.post<any>(this.urlString + '/selectReject',v_input_param);
+  }
 
 }

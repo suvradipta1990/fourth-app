@@ -56,6 +56,12 @@
             <p>{{regis.emailid}}</p>
         </div>
         <div class="col-md-6">
+            <label>SELECTION STATUS</label>
+        </div>
+        <div class="col-md-6">
+            <p>{{regis.status}}</p>
+        </div>
+        <div class="col-md-6">
             <label>REGISTRATION FEE RECIEPT </label>
         </div>
         <div class="col-md-6">
@@ -65,8 +71,8 @@
             <label>ACTIONS: </label>
         </div>
         <div class="col-md-6">
-            <input id="approvereg" type="button" (click)="approve_reg(regis.id)" class="aprvbutton"  value="SELECTED">
-            <input id="approvereg" type="button" (click)="reject_reg(regis.id)" class="decbutton"  value="REJECTED">
+            <input id="approvereg" type="button" (click)="approve_reg(regis.id,1)" class="aprvbutton"  value="SELECTED">
+            <input id="approvereg" type="button" (click)="approve_reg(regis.id,0)" class="decbutton"  value="REJECTED">
             <input id="view_form" type="button" target="_blank" (click)="view_form(regis.id)" class="aprvbutton"  value="View Form">
         </div>
         

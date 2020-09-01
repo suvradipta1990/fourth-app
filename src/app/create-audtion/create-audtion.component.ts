@@ -38,6 +38,7 @@ export class CreateAudtionComponent implements OnInit {
      if(this.audname == null || this.audname == "" || this.dateofaud == null ||
       this.subject == null || this.subject == ""){
         alert("Please fill all mandatory fields");
+        this.ngOnInit();
       }
       else{
             this.createAuditionService.createaudition(this.audname, 
@@ -48,6 +49,7 @@ export class CreateAudtionComponent implements OnInit {
               if(data != null && data.length>0) {  
                 this.createaud_result=data[0].create_audition;
                 alert(this.createaud_result);
+                this.dateofaud=null;
                 this.ngOnInit();
               }else {
                 alert("Unable to connect  database ");
@@ -57,7 +59,7 @@ export class CreateAudtionComponent implements OnInit {
   }
 
   datechange(element:any) {
-   this.audname=this.audname+'-'+this.dateofaud;
+   this.audname='AUD-'+this.dateofaud;
   }
 
   logout(){

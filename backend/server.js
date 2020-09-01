@@ -429,6 +429,16 @@ app.post('/getAudRegForm', (req, res) => {
                            res);  // res.json(data); 
 }) 
 
+app.post('/selectReject', (req, res) => {
+    console.log('selectReject REQ') ;
+    console.log(req.body) ;
+    console.log('selectReject RES') ;
+    console.log(res.body) ;
+    return db.approve_reg_candidate(req.body.id,
+                                    req.body.is_selected,
+                                    res);  // res.json(data); 
+}) 
+
 
 
 app.listen(3000, () => {

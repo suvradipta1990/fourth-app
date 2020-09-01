@@ -580,7 +580,23 @@ var get_audreg_list = (audname,
       });
 }
 
-
+var approve_reg_candidate = (id,
+                             is_selected,
+                             res) => {
+                const approve_regQry = 'SELECT * from master.approve_reject_candidate($1,$2)';
+                console.log("db.js console approve_reg_candidate: ");
+                client.query(approve_regQry,
+                            [id,
+                            is_selected],
+                            (err, result, callback) => {
+                            if (err) {
+                              console.log(err);
+                              return null;
+                            }
+                            console.log("db.js console approve_reg_candidate results : "+result);
+                            res.status(200).json(result.rows);
+                  });
+  }
 
 module.exports = {'client': client,
                   'login': login,
@@ -605,5 +621,6 @@ module.exports = {'client': client,
                    'get_upcomming_aud' : get_upcomming_aud,
                    'aud_registration' : aud_registration,
                    'get_audreg_list' : get_audreg_list,
-                   'get_aud_form' : get_aud_form
+                   'get_aud_form' : get_aud_form,
+                   'approve_reg_candidate' : approve_reg_candidate
                   };

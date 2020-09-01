@@ -16,7 +16,7 @@ export class GetAudRegListComponent implements OnInit {
   public  audForm: AudRegList[];
   public loggedInUser: string="";
   public count :number;
-  public result :string;
+  public result :string="";
   public remakrs :string="";
   public audname : string="";
   public apprejlist :string="all";
@@ -46,15 +46,29 @@ export class GetAudRegListComponent implements OnInit {
       });
     }
 
-    
-
-      view_form(id :string){
+    view_form(id :string){
          localStorage.setItem('audition_pk',id);
          console.log("id :"+id);
          console.log("view-form calling");
          //this.router.navigate(["/view-reg-form"]);
          this.router.navigate([]).then(result => {  window.open( "/view-reg-form", "_blank"); });
       }
+
+      approve_reg(id :number,is_selected :number){
+        console.log("id="+ id + "is_selected=" + is_selected);
+        this.getAudRegListService.approve_reg(id,is_selected)
+                .subscribe((data) => {
+                  if(data != null ) {
+                    console.log('approve_reg');
+                    this.result=data[0].approve_reject_candidate;
+                      alert(this.result);
+                      console.log(this.result);
+                      this.getaudreglist(this.audname);
+                    }else {
+                      console.log(this.result);
+                    }
+              });
+        }
 
 
   logout(){
