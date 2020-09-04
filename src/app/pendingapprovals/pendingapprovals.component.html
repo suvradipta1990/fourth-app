@@ -6,50 +6,56 @@
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
     </div>
 </div>
-<div class="student-section">
-     <table class="col-md-3">
-         <tr>
+<div>
+    <div class="student-section">
+        <table class="col-md-4">
+            <tr>
+                <td class="row">
+                    <h2>STUDENT SECTION</h2>
+                    <button type="submit"  class="registerbtn">Create Student</button>
+                    <button type="submit"  class="registerbtn">Delete Student</button>
+                    <button type="submit"  class="registerbtn">Update Student Password</button>
+                </td>
+            </tr>
+        </table>
+        <table class="col-md-4">
+            <tr>
+                <td class="row center">
+                    <h2>APPROVAL SECTION</h2>
+                    <button type="submit" (click)="getappregpage()" class="registerbtn">Approve Registration</button>
+                    <button type="submit"  (click)="getapppaymentpage()" class="registerbtn">Approve Payment</button>
+                    <button type="submit"  (click)="getapppaymentpage()" class="registerbtn">Approve Profile Update</button>
+                </td>
+            </tr>
+        </table>
+        <table class="col-md-4">
+            <tr>
             <td class="row">
-                <h2>STUDENT SECTION</h2>
-                <button type="submit"  class="registerbtn">Create Student</button>
-                <button type="submit"  class="registerbtn">Delete Student</button>
+                <h2>AUDITION SECTION</h2>
+                <button type="submit"  (click)="createAudition()" class="registerbtn">Create Audition</button>
+                <button type="submit"  class="registerbtn">Delete Audition</button>
+                <button type="submit"  (click)="getAudReglist()" class="registerbtn">Get Registration List</button>
             </td>
         </tr>
-     </table>
-     <table class="col-md-3">
-        <tr>
-            <td class="row">
-                <h2>APPROVAL SECTION</h2>
-            </td>
-            <td class="row">
-               <button type="submit" (click)="getappregpage()" class="registerbtn">Approve Registration</button>
-            </td>
-            <td class="row">
-               <button type="submit"  (click)="getapppaymentpage()" class="registerbtn">Approve Payment</button>
-            </td>
-        </tr>
-     </table>
-     <table class="col-md-3">
-        <tr>
-           <td class="row">
-               <h2>AUDITION SECTION</h2>
-               <button type="submit"  (click)="createAudition()" class="registerbtn">Create Audition</button>
-               <button type="submit"  class="registerbtn">Delete Audition</button>
-               <button type="submit"  (click)="getAudReglist()" class="registerbtn">Get Registration List</button>
-           </td>
-       </tr>
-    </table>
-    <table class="col-md-3">
-        <tr>
-            <td class="row">
-                <h2>REPORT SECTION</h2>
-            </td>
-            <td class="row">
-               <button type="submit" (click)="getpaymentdefaulter()" class="registerbtn">Payment Defaulter</button>
-            </td>
-            <td class="row">
-               <button type="submit"  class="registerbtn">Payment Report</button>
-            </td>
-        </tr>
-     </table>
+        </table>
+        <table class="col-md-4">
+            <tr>
+                <td class="row">
+                    <br><br>
+                    <h2>REPORT SECTION</h2>
+                    <button type="submit" (click)="getpaymentdefaulter()" class="registerbtn">Payment Defaulter</button>
+                    <button type="submit"  class="registerbtn">Payment Report</button>
+                </td>
+            </tr>
+        </table>
+        <table class="col-md-4">
+            <tr>
+                <td class="row">
+                    <h2>DISPLAY SECTION</h2>
+                    <button type="submit" (click)="changeBackground()" class="registerbtn">Update Background/Events</button>
+                    <!-- <button type="submit"  class="registerbtn">Update Event</button> -->
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

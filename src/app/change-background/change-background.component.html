@@ -1,0 +1,71 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="background-image wrapper">
+    <form >
+        <div class="container">
+          <hr>
+            <label for="addresstype"><b>Select Page to Change background*</b></label><br>
+            <br><br>
+            <table>
+              <tr>
+                <td>
+                    <input type="radio" id="dashboard_background" name="dashboard_background" [(ngModel)]="pagebgchange" value="dashboard_background">&nbsp;
+                    <label for="per">DASHBOARD PAGE</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input type="radio" id="login_page_background" name="login_page_background" [(ngModel)]="pagebgchange" value="login_page_background">&nbsp;
+                    <label for="addresstype">LOGIN PAGE </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input type="radio" id="home_page_background" name="home_page_background" [(ngModel)]="pagebgchange" value="home_page_background">&nbsp;
+                    <label for="addresstype">HOME PAGE </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+             </tr>
+             <br>
+             <tr>
+                <td>
+                    <input type="radio" id="pre-audition_background" name="pre-audition_background" [(ngModel)]="pagebgchange" value="pre-audition_background">&nbsp;
+                    <label for="per">PRE AUDITION REGISTRATION</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input type="radio" id="current" name="register_page_background" [(ngModel)]="pagebgchange" value="register_page_background">&nbsp;
+                    <label for="addresstype">POST AUDITION REGISTRATION </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <input type="radio" id="fee_book_background" name="fee_book_background" [(ngModel)]="pagebgchange" value="fee_book_background">&nbsp;
+                    <label for="addresstype">FEES BOOK</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+             </tr>
+             <br>
+             <tr>
+                <td>
+                    <input type="radio" id="event_1_background" name="event_1_background" [(ngModel)]="pagebgchange" value="event_1_background">&nbsp;
+                    <label for="per">1st EVENT</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                   <input type="radio" id="event_2_background" name="event_2_background" [(ngModel)]="pagebgchange" value="event_2_background">&nbsp;
+                   <label for="addresstype">2nd EVENT </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                   <input type="radio" id="event_3_background" name="event_3_background" [(ngModel)]="pagebgchange" value="event_3_background">&nbsp;
+                   <label for="addresstype">3rd EVENT</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+             </tr>
+            </table>    
+            <br><br>
+            <label for="profilephoto"><b>Upload New Background Image*</b></label>
+            <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">
+              <input type="file" (change)="fileChange($event)" placeholder="select your file" [(ngModel)]="backgroungImg" name="backgroungImg" id="backgroungImg" aria-describedby="inputGroupFileAddon01" required>
+            </form>
+            <div class="wrapper">
+               <button type="submit" (click)="UploadBackground()" class="registerbtn">Upload Photo</button>
+            </div>
+        </div> 
+    </form>           
+</div> 

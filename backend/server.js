@@ -439,6 +439,22 @@ app.post('/selectReject', (req, res) => {
                                     res);  // res.json(data); 
 }) 
 
+/****************************Background Photo Upload *************** */
+var BackgroundPhoto = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, myImagePath + 'backgroud-images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+});
+const BackgroundPhotoupload = multer({ storage: BackgroundPhoto });
+
+app.post('/uploadBackgroundPic', BackgroundPhotoupload.single('uploads'), function(req,res) {
+    console.log('storage location is ', req.hostname +'/' + req.file.path);
+    return res.send(req.file);
+}) 
+
 
 
 app.listen(3000, () => {

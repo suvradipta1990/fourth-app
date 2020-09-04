@@ -95,3 +95,24 @@ input[type=submit] {
     height: 100%;
      /* padding: 120px 70px;  */
   }
+
+  .event-1-background-image{
+    background-image: url("../../assets/images/backgroud-images/event_1_background.jpg");
+    width: 100%;
+    height: 100%;
+     /* padding: 120px 70px;  */
+  }
+
+  .event-2-background-image{
+    background-image: url("../../assets/images/backgroud-images/event_2_background.jpg");
+    width: 100%;
+    height: 100%;
+     /* padding: 120px 70px;  */
+  }
+
+  .event-3-background-image{
+    background-image: url("../../assets/images/backgroud-images/event_3_background.jpg");
+    width: 100%;
+    height: 100%;
+     /* padding: 120px 70px;  */
+  }

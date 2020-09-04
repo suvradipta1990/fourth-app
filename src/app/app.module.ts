@@ -34,6 +34,7 @@ import { PreAuditionRegistrationComponent } from './pre-audition-registration/pr
 import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-auditions.component';
 import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
 import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
+import { ChangeBackgroundComponent } from './change-background/change-background.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
     PreAuditionRegistrationComponent,
     UpcommingAuditionsComponent,
     GetAudRegListComponent,
-    ViewRegFormComponent
+    ViewRegFormComponent,
+    ChangeBackgroundComponent
   ],
   imports: [
     BrowserModule,

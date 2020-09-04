@@ -1,0 +1,148 @@
+
+.header-div {
+    background-color: lightblue;    
+    height: 110px;
+  }
+  .header-welcome-div {   
+    text-align: center;
+    justify-content: center;
+  
+  }
+  .header-logout-div {   
+    text-align: right;
+    justify-content: right;
+  }
+  
+  input[type=button] {
+    background-color: #0a2d79;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial;
+    margin: 5px;
+    width: 10%;
+    border: 1px solid #f6f6f6;
+  }
+  .registerbtn {
+    background-color: #0b57e2;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: 2px solid #fff;
+    cursor: pointer;
+    width: 90%;
+    opacity: 0.9;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    justify-content: center;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+  input[type=submit] {
+    background-color: #0942bd;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: auto;
+    width: 80%;
+    border: 1px solid #0d0d0d;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=submit]:focus {
+    background-color: rgb(7, 61, 241);
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=submit]:placeholder {
+    color: #2a09e4;
+  }
+
+  .student-section{
+   padding: 10px; 
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    
+  }
+
+  .approval-section{
+    display: flex;
+    margin: left;
+    width: 30%;
+    height: 20%;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+  }
+
+  .center{
+     text-align: center;
+     margin: auto;
+  }
+
+  .background-image{
+    /* background-image: url("../../assets/images/backgroud-images/admin_panel_background.jpg"); */
+    background-color: rgba(106, 151, 47, 0.582);
+    width: 100%;
+    height: 80%;
+    text-align: left;
+
+  }
+
+  .wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 60%;
+    min-height: 100px;
+    padding: 20px;
+
+    
+  }
+  
+  #formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    /* background: #fff; */
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  #formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .container{
+    justify-content: center;
+  }

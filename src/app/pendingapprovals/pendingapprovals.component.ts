@@ -47,6 +47,10 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/get-aud-reg-list"]);
   }
 
+  changeBackground(){
+    this.router.navigate(["/change-background"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');
