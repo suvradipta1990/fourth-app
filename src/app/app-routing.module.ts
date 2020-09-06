@@ -27,6 +27,7 @@ import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.comp
 import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 import { ChangeBackgroundComponent } from './change-background/change-background.component';
 import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
+import { PaymentReportComponent } from './payment-report/payment-report.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'get-aud-reg-list', component: GetAudRegListComponent,canActivate: [AuthGuard] },
   { path: 'change-background', component: ChangeBackgroundComponent,canActivate: [AuthGuard] },
   { path: 'student-payment-history', component: StudentPaymentHistoryComponent,canActivate: [AuthGuard] },
+  { path: 'payment-report', component: PaymentReportComponent,canActivate: [AuthGuard] },
   { path: 'view-reg-form', component: ViewRegFormComponent },
   { path: '**', redirectTo: '' }
   

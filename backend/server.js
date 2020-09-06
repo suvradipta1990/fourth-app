@@ -309,6 +309,15 @@ app.get('/my-custom-url', function(req, res) {
                                res);  // res.json(data); 
     }) 
 
+    app.post('/deleteuser', (req, res) => {
+        console.log('deleteuser REQ') ;
+        console.log(req.body) ;
+        console.log('deleteuser RES') ;
+        console.log(res.body) ;
+        return db.delete_user(req.body.regnno,
+                               res);  // res.json(data); 
+    }) 
+
 
  /****************************Profile Photo Upload *************** */
     var ProfilePhoto = multer.diskStorage({

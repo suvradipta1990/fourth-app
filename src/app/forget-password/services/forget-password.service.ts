@@ -21,6 +21,12 @@ export class ForgetPasswordService {
      
       const user  = {regnno: regnno,password : password};
       return this.http.post<any>(this.urlString + '/updatepassword',user);
-}
+    }
+
+    deleteuser(regnno: string): Observable<any> {
+     
+      const user  = {regnno: regnno};
+      return this.http.post<any>(this.urlString + '/deleteuser',user);
+    }
 
 }

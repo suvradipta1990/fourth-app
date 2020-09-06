@@ -36,6 +36,7 @@ import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.comp
 import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 import { ChangeBackgroundComponent } from './change-background/change-background.component';
 import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
+import { PaymentReportComponent } from './payment-report/payment-report.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { StudentPaymentHistoryComponent } from './student-payment-history/studen
     GetAudRegListComponent,
     ViewRegFormComponent,
     ChangeBackgroundComponent,
-    StudentPaymentHistoryComponent
+    StudentPaymentHistoryComponent,
+    PaymentReportComponent
   ],
   imports: [
     BrowserModule,

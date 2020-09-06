@@ -51,6 +51,24 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/change-background"]);
   }
 
+  upadatePassword(){
+    this.router.navigate(["/forget-password"]);
+  }
+
+  deleteuser(){
+    localStorage.setItem('delete_student',"true");
+    this.router.navigate(["/forget-password"]);
+  }
+
+  createstudent(){
+    localStorage.setItem('create_student',"true");
+    this.router.navigate(["/register"]);
+  }
+
+  paymentreport(){
+    this.router.navigate(["/payment-report"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

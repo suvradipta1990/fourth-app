@@ -12,9 +12,9 @@
             <tr>
                 <td class="row">
                     <h2>STUDENT SECTION</h2>
-                    <button type="submit"  class="registerbtn">Create Student</button>
-                    <button type="submit"  class="registerbtn">Delete Student</button>
-                    <button type="submit"  class="registerbtn">Update Student Password</button>
+                    <button type="submit" (click)="createstudent()"  class="registerbtn">Create Student</button>
+                    <button type="submit" (click)="deleteuser()" class="registerbtn">Delete Student</button>
+                    <button type="submit" (click)="upadatePassword()" class="registerbtn">Update Student Password</button>
                 </td>
             </tr>
         </table>
@@ -22,7 +22,7 @@
             <tr>
                 <td class="row center">
                     <h2>APPROVAL SECTION</h2>
-                    <button type="submit" (click)="getappregpage()" class="registerbtn">Approve Registration</button>
+                    <button type="submit"  (click)="getappregpage()" class="registerbtn">Approve Registration</button>
                     <button type="submit"  (click)="getapppaymentpage()" class="registerbtn">Approve Payment</button>
                     <button type="submit"  class="registerbtn">Approve Profile Update</button>
                 </td>
@@ -44,7 +44,7 @@
                     <br><br>
                     <h2>REPORT SECTION</h2>
                     <button type="submit" (click)="getpaymentdefaulter()" class="registerbtn">Payment Defaulter</button>
-                    <button type="submit"  class="registerbtn">Payment Report</button>
+                    <button type="submit" (click)="paymentreport()" class="registerbtn">Payment Report</button>
                 </td>
             </tr>
         </table>

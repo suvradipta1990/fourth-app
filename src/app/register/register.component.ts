@@ -48,6 +48,7 @@ export class RegisterComponent  {
   public uploadedFiles: Array < File > ;
   public filetype : string="";
   public reciept_attached : boolean=false;
+  public create_student :string="";
 
   private urlString: string = 'http://localhost:3000'; 
 
@@ -60,6 +61,7 @@ export class RegisterComponent  {
      ) { }
 
      ngOnInit() {
+      this.create_student=localStorage.getItem('create_student');
 
      }
 
@@ -113,7 +115,12 @@ export class RegisterComponent  {
           alert(this.regNo);
           this.regNo=this.regNo.substring(this.regNo.lastIndexOf(":")+1)
           this.UploadProfilePhoto(this.regNo);
-          this.router.navigate(["/"]);
+          if (this.create_student=="true"){
+            this.router.navigate(["/pendingapprovals"]);
+          }
+          else{
+             this.router.navigate(["/home"]);
+          }
         }else {
           alert("Registration Failed");
         }

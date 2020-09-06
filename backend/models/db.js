@@ -420,6 +420,22 @@ var login = (user, pwd,res) => {
         });
       }
 
+    var delete_user = (regnno,
+                      res) => {
+            const delete_userQry = 'SELECT  * from master.delete_user ($1)';
+            console.log("db.js console delete_user: ");
+            client.query(delete_userQry,
+                        [regnno],
+                      (err, result, callback) => {
+                      if (err) {
+                        console.log(err);
+                        return null;
+                      }
+                console.log("db.js console delete_user results : "+result.rows);
+                res.status(200).json(result.rows);
+            });
+  }
+
  /*****************************AUDITION MODULE************************************ */
 
 
@@ -634,6 +650,7 @@ module.exports = {'client': client,
                    'get_payment_defaulter' :get_payment_defaulter,
                    'forget_pwd_validation' : forget_pwd_validation,
                    'update_password' : update_password,
+                   'delete_user' : delete_user,
                    'create_audition' : create_audition,
                    'get_upcomming_aud' : get_upcomming_aud,
                    'aud_registration' : aud_registration,
