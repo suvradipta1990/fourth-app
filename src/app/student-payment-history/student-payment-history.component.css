@@ -1,0 +1,209 @@
+input[type=submit] {
+    background-color: #0942bd;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  .logoutbutton {
+    background-color: #0a2d79;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .header-div {
+    background-color: lightblue;    
+    height: 110px;
+  }
+  
+  .header-welcome-div {   
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  .header-logout-div {   
+    text-align: right;
+    justify-content: right;
+  }
+  
+  input[type=button] {
+    /* background-color: #0a2d79; */
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Arial;
+    margin: 5px;
+    width: 120px;
+    border: 1px solid #f6f6f6;
+  }
+  .main-div{
+    height: 300px;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+ }
+
+ .wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px;
+  }
+  .aprvbutton {
+    background-color: #1bb807;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .decbutton {
+    background-color: #b80505;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .div-block{
+      border-top: 2px solid #081352;
+      margin: auto;
+      justify-content: center;
+      width: 100%;
+  }
+  .center{
+      text-align: center;
+  }
+
+  .profile-img{
+    text-align: center;
+  }
+  .profile-img img{
+    width: 90px;
+    height: 120px;
+    position: relative;
+    margin: auto;
+  }
+  .profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+  }
+  .profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  .fixed-height{
+     height: 300px;
+     width: 100%;
+     overflow: scroll;
+     margin: auto;
+     justify-content: center;
+  }
+
+  input[type=submit] {
+    background-color: #0942bd;
+    border: none;
+    color: #f5eded;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: caption;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #0d0d0d;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  input[type=submit]:focus {
+    background-color: rgb(7, 61, 241);
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=submit]:placeholder {
+    color: #2a09e4;
+  }
+
+  .registerbtn {
+    background-color: #0b57e2;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: 2px solid #fff;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  .wrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 70%;
+    height: 450px;
+    padding: 20px;
+    
+  }

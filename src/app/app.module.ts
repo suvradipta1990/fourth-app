@@ -35,6 +35,7 @@ import { UpcommingAuditionsComponent } from './upcomming-auditions/upcomming-aud
 import { GetAudRegListComponent } from './get-aud-reg-list/get-aud-reg-list.component';
 import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 import { ChangeBackgroundComponent } from './change-background/change-background.component';
+import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ChangeBackgroundComponent } from './change-background/change-background
     UpcommingAuditionsComponent,
     GetAudRegListComponent,
     ViewRegFormComponent,
-    ChangeBackgroundComponent
+    ChangeBackgroundComponent,
+    StudentPaymentHistoryComponent
   ],
   imports: [
     BrowserModule,
