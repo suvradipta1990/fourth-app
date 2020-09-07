@@ -14,5 +14,5 @@ export class PaymentDefaulterService {
   getallpaymentdefaulter(no_of_months:number): Observable<PaymentSummary[]> {
     const v_input_param  = {no_of_months: no_of_months}
     return this.http.post<PaymentSummary[]>(this.urlString + '/getallpaymentdefaulter',v_input_param);
- }
+  }
 }

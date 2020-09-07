@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { Teachers } from '../../teachers/teachers';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +25,9 @@ export class PaymentService {
                           regn_no : regn_no,transacslip : transacslip};
                         
           return this.http.post<any>(this.urlString + '/createpayment',user);
+    }
+
+    getallteachers(): Observable<Teachers[]> {          
+    return this.http.get<Teachers[]>(this.urlString + '/getallteachers');
     }
 }

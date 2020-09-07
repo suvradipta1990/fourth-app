@@ -28,6 +28,7 @@ import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 import { ChangeBackgroundComponent } from './change-background/change-background.component';
 import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
 import { PaymentReportComponent } from './payment-report/payment-report.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'change-background', component: ChangeBackgroundComponent,canActivate: [AuthGuard] },
   { path: 'student-payment-history', component: StudentPaymentHistoryComponent,canActivate: [AuthGuard] },
   { path: 'payment-report', component: PaymentReportComponent,canActivate: [AuthGuard] },
+  { path: 'teachers', component: TeachersComponent,canActivate: [AuthGuard] },
   { path: 'view-reg-form', component: ViewRegFormComponent },
   { path: '**', redirectTo: '' }
   

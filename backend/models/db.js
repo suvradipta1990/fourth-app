@@ -629,6 +629,39 @@ var approve_reg_candidate = (id,
                     console.log("db.js console student_payment_history results : "+result);
                     res.status(200).json(result.rows);
                 });
+   }
+
+    var payment_report = (startdate,
+                          enddate,
+                          res) => {
+                const payment_reportQry = 'SELECT * from master.get_payment_report ($1,$2)';
+                console.log("db.js console student_payment_history: ");
+                client.query(payment_reportQry,
+                            [startdate,
+                            enddate],
+                            (err, result, callback) => {
+                            if (err) {
+                            console.log(err);
+                            return null;
+                            }
+                            console.log("db.js console payment_report results : "+result);
+                            res.status(200).json(result.rows);
+                  });
+    }
+
+    var get_teachers = (req,
+                        res) => {
+            const get_teachersQry = 'SELECT * from master.get_all_teachers()';
+            console.log("db.js console student_payment_history: ");
+            client.query(get_teachersQry,
+                        (err, result, callback) => {
+                        if (err) {
+                          console.log(err);
+                          return null;
+                        }
+                    console.log("db.js console get_teachers results : "+result);
+                    res.status(200).json(result.rows);
+            });
   }
 
 module.exports = {'client': client,
@@ -657,5 +690,7 @@ module.exports = {'client': client,
                    'get_audreg_list' : get_audreg_list,
                    'get_aud_form' : get_aud_form,
                    'approve_reg_candidate' : approve_reg_candidate,
-                   'student_payment_history' : student_payment_history
+                   'student_payment_history' : student_payment_history,
+                   'payment_report' : payment_report,
+                   'get_teachers' : get_teachers
                   };

@@ -1,12 +1,12 @@
-<div class="header-div">
+  <div class="header-div">
     <div class="header-welcome-div">
       <h1>Welcome {{this.loggedInUser}}</h1>
     </div>
     <div class="header-logout-div">
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
     </div>
-</div>
-<div class="background-image"> 
+  </div>
+  <div class="background-image"> 
     <div id="id01" class="wrapper">
       <div class="container">
         <label for="startdate"><b>Enter Start Date*</b></label>
@@ -15,65 +15,61 @@
         <input type="date" placeholder="End Date" [(ngModel)]="enddate" name="enddate" id="enddate" required>
         <button type="submit" (click)="getpaymentreport()" class="registerbtn">Get Report</button>
         <br><br>
-        <!-- <label for="radio"><b>Fliter By</b></label><br>
-        <input type="radio" id="selected" name="apprejlist" [(ngModel)]="apprejlist" value="selected">&nbsp;
-        <label for="selected">Selected</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="rejected" name="apprejlist" [(ngModel)]="apprejlist" value="rejected">&nbsp;
-        <label for="rejected">Rejected </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="all" name="apprejlist" [(ngModel)]="apprejlist" value="all">&nbsp;
-        <label for="all">All </label>       -->
       </div>
     </div>
- </div>
- <div class="div-block" *ngFor="let regis of studentPaymentView" >
-    <div class="row">
-        <div class="col-md-6">
-            <label>CANDIDATE PHOTO</label>
+  </div>
+  <div class="center">
+    <div class="div-block">
+      <div class="row table-header">
+        <div class="col-md-2 table-header-border ">
+        <label>NAME</label>
         </div>
-        <div class="profile-img">
-            <img src="{{this.profilePicPath}}{{regis.aud_regn_no}}.jpg" alt="Profile photo"/>
+        <div class="col-md-2 table-header-borde">
+          <label>REGN NO</label>
         </div>
-        <div class="col-md-6">
-            <label>REGISTRATION NO</label>
+        <div class="col-md-2 table-header-borde">
+            <label>PAYMENT DATE</label>
         </div>
-        <div class="col-md-6">
-            <p>{{regis.aud_regn_no}}</p>
+        <div class="col-md-1 table-header-borde">
+          <label>MONTH </label>
         </div>
-        <div class="col-md-6">
-            <label>NAME</label>
+        <div class="col-md-1 table-header-borde">
+            <label>AMOUNT PAID </label>
         </div>
-        <div class="col-md-6">
-            <p>{{regis.firstname}}</p>
+        <div class="col-md-2 table-header-borde">
+            <label>PAY MONTH FROM</label>
         </div>
-        <div class="col-md-6">
-            <label>MOBILE NO</label>
+        <div class="col-md-2 table-header-border">
+            <label>PAY MONTH TO</label>
         </div>
-        <div class="col-md-6">
-            <p>{{regis.mobilenumber}}</p>
+      </div>
+      <div class="row table-data">
+        <div *ngFor="let payment of paysummary" >
+          <div class="row">
+            <div class="col-md-2 table-border">
+              <p>{{payment.first_name}} {{payment.last_name}}</p>
+            </div>
+            <div class="col-md-2 table-border">
+              <p>{{payment.regn_no}}</p>
+            </div>
+            <div class="col-md-2 table-border">
+                <p>{{payment.payment_date.substring(0, 10)}}</p>
+            </div>
+            <div class="col-md-1 table-border">
+              <p>{{payment.month}} {{payment.year}}</p>
+            </div>
+            <div class="col-md-1 table-border">
+                <p>{{payment.pay_amount}}</p>
+            </div>
+            <div class="col-md-2 table-border">
+                <p>{{payment.pay_month_from.substring(0, 10)}}</p>
+            </div>
+            <div class="col-md-2 table-border">
+                <p>{{payment.pay_month_to.substring(0, 10)}}</p>
+            </div> 
+          </div>
         </div>
-        <div class="col-md-6">
-            <label>EMAIL</label>
-        </div>
-        <div class="col-md-6">
-            <p>{{regis.emailid}}</p>
-        </div>
-        <div class="col-md-6">
-            <label>SELECTION STATUS</label>
-        </div>
-        <div class="col-md-6">
-            <p>{{regis.status}}</p>
-        </div>
-        <div class="col-md-6">
-            <label>REGISTRATION FEE RECIEPT </label>
-        </div>
-        <div class="col-md-6">
-            <p>Clicke here to see reciept <a target="_blank"  href="{{this.feeRecieptRootDir}}{{regis.aud_regn_no}}.jpg">AUD-FEE-{{regis.aud_regn_no}}.jpg</a></p>
-        </div>
-        <div class="col-md-6">
-            <label>   </label>
-        </div>
-        <div class="col-md-6">
-            <p>  </p>
-        </div>
+      </div>
     </div>
-</div>
+    <button type="submit" (click)="back()" class="registerbtn">Back</button> 
+  </div> 

@@ -21,6 +21,9 @@ export class PaymentSummary {
         public actual_fees_per_month:string,
         public duration:string,
         public payment_due_for:string,
-        public total_amount_due:number){}
+        public total_amount_due:number,
+        public month:string,
+        public year:number,
+        public day:number){}
   }
   export * from './PaymentSummary';

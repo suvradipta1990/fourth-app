@@ -145,7 +145,7 @@ export class HomeComponent implements OnInit {
             console.log(this.paysummary);
           }
         });
-      }
+    }
 
       getAddress(profile_id: string){
         this.profileService.getAddress(profile_id)

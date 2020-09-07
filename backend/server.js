@@ -472,6 +472,24 @@ app.post('/student-payment-history', (req, res) => {
     return db.student_payment_history(req.body.regno, res);  // res.json(data);
 })
 
+app.post('/getpaymentreport', (req, res) => {
+    console.log('payment-report REQ') ;
+    console.log(req.body.regno) ;
+    console.log('payment-report RES') ;
+    console.log(res.body) ;
+    return db.payment_report(req.body.startdate,
+                             req.body.enddate,
+                             res);  // res.json(data);
+})
+
+app.get('/getallteachers', (req, res) => {
+    console.log('payment-report REQ') ;
+    console.log(req) ;
+    console.log('payment-report RES') ;
+    console.log(res.body) ;
+    return db.get_teachers(req,res);  // res.json(data);
+})
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

@@ -15,6 +15,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AgGridModule } from 'ag-grid-angular';
+
 import { FileUploadModule } from 'ng2-file-upload';
 import { ApproveregComponent } from './approvereg/approvereg.component';
 import { ApprovepaymentComponent } from './approvepayment/approvepayment.component';
@@ -37,6 +40,7 @@ import { ViewRegFormComponent } from './view-reg-form/view-reg-form.component';
 import { ChangeBackgroundComponent } from './change-background/change-background.component';
 import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
 import { PaymentReportComponent } from './payment-report/payment-report.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 
 @NgModule({
@@ -66,7 +70,8 @@ import { PaymentReportComponent } from './payment-report/payment-report.componen
     ViewRegFormComponent,
     ChangeBackgroundComponent,
     StudentPaymentHistoryComponent,
-    PaymentReportComponent
+    PaymentReportComponent,
+    TeachersComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +83,8 @@ import { PaymentReportComponent } from './payment-report/payment-report.componen
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatGridListModule,
+    AgGridModule.withComponents([]),
     FileUploadModule
   ],
   providers: [AuthGuard],

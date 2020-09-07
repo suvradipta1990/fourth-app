@@ -27,24 +27,17 @@
         
           <br><br>
           <label for="radio"><b>LALITKALA'S TEACHER NAME*</b></label><br>
-          <input type="radio" id="jayantasarkar" name="teacher" [(ngModel)]="teacher" value="SRI JAYANTA SARKAR">&nbsp;
-          <label for="jayantasarkar">SRI JAYANTA SARKAR</label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" id="simaantasarkar" name="teacher" [(ngModel)]="teacher" value="SRI SIMAANTA SARKAR">&nbsp;
-          <label for="simaantasarkar">SRI SIMAANTA SARKAR </label>&nbsp;&nbsp;&nbsp;<br>
-          <input type="radio" id="mithudasgupta" name="teacher" [(ngModel)]="teacher" value="SMT MITHU DASGUPTA">&nbsp;
-          <label for="mithudasgupta">SMT MITHU DASGUPTA </label>&nbsp;&nbsp;&nbsp;
-          <input type="radio" id="bhaswatisenroy" name="teacher" [(ngModel)]="teacher" value="SMT BHASWATI SENGUPTA ROY">&nbsp;
-          <label for="bhaswatisenroy">SMT BHASWATI SENGUPTA ROY </label>&nbsp;&nbsp;&nbsp;<br>
-          <input type="radio" id="trishitaganguly" name="teacher" [(ngModel)]="teacher" value="MISS TRISHITA GANGULY">&nbsp;
-          <label for="trishitaganguly">MISS TRISHITA GANGULY</label>
-          
+          <div class="div-block" *ngFor="let teachers of teachers" > 
+            <input type="radio" id="teacher" name="teacher" [(ngModel)]="teacher" value={{teachers.teacher_name}}>&nbsp;
+            <label for="teacher">{{teachers.teacher_name}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>  
           <br><br>
           <label for="paymonthfrom"><b>Payment Month From*(select 1st day of month)</b></label>
           <input type="date" placeholder="select 1st day of month " [(ngModel)]="paymonthfrom" name="paymonthfrom" id="paymonthfrom" required>
         
           <br><br>
           <label for="paymonthto"><b>Payment Month To*(Select last day of month)</b></label>
-          <input type="date" placeholder="Select last day of month" [(ngModel)]="paymonthto" name="paymonthto" id="paymonthto" required>
+          <input type="date" (change)="datechange($event)" placeholder="Select last day of month" [(ngModel)]="paymonthto" name="paymonthto" id="paymonthto" required>
         
           <br><br>
           <label for="permonthfees"><b>Fees Per Month*</b></label>

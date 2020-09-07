@@ -129,26 +129,26 @@ export class EditprofileComponent implements OnInit {
     updateProfile(){
 
           this.editprofileService.updateProfile(this.profile_id,this.regno,this.oldregnno,
-            this.firstname,this.middlename,this.lastname,this.dateofbirth,
-            this.mobilenumber,
-            this.fathersname,this.fathersnumber,
-            this. mothersname,this.mothersnumber,
-            this.emailid,this.dateofjoin,
-            this.fathersoccupation,this.mothersoccupation,
-            this.gender,this.aadhaar,this.subject,
-            this.country,this.addressline1,this.addressline2,
-            this.district,this.city,this.pincode,this.address_type)
-          .subscribe((data) => {
-          if(data != null ) {
-          console.log('update profile result');
-          this.result = data[0].update_profile;
-          console.log(this.result);
-          alert(this.result); 
-          this.router.navigate(['/home']);
-          }else {
-          console.log(this.result);
-          }
-          });
+                                                this.firstname,this.middlename,this.lastname,this.dateofbirth,
+                                                this.mobilenumber,
+                                                this.fathersname,this.fathersnumber,
+                                                this.mothersname,this.mothersnumber,
+                                                this.emailid,this.dateofjoin,
+                                                this.fathersoccupation,this.mothersoccupation,
+                                                this.gender,this.aadhaar,this.subject,
+                                                this.country,this.addressline1,this.addressline2,
+                                                this.district,this.city,this.pincode,this.address_type)
+                              .subscribe((data) => {
+                              if(data != null ) {
+                              console.log('update profile result');
+                              this.result = data[0].update_profile;
+                              console.log(this.result);
+                              alert(this.result); 
+                              this.router.navigate(['/home']);
+                              }else {
+                              console.log(this.result);
+                              }
+            });
     }
 
     logout(){

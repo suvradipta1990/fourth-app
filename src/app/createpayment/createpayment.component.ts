@@ -9,6 +9,8 @@ import {Address} from "../home/Address";
 import { LoginComponent } from '../login/login.component';
 import { PaymentService } from "./services/payment.service";
 import { HttpClient } from '@angular/common/http';
+import { TeachersComponent } from '../teachers/teachers.component';
+import { Teachers } from '../teachers/teachers';
 
 export * from './createpayment.component';
 
@@ -33,7 +35,10 @@ export class CreatepaymentComponent implements OnInit {
   public payamount: number;
   public regn_no: string="";
   public create_payment_result: string;
-  public  paysummary: PaymentSummary[];
+  public paysummary: PaymentSummary[];
+  public teachers :Teachers[];
+  public first_date :string="";
+  public last_date :string="";
 
   public uploadedFiles: Array < File > ;
   public filetype : string="";
@@ -55,6 +60,13 @@ export class CreatepaymentComponent implements OnInit {
     console.log(this.isadmin);
     console.log("fees book profile_id: " +this.profile_id);
     this.getPaymentSummary(this.profile_id);
+    this.getallteachers();
+    if(this.isadmin=="true"){
+       this.regn_no="";
+    }
+    else{
+      this.regn_no =this.loggedInUser;
+    }
   }
 
   fileChange(element:any) {
@@ -122,6 +134,19 @@ export class CreatepaymentComponent implements OnInit {
       });
     }
 
+    getallteachers(){
+      this.paymentService.getallteachers()
+      .subscribe((data) => {
+        if(data != null ) {
+          console.log('getallteachers for fees book');
+           this.teachers=data;
+           console.log(this.teachers);
+          }else {
+            console.log(this.teachers);
+          }
+        });
+      }
+
     UploadFeeReciept(regnno:string,paymonthfrom :string){
       var filename: string=regnno+'-'+paymonthfrom.substring(0,10);
       
@@ -145,6 +170,17 @@ export class CreatepaymentComponent implements OnInit {
     alert ("File Name Recieve: "+filetype);
       this.filetype=filetype.substring(filetype.lastIndexOf("."))
     }
+
+    datechange(element:any) { 
+      var sdate = new Date(this.paymonthfrom);      
+      var firstDay =  
+          new Date(sdate.getFullYear(), sdate.getMonth(), 1); 
+      var ldate = new Date(this.paymonthto);               
+      var lastDay =  
+         new Date(ldate.getFullYear(), ldate.getMonth() + 1, 0);  
+      console.log("1st day :"+firstDay);
+      console.log("last day :"+lastDay);
+  } 
 
 
   logout(){
