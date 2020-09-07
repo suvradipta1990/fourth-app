@@ -20,7 +20,7 @@ export class ChangeBackgroundComponent implements OnInit {
   public filetype : string="";
   public reciept_attached : boolean=false;
 
-  private urlString: string = 'http://localhost:3000'; 
+  private urlString: string = 'http://192.168.0.14:3000'; 
 
   constructor(private router: Router,
              public authService: AuthService,

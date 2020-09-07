@@ -73,7 +73,7 @@ export class PreAuditionRegistrationComponent implements OnInit {
   public reciept_attached : boolean=false;
   public photo_attached :boolean=false;
 
-  private urlString: string = 'http://localhost:3000'; 
+  private urlString: string = 'http://192.168.0.14:3000'; 
 
   constructor(private router: Router, 
     private preAuditionRegistrationService: PreAuditionRegistrationService,

@@ -12,7 +12,7 @@
 
 const { Client } = require('pg');
 // const login = require('./users/login');
-const connectionString = 'postgres://postgres:password@localhost:5433/LALITKALA';
+const connectionString = 'postgres://postgres:password@192.168.0.14:5433/LALITKALA';
 const client = new Client({
     connectionString: connectionString
 });

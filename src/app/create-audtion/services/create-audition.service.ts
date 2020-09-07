@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CreateAuditionService {
 
-  private urlString: string = 'http://localhost:3000';
+  private urlString: string = 'http://192.168.0.14:3000';
 
   constructor(private http: HttpClient) { }
 

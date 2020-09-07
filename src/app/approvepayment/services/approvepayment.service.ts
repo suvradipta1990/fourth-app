@@ -8,7 +8,7 @@ import {Approvepayment} from '../Approvepayment';
 })
 export class ApprovepaymentService {
 
-  private urlString: string = 'http://localhost:3000';
+  private urlString: string = 'http://192.168.0.14:3000';
   constructor(private http: HttpClient) { }
 
   getallpendingpayment(): Observable<Approvepayment[]> {
