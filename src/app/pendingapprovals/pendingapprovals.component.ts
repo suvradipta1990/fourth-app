@@ -52,6 +52,7 @@ export class PendingapprovalsComponent implements OnInit {
   }
 
   upadatePassword(){
+    localStorage.setItem('delete_student',"false");
     this.router.navigate(["/forget-password"]);
   }
 

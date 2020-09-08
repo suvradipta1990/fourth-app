@@ -11,6 +11,8 @@
   width: 60%;
   min-height: 100px;
   padding: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 .logoutbutton {
     background-color: #1b7ceb;

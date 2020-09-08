@@ -14,8 +14,8 @@ export class PaymentSummary {
         public email:string,
         public payment_date:string,
         public pay_amount:string,
-        public pay_month_from:string,
-        public pay_month_to:string,
+        public pay_month_from:Date,
+        public pay_month_to:Date,
         public payment_duration:string,
         public fees_payble_per_month:string,
         public actual_fees_per_month:string,
@@ -24,6 +24,8 @@ export class PaymentSummary {
         public total_amount_due:number,
         public month:string,
         public year:number,
-        public day:number){}
+        public day:number,
+        public paid_months :string,
+        public total_amount_paid :number){}
   }
   export * from './PaymentSummary';

@@ -23,14 +23,6 @@ export class PaymentReportComponent implements OnInit {
   public startdate :Date;
   public enddate :Date;
 
-  columnDefs = [
-    {headerName: 'Name', field: 'first_name' },
-    {headerName: 'Regn No', field: 'regn_no' },
-    {headerName: 'Payment Date', field: 'payment_date' },
-    {headerName: 'Amount Paid', field: 'pay_amount' },
-    {headerName: 'From', field: 'pay_month_from' },
-    {headerName: 'Till', field: 'pay_month_to' },
-];
 
   constructor(private router: Router,
               public authService: AuthService,

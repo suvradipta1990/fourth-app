@@ -30,6 +30,7 @@ export class ForgetPasswordComponent implements OnInit {
     this.delete_student=localStorage.getItem('delete_student');
     if  (this.is_admin=="true"){
       this.result =true;
+
      }
      if  (this.delete_student=="true"){
       this.is_delete =true;
@@ -54,7 +55,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
 
   updatepassword() : void {
-
+   
     if (this.password==this.cpassword){
           this.forgetPasswordService.updatepassword(this.regnno, this.password)
         .subscribe((data) => {

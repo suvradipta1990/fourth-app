@@ -19,57 +19,45 @@
     </div>
   </div>
   <div class="center">
-    <div class="div-block">
-      <div class="row table-header">
-        <div class="col-md-2 table-header-border ">
-        <label>NAME</label>
+    <div>
+      <div class="u-clearfix u-sheet u-valign-middle">
+        <table class="u-table-entity u-table-entity-1">    
+          <colgroup>
+            <col width="150px">
+            <col width="140px">
+            <col width="150px">
+            <col width="140px">
+            <col width="140px">
+            <col width="160px">
+          </colgroup>
+          <thead class="u-black table-header">
+            <tr style="margin: auto;">
+              <th class="u-border-2 u-border-black">NAME</th>
+              <th class="u-border-2 u-border-black">REGN NO</th>
+              <th class="u-border-2 u-border-black">PAYMENT DATE</th>
+              <th class="u-border-2 u-border-black">MONTH</th>
+              <th class="u-border-2 u-border-black">AMOUNT PAID </th>
+              <th class="u-border-2 u-border-black">TOTAL AMT PAID</th>
+              <!-- <th class="u-border-2 u-border-black">PAY MONTH TO</th> -->
+            </tr>
+          </thead>
+      </table>
+        <div class="u-table u-table-responsive u-table-1  div-block">
+          <table class="u-table-entity u-table-entity-1">
+              <tbody class="u-grey-70 div-block">
+                <tr *ngFor="let payment of paysummary">
+                  <td class="u-border-1 u-border-grey-50">{{payment.first_name}} {{payment.last_name}}</td>
+                  <td class="u-border-1 u-border-grey-50">{{payment.regn_no}}</td>
+                  <td class="u-border-1 u-border-grey-50">{{payment.payment_date.substring(0, 10)}}</td>
+                  <td class="u-border-1 u-border-grey-50">{{payment.paid_months}}</td>
+                  <td class="u-border-1 u-border-grey-50">{{payment.pay_amount}}</td>
+                  <td class="u-border-1 u-border-grey-50">{{payment.total_amount_paid}}</td>
+                  <!-- <td class="u-border-1 u-border-grey-50">{{payment.pay_month_to.substring(0, 10)}}</td> -->
+                </tr>
+              </tbody> 
+          </table>
         </div>
-        <div class="col-md-2 table-header-borde">
-          <label>REGN NO</label>
-        </div>
-        <div class="col-md-2 table-header-borde">
-            <label>PAYMENT DATE</label>
-        </div>
-        <div class="col-md-1 table-header-borde">
-          <label>MONTH </label>
-        </div>
-        <div class="col-md-1 table-header-borde">
-            <label>AMOUNT PAID </label>
-        </div>
-        <div class="col-md-2 table-header-borde">
-            <label>PAY MONTH FROM</label>
-        </div>
-        <div class="col-md-2 table-header-border">
-            <label>PAY MONTH TO</label>
-        </div>
-      </div>
-      <div class="row table-data">
-        <div *ngFor="let payment of paysummary" >
-          <div class="row">
-            <div class="col-md-2 table-border">
-              <p>{{payment.first_name}} {{payment.last_name}}</p>
-            </div>
-            <div class="col-md-2 table-border">
-              <p>{{payment.regn_no}}</p>
-            </div>
-            <div class="col-md-2 table-border">
-                <p>{{payment.payment_date.substring(0, 10)}}</p>
-            </div>
-            <div class="col-md-1 table-border">
-              <p>{{payment.month}} {{payment.year}}</p>
-            </div>
-            <div class="col-md-1 table-border">
-                <p>{{payment.pay_amount}}</p>
-            </div>
-            <div class="col-md-2 table-border">
-                <p>{{payment.pay_month_from.substring(0, 10)}}</p>
-            </div>
-            <div class="col-md-2 table-border">
-                <p>{{payment.pay_month_to.substring(0, 10)}}</p>
-            </div> 
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>  
+    </div>  
     <button type="submit" (click)="back()" class="registerbtn">Back</button> 
   </div> 

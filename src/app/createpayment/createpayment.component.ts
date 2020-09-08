@@ -11,6 +11,8 @@ import { PaymentService } from "./services/payment.service";
 import { HttpClient } from '@angular/common/http';
 import { TeachersComponent } from '../teachers/teachers.component';
 import { Teachers } from '../teachers/teachers';
+import { formatDate, DatePipe } from '@angular/common';
+
 
 export * from './createpayment.component';
 
@@ -29,8 +31,8 @@ export class CreatepaymentComponent implements OnInit {
   public transacslip: string="";
   public transacid: string="";
   public teacher: string="";
-  public paymonthfrom: string="";
-  public paymonthto: string="";
+  public paymonthfrom: Date;
+  public paymonthto: Date;
   public permonthfees: string="";
   public payamount: number;
   public regn_no: string="";
@@ -77,7 +79,7 @@ export class CreatepaymentComponent implements OnInit {
   createPayment(){
       if(this.transacid ==null ||
         this.teacher=="" ||  this.teacher==null ||
-        this.paymonthfrom=="" || this.paymonthfrom==null ||
+        this.paymonthfrom==null ||
         this.paymonthto==null ||
         this.payamount==null ){
           alert("Please Fill all the details");
@@ -101,7 +103,7 @@ export class CreatepaymentComponent implements OnInit {
                               //this.openDialog(data);
                               alert(this.create_payment_result);
                               if(this.create_payment_result.lastIndexOf("SUCESSFULL")>0){
-                                this.UploadFeeReciept(this.regn_no,this.paymonthfrom);
+                                this.UploadFeeReciept(this.regn_no,this.paymonthfrom.toString());
                                 this.ngOnInit();
                                 this.router.navigate(["/createpayment"]);
                               }
@@ -154,7 +156,7 @@ export class CreatepaymentComponent implements OnInit {
          for (var i = 0; i < this.uploadedFiles.length; i++) {
             var filetype=this.uploadedFiles[i].name;
             this.checkFileType(filetype);
-            filename=filename+this.filetype;
+            filename=filename+".jpg";
            //  alert(filename); 
              formData.append("uploads", this.uploadedFiles[i], filename);
           }
@@ -173,13 +175,16 @@ export class CreatepaymentComponent implements OnInit {
 
     datechange(element:any) { 
       var sdate = new Date(this.paymonthfrom);      
-      var firstDay =  
+       var sday =  
           new Date(sdate.getFullYear(), sdate.getMonth(), 1); 
       var ldate = new Date(this.paymonthto);               
       var lastDay =  
          new Date(ldate.getFullYear(), ldate.getMonth() + 1, 0);  
-      console.log("1st day :"+firstDay);
-      console.log("last day :"+lastDay);
+      console.log("sdate :"+sday.toDateString());
+      console.log("lastDay :"+lastDay.toDateString());
+
+
+
   } 
 
 

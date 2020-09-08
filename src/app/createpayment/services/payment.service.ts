@@ -13,7 +13,7 @@ export class PaymentService {
 
   createPayment(profile_id: string,officename: string,
                 transacid: string,teacher: string,
-                paymonthfrom: string,paymonthto: string,
+                paymonthfrom: Date,paymonthto: Date,
                 payamount: number,isadmin:string,
                 regn_no:string,transacslip: string): Observable<any> {
           console.log(profile_id);
