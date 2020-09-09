@@ -55,6 +55,10 @@ export class UpdateProfilePhotoComponent implements OnInit {
             })
   }
 
+  back(){
+    this.router.navigate(["/home"]);
+  }
+
   logout(){
     localStorage.setItem('isLoggedIn', "false");
     localStorage.removeItem('user_id');

@@ -12,12 +12,14 @@
       <p><b>Upload Your Profile Photo</b></p>
       <div class="container">
  
-        <label for="regnno"><b>Enter Registration No*</b></label>
-        <input type="text" placeholder="Enter Registration No" [(ngModel)]="regnno" name="regnno" id="regnno" required>
+        <label for="regnno"><b>Enter Registration No*</b></label><br>
+        <input type="text" placeholder="Enter Registration No" [(ngModel)]="regnno" name="regnno" id="regnno" readonly>
         <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">
             <input type="file" (change)="fileChange($event)" placeholder="Upload Your Photo" [(ngModel)]="photo" name="photo" id="photo" aria-describedby="inputGroupFileAddon01" required>
         </form>
         <button type="submit" (click)="UploadProfilePhoto(this.regnno)" class="registerbtn">Upload Photo</button>
+        <button type="submit" (click)="back()" class="registerbtn">Back</button>
+      
       </div>
     </div>
   </div>
