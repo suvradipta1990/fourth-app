@@ -25,7 +25,7 @@ export class PaymentSummary {
         public month:string,
         public year:number,
         public day:number,
-        public paid_months :string,
+        public month_year :string,
         public total_amount_paid :number){}
   }
   export * from './PaymentSummary';

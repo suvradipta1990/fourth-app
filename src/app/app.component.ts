@@ -8,9 +8,18 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   title = 'fourth-app';
-
+  public loggedInUser :string="";
+  public is_loggedIn :boolean=false;
   constructor(private titleService:Title) {
     this.titleService.setTitle("Lalitkala");
+  }
+
+  ngOnInit(): void {
+
+    this.loggedInUser = localStorage.getItem('user_name');
+    if (this.loggedInUser!=""){
+       this.is_loggedIn=true;
+    }
   }
 }
  

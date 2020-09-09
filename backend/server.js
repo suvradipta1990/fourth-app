@@ -466,10 +466,12 @@ app.post('/uploadBackgroundPic', BackgroundPhotoupload.single('uploads'), functi
 
 app.post('/student-payment-history', (req, res) => {
     console.log('student-payment-history REQ') ;
-    console.log(req.body.regno) ;
+    console.log(req.body) ;
     console.log('student-payment-history RES') ;
     console.log(res.body) ;
-    return db.student_payment_history(req.body.regno, res);  // res.json(data);
+    return db.student_payment_history(req.body.startdate,
+                                     req.body.enddate,
+                                     req.body.regno, res);  // res.json(data);
 })
 
 app.post('/getpaymentreport', (req, res) => {

@@ -11,8 +11,8 @@ export class StudentPaymentHistoryService {
   private urlString: string = 'http://192.168.0.14:3000';
   constructor(private http: HttpClient) { }
 
-  getallpayment(regno :string): Observable<StudentPaymentView[]> {
-    const v_input_param  = {regno: regno};
+  getallpayment(startdate :Date,enddate :Date,regno :string): Observable<StudentPaymentView[]> {
+    const v_input_param  = {startdate: startdate,enddate: enddate,regno: regno};
     return this.http.post<StudentPaymentView[]>(this.urlString + '/student-payment-history',v_input_param);
   }
 }

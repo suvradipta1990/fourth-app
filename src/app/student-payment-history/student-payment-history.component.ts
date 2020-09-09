@@ -15,6 +15,10 @@ export class StudentPaymentHistoryComponent implements OnInit {
   public isadmin :string="false";
   public count :number=0;
   public  studentPaymentView: StudentPaymentView[];
+  public result :string;
+  public startdate :Date;
+  public enddate :Date;
+
 
   constructor(private router: Router,
               public authService: AuthService,
@@ -22,14 +26,14 @@ export class StudentPaymentHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
-    this.getallpayment(this.loggedInUser);
+    this.getallpayment(this.startdate,this.enddate,this.loggedInUser);
   }
 
-  getallpayment(regno :string){
-    this.studentPaymentHistoryService.getallpayment(regno)
+  getallpayment(startdate :Date,enddate :Date,regno :string){
+    this.studentPaymentHistoryService.getallpayment(startdate,enddate,regno)
     .subscribe((data) => {
       if(data != null ) {
-        console.log('getallpendingpayment');
+        console.log('studentPaymentView');
          this.studentPaymentView=data;
          this.count = this.studentPaymentView.length;
           console.log(this.studentPaymentView);
@@ -38,6 +42,23 @@ export class StudentPaymentHistoryComponent implements OnInit {
         }
       });
     }
+
+    getpaymentreport(){
+      console.log(this.startdate);
+      console.log(this.enddate);
+      console.log(this.loggedInUser);
+      this.studentPaymentHistoryService.getallpayment(this.startdate,this.enddate,this.loggedInUser)
+      .subscribe((data) => {
+        if(data != null ) {
+          console.log('getallpendingpayment');
+           this.studentPaymentView=data;
+           this.count = this.studentPaymentView.length;
+            console.log(this.studentPaymentView);
+          }else {
+            console.log(this.studentPaymentView);
+          }
+        });
+      }
 
     gotohome(){
       this.router.navigate(["/home"]);

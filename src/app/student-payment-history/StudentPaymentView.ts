@@ -17,6 +17,7 @@ export class StudentPaymentView {
         public transaction_id  :string,
         public teachers_name  :string,
         public status :string,
+        public month_year  :string,
         public remarks :string){}
   }
   export * from './StudentPaymentView';

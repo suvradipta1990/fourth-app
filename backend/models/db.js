@@ -615,12 +615,19 @@ var approve_reg_candidate = (id,
   }
 
 
-  var student_payment_history = (regnno,
-                              res) => {
-        const student_payment_historyQry = 'SELECT * from master.student_payment_view where regn_no=$1 order by payment_date desc';
+  var student_payment_history = (startdate,
+                                 enddate,
+                                 regnno,
+                                 res) => {
+        console.log(startdate);
+        console.log(enddate);
+        console.log(regnno);
+        const student_payment_historyQry = 'SELECT * from master.get_student_payment_history($1,$2,$3)';
         console.log("db.js console student_payment_history: ");
         client.query(student_payment_historyQry,
-                    [regnno],
+                    [startdate,
+                      enddate,
+                      regnno],
                     (err, result, callback) => {
                       if (err) {
                         console.log(err);

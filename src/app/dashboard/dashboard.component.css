@@ -325,7 +325,7 @@
   }
 
   .logo{
-    background-image: url("../../assets/images/backgroud-images/lalitkala_logo.jpg");
+    /* background-image: url("../../assets/images/backgroud-images/lalitkala_logo.jpg"); */
     width: 150px;
     height: 150px;
     border: blue;
