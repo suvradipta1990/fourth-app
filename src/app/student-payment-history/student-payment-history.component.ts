@@ -18,7 +18,7 @@ export class StudentPaymentHistoryComponent implements OnInit {
   public result :string;
   public startdate :Date;
   public enddate :Date;
-
+  public feeRecieptRootDir ="assets/images/fees_transaction_image/";
 
   constructor(private router: Router,
               public authService: AuthService,

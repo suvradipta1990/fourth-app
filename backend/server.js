@@ -492,6 +492,44 @@ app.get('/getallteachers', (req, res) => {
     return db.get_teachers(req,res);  // res.json(data);
 })
 
+app.post('/createteacher', (req, res) => {
+    console.log('payment-report REQ') ;
+    console.log(req) ;
+    console.log('payment-report RES') ;
+    console.log(res.body) ;
+    return db.create_teacher(req.body.firstname, 
+                            req.body.speciality, 
+                            req.body.mobilenumber, 
+                            req.body.emailid, 
+                            req.body.dateofbirth, 
+                            req.body.gender,
+                            req.body.addressline1,
+                            req.body.addressline2,
+                            req.body.district,
+                            req.body.city,
+                            req.body.pincode,
+                            req.body.subject,
+                            res);  // res.json(data);
+})
+
+/****************************Teacher Photo Upload *************** */
+var ProfilePhoto = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, myImagePath + 'teachers')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
+});
+const TeacherPicupload = multer({ storage: ProfilePhoto });
+
+app.post('/uploadTeacherPic', TeacherPicupload.single('uploads'), function(req,res) {
+    console.log('storage location is ', req.hostname +'/' + req.file.path);
+    return res.send(req.file);
+}) 
+
+/************************************************************ */   
+
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

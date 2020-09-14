@@ -23,50 +23,44 @@
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-
-
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" />
 </head>
 <div class="navbar">
-  <a>
+  <a href="/">
    <img src="../assets/images/backgroud-images/toolbar_logo.jpg" alt="lalitkala logo">
   </a>
-  <a href="/">DASH BOARD</a>
   <a href="home">HOME</a>
   <a href="createpayment">PAYMENTS</a>
-  <a href="students">STUDENT DETAILS</a>
+  <!-- <a href="students">STUDENT DETAILS</a> -->
   <a href="pendingapprovals">ADMIN PANEL</a>
-  <a href="#">GALLERY</a>
-  <a href="#">ABOUT US</a>
-  <!-- <div class="dropdown">
-    <button class="dropbtn">ADMIN SECTION 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-     <a href="students">STUDENT DETAILS</a>
-     <a href="pendingapprovals">ADMIN PANEL</a>
-    </div>
-  </div>  -->
-  <a aria-label="Follow us on Facebook" target="_blank" rel="_next" href="https://www.facebook.com/Lalitkala4u/" title="Facebook">
-       <img src="https://img.icons8.com/metro/30/000000/facebook-new--v2.png"/>
-  </a>
-  <a aria-label="Subscribe us on Youtube Channel" target="_blank" rel="_next" href="https://www.youtube.com/channel/UCo1qEAH-63jMYEuNMF94wvQ" title="Youtube">
-    <img src="https://img.icons8.com/ios-filled/30/000000/youtube-squared.png"/>
-  </a>
+<a href="upcomming-auditions">UPCOMMING EVENTS</a>
+   <a href="gallery">GALLERY</a>
+  <a href="aboutus">ABOUT US</a> 
+  
+    <a aria-label="Follow us on Facebook" target="_blank" rel="_next" href="https://www.facebook.com/Lalitkala4u/" title="Facebook">
+      <img src="https://img.icons8.com/metro/30/000000/facebook-new--v2.png"/>
+    </a>
+    <a aria-label="Subscribe us on Youtube Channel" target="_blank" rel="_next" href="https://www.youtube.com/channel/UCo1qEAH-63jMYEuNMF94wvQ" title="Youtube">
+      <img src="https://img.icons8.com/ios-filled/30/000000/youtube-squared.png"/>
+    </a>
+  <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+  <!-- <ng-container
+     *ngIf="this.is_loggedIn=='true'; then YES; else NO">
+  </ng-container>
+  <ng-template #YES>
+    <a (click)="logout()">LOGOUT</a>
+  </ng-template>
+  <ng-template #NO>
+    <a href="login">LOGIN</a>
+  </ng-template> -->
 </div>
-<!-- <div class="u-custom-menu u-nav-container-collapse">
-  <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-    <div class="u-menu-close"></div>
-      <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-        <li class="u-nav-item"><a class="u-button-style u-nav-link" href='login'>Login</a></li>
-        <li class="u-nav-item"><a class="u-button-style u-nav-link" href='register'>REGISTER<br>(Post Audition)</a></li>
-        <li class="u-nav-item"><a class="u-button-style u-nav-link" href='upcomming-auditions'>REGISTER<br>(Pre Audition)</a></li>
-      </ul>
-    </div>
-    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-</div> -->
+ 
 <div>
   <router-outlet></router-outlet>
 </div>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->

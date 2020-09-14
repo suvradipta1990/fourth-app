@@ -70,6 +70,18 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/payment-report"]);
   }
 
+  searchstudent(){
+    this.router.navigate(["/students"]);
+  }
+
+  createteacher(){
+    this.router.navigate(["/teachers"]);
+  }
+
+  createclass(){
+    this.router.navigate(["/create-class"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

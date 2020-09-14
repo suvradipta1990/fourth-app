@@ -8,6 +8,7 @@ import {PaymentSummary} from "./PaymentSummary";
 import {Address} from "./Address";
 import { LoginComponent } from '../login/login.component';
 import {AddhistoryService} from '../addhistory/services/addhistory.service';
+import { AppComponent } from '../app.component';
 
 @Component({ 
   selector: 'app-home',

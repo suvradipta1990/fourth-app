@@ -25,12 +25,19 @@
           <label for="transacid"><b>Transaction Id/Reference Id*</b></label>
           <input type="text" placeholder="Enter Transaction Id" [(ngModel)]="transacid" name="transacid" id="transacid" required>
         
-          <br><br>
+          <!-- <br><br>
           <label for="radio"><b>LALITKALA'S TEACHER NAME*</b></label><br>
           <div class="div-block" *ngFor="let teachers of teachers" > 
-            <input type="radio" id="teacher" name="teacher" [(ngModel)]="teacher" value={{teachers.teacher_name}}>&nbsp;
-            <label for="teacher">{{teachers.teacher_name}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>  
+              <input type="radio" id="teacher" name="teacher" [(ngModel)]="teacher" value={{teachers.teacher_name}}>&nbsp;
+              <label for="teacher">{{teachers.teacher_name}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>   -->
+
+          <br><br>
+            <label for="teacher">Teacher:</label> 
+              <select #mySelect class="form-control" id="teacher" [(ngModel)]="teacher" (change)='onOptionsSelected(mySelect.value)'>        
+                  <option *ngFor="let teachers of teachers" value={{teachers.teacher_name}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
+              </select>
+          
           <br><br>
           <label for="paymonthfrom"><b>Payment Month From*(select 1st day of month)</b></label>
           <input type="date" placeholder="select 1st day of month " [(ngModel)]="paymonthfrom" name="paymonthfrom" id="paymonthfrom" required>
@@ -50,7 +57,7 @@
           <br><br>
           <label for="transacslip"><b>Transaction Slip*</b></label>
           <form action="/uploadFeeReciept" method="post" enctype="multipart/form-data">
-            <input type="file" (change)="fileChange($event)" placeholder="select your file" [(ngModel)]="transacslip" name="transacslip" id="transacslip" aria-describedby="inputGroupFileAddon01" required>
+            <input type="file" (change)="fileChange($event)" placeholder="select your file (Only Image File)" [(ngModel)]="transacslip" name="transacslip" id="transacslip" aria-describedby="inputGroupFileAddon01" required>
           </form>
           
           <br><br>

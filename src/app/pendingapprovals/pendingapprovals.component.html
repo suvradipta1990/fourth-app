@@ -42,9 +42,11 @@
             <tr>
                 <td class="row">
                     <br><br>
-                    <h2>REPORT SECTION</h2>
+                    <h2>REPORT/SEARCH SECTION</h2>
                     <button type="submit" (click)="getpaymentdefaulter()" class="registerbtn">Payment Defaulter</button>
                     <button type="submit" (click)="paymentreport()" class="registerbtn">Payment Report</button>
+                    <button type="submit" (click)="searchstudent()" class="registerbtn">Search Student</button>
+                    
                 </td>
             </tr>
         </table>
@@ -53,7 +55,16 @@
                 <td class="row">
                     <h2>DISPLAY SECTION</h2>
                     <button type="submit" (click)="changeBackground()" class="registerbtn">Update Background/Events</button>
-                    <!-- <button type="submit"  class="registerbtn">Update Event</button> -->
+                    <button type="submit" (click)="changeBackground()"  class="registerbtn">Update Gallery</button>
+                </td>
+            </tr>
+        </table>
+        <table class="col-md-4">
+            <tr>
+                <td class="row">
+                    <h2>CLASS/TEACHER SECTION</h2>
+                    <button type="submit" (click)="createteacher()" class="registerbtn">Create/Delete Teacher</button>
+                    <button type="submit" (click)="createclass()"  class="registerbtn">Create/Delete Class</button>
                 </td>
             </tr>
         </table>

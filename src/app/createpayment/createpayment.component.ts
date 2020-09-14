@@ -74,8 +74,11 @@ export class CreatepaymentComponent implements OnInit {
   fileChange(element:any) {
     this.uploadedFiles = element.target.files;
     this.reciept_attached=true;
-}
+  }
 
+  onOptionsSelected(value :string) {
+     this.teacher = value;
+  }
   createPayment(){
       if(this.transacid ==null ||
         this.teacher=="" ||  this.teacher==null ||

@@ -48,10 +48,10 @@
                     <tr *ngFor="let pay of studentPaymentView">
                       <td class="u-border-1 u-border-grey-50">{{pay.month_year}}</td>
                       <td class="u-border-1 u-border-grey-50">{{pay.teachers_name}}</td>
-                      <td class="u-border-1 u-border-grey-50">{{pay.payment_date.substring(0, 10)}}</td>
+                      <td class="u-border-1 u-border-grey-50">{{pay.payment_date | date}}</td>
                       <td class="u-border-1 u-border-grey-50">{{pay.status}}</td>
                       <td class="u-border-1 u-border-grey-50">{{pay.transaction_id}}</td>
-                      <td class="u-border-1 u-border-grey-50"><a target="_blank"  href="{{this.feeRecieptRootDir}}{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg">Reciept.jpg</a></td>
+                      <td class="u-border-1 u-border-grey-50"><a target="_blank"  href="{{this.feeRecieptRootDir}}{{pay.regn_no}}-{{pay.pay_month_from | date:'yyyy-MM-dd' }}.jpg">Reciept</a></td>
                       <!-- <td class="u-border-1 u-border-grey-50">{{payment.pay_month_to.substring(0, 10)}}</td> -->
                     </tr>
                   </tbody> 

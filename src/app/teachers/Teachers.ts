@@ -6,7 +6,6 @@ export class Teachers {
         public speciality:string,
         public mobile_no:string,
         public email_id:string,
-        public last_name:string,
         public fees:number,
         public subject:string,
         public address_line_1:string,

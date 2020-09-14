@@ -41,6 +41,9 @@ import { ChangeBackgroundComponent } from './change-background/change-background
 import { StudentPaymentHistoryComponent } from './student-payment-history/student-payment-history.component';
 import { PaymentReportComponent } from './payment-report/payment-report.component';
 import { TeachersComponent } from './teachers/teachers.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { CreateClassComponent } from './create-class/create-class.component';
 
 
 @NgModule({
@@ -71,7 +74,10 @@ import { TeachersComponent } from './teachers/teachers.component';
     ChangeBackgroundComponent,
     StudentPaymentHistoryComponent,
     PaymentReportComponent,
-    TeachersComponent
+    TeachersComponent,
+    GalleryComponent,
+    AboutusComponent,
+    CreateClassComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,11 @@ export * from './dashboard.component';
 })
 export class DashboardComponent implements OnInit {
 
+  public sidebar :string="false";
   constructor() { }
 
   ngOnInit(): void {
+    this.sidebar=localStorage.getItem('login');
   }
 
 }
