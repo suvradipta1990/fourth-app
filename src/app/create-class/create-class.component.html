@@ -1,0 +1,66 @@
+<div class="header-div">
+    <div class="header-welcome-div">
+      <h1>Welcome {{this.loggedInUser}}</h1>
+    </div>
+    <div class="header-logout-div">
+       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+    </div>
+</div>
+<div class="background-image">
+  <div id="id01" class="wrapper">
+    <!-- <p><b>Create a New Teacher</b></p> -->
+    <div> 
+      <form >
+        <div class="container">
+          <hr>
+         
+          <label for="teacher"><b>Teacher Name*</b></label><br>
+          <input type="text" placeholder="Enter Teacher name" [(ngModel)]="teacher" name="teacher" id="teacher" required>
+          
+          <br><br>
+          <label for="subject"><b>Subject*</b></label><br>
+          <input type="radio" id="vocal" name="vocal" [(ngModel)]="subject" value="VOCAL">&nbsp;
+          <label for="vocal">Vocal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="DANCE">&nbsp;
+          <label for="Dance">Dance </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="Dance" name="Dance" [(ngModel)]="subject" value="OTHERS">&nbsp;
+          <label for="Dance">Music Instrument</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <br><br>
+          <label for="dow"><b>Day Of Week*</b></label><br>
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="MON">&nbsp;
+          <label for="vocal">Monday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="TUE">&nbsp;
+          <label for="vocal">Tuesday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="WED">&nbsp;
+          <label for="vocal">Wednesday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="THU">&nbsp;
+          <label for="vocal">Thursday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="FRI">&nbsp;
+          <label for="vocal">Friday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="SAT">&nbsp;
+          <label for="vocal">Saturday</label>&nbsp;&nbsp;&nbsp;
+          
+          <input type="radio" id="vocal" name="dow" [(ngModel)]="dow" value="SUN">&nbsp;
+          <label for="vocal">Sunday</label>&nbsp;&nbsp;&nbsp;
+          
+          <br><br>
+          <label for="stime"><b>From*</b></label>
+          <input type="time" placeholder="Start Time " [(ngModel)]="stime" name="stime" id="stime" required>&nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="etime"><b>To*</b></label>
+          <input type="time" placeholder="End Time" [(ngModel)]="etime" name="etime" id="etime" required>
+        
+
+          <hr>
+          <button type="submit" (click)="createclass()" class="registerbtn">Create</button>
+          <button type="submit" (click)="back()" class="registerbtn">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
