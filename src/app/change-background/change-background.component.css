@@ -104,7 +104,7 @@
     width: 100%;
     height: 80%;
     text-align: left;
-
+    border : 2px solid #3f0101;
   }
 
   .wrapper {
@@ -116,6 +116,9 @@
     width: 60%;
     min-height: 100px;
     padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 
     
   }

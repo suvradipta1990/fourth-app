@@ -558,7 +558,19 @@ app.post('/getClassByTeacher', (req, res) => {
     console.log('getClassByTeacher RES') ;
     console.log(res.body) ;
     return db.get_class_by_teacher(req.body.teacher_id,
-                                       res);  // res.json(data);
+                                   res);  // res.json(data);
+})
+
+
+app.post('/classMapping', (req, res) => {
+    console.log('classMapping REQ') ;
+    console.log(req.body) ;
+    console.log('classMapping RES') ;
+    console.log(res.body) ;
+    return db.class_mapping_for_student(req.body.regnno,
+                                        req.body.teacher,
+                                        req.body.classes,
+                                        res);  // res.json(data);
 })
 
 app.listen(3000, () => {

@@ -1,24 +1,33 @@
-<div class="header-div">
+<!-- <div class="header-div">
     <div class="header-welcome-div">
       <h1>Welcome {{this.loggedInUser}}</h1>
     </div>
     <div class="header-logout-div">
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
     </div>
-</div>
+</div> -->
 <div >
     <div id="id01" class="wrapper background-image">
       <div>
         <table>
-            <tr>
-                <td>
-                  <label for="teacher">Teacher:</label>&nbsp;&nbsp;&nbsp;
-                </td> 
-                <td>
-                    <select type="text" #teacherSelect  id="teacher" [(ngModel)]="teacher" (change)='getClassByTeacherId(teacherSelect.value)'>        
-                       <option *ngFor="let teachers of teachers" value={{teachers.teacher_id}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
-                    </select>
-                </td>
+          <tr>
+            <td>
+              <label for="regnno">Regn No:</label>&nbsp;&nbsp;&nbsp;
+            </td>
+            <td>
+              <input type="text" placeholder="Enter Regn No" [(ngModel)]="regnno" name="regnno" id="regnno">
+            </td>
+          </tr>
+          <br>
+          <tr>
+              <td>
+                <label for="teacher">Teacher:</label>&nbsp;&nbsp;&nbsp;
+              </td> 
+              <td>
+                  <select type="text" #teacherSelect  id="teacher" [(ngModel)]="teacher" (change)='getClassByTeacherId(teacherSelect.value)'>        
+                      <option *ngFor="let teachers of teachers" value={{teachers.teacher_id}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
+                  </select>
+              </td>
             </tr>
             <br>
             <tr>

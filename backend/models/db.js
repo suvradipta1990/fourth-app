@@ -759,7 +759,26 @@ var approve_reg_candidate = (id,
                       console.log("db.js console get_class_by_teacher results : "+result.rows);
                       res.status(200).json(result.rows);
                   });
-}
+   }
+
+var class_mapping_for_student = (regnno,
+                                 teacher,
+                                 classes,
+                                  res) => {
+        const registerQry = 'SELECT * from master.create_student_class_mapping($1,$2,$3)';
+        console.log("db.js console class_id: "+classes);
+        client.query(registerQry,[regnno,
+                                  teacher,
+                                  classes], 
+                            (err, result, callback) => {
+                            if (err) {
+                                console.log(err);
+                                return null;
+                            }
+              console.log("db.js console class_mapping_for_student results : "+result.rows);
+              res.status(200).json(result.rows);
+          });
+  }
 
 module.exports = {'client': client,
                   'login': login,
@@ -791,7 +810,8 @@ module.exports = {'client': client,
                    'payment_report' : payment_report,
                    'get_teachers' : get_teachers,
                    'create_teacher' : create_teacher,
-                   'create_class' :create_class,
+                   'create_class' : create_class,
                    'get_teacher_by_profileid' : get_teacher_by_profileid,
-                   'get_class_by_teacher' : get_class_by_teacher
+                   'get_class_by_teacher' : get_class_by_teacher,
+                   'class_mapping_for_student' : class_mapping_for_student
                   };

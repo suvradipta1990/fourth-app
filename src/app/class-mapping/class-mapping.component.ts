@@ -20,29 +20,38 @@ export class ClassMappingComponent implements OnInit {
   public loggedInUser: string="";
   public teachers :Teachers[];
   public classes :Class[];
-  public class: string="";
-  public teacher: string="";
+  public class: number;
+  public teacher: number;
   public is_select_teacher : boolean=false;
+  public regnno : string="";
+  public is_admin : string="";
+  public result :string="";
 
   constructor(private router: Router,
     public authService: AuthService,
     private classMappingService: ClassMappingService,
     private paymentService: PaymentService,
     private createClassService: CreateClassService) { }
-
+    
   ngOnInit(): void {
     this.loggedInUser = localStorage.getItem('user_name');
     this.getallteachers();
     this.getClassByTeacherId(null);
     this.is_select_teacher=false;
+    this.is_admin = localStorage.getItem('is_admin');
+    alert(this.is_admin);
+    if(this.is_admin=="false"){
+       this.regnno = this.loggedInUser;
+       alert(this.regnno);
+    }
   }
 
-  onTeacherChange(value :string) {
+  onTeacherChange(value :number) {
     this.teacher = value;
     this.is_select_teacher=true;
  }
 
- onchangeclass(value :string) {
+ onchangeclass(value :number) {
     if (!this.is_select_teacher){
       alert('Please Select Teacher First');
      }
@@ -64,22 +73,35 @@ export class ClassMappingComponent implements OnInit {
       });
     }
 
-    getClassByTeacherId(teacher_id :string){
-      this.onTeacherChange(teacher_id);
-                       this.createClassService.getClassByTeacherId(teacher_id)
+    getClassByTeacherId(teacher_id :number){
+        this.onTeacherChange(teacher_id);
+        this.createClassService.getClassByTeacherId(teacher_id)
             .subscribe((data) => {
               if(data != null ) {
-                console.log('getallteachers for fees book');
                 this.classes=data;
                 console.log(this.teachers);
                 }else {
                   console.log(this.teachers);
                 }
-              });
+          });
     }
 
     createclassmap(){
-      //to do
+      this.classMappingService.classMapping(this.regnno,this.teacher,this.class)
+        .subscribe((data) => {
+              if(data != null ) {
+                console.log('getallteachers for fees book');
+                this.result=data[0].create_student_class_mapping;
+                console.log(this.result);
+                alert(this.result);
+                }
+                if(this.is_admin=="true"){
+                  this.router.navigate(["/pendingapprovals"]);
+               }
+               else{
+                this.router.navigate(["/home"]);
+               }
+         });
     }
 
     back(){

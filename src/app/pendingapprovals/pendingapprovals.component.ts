@@ -82,6 +82,10 @@ export class PendingapprovalsComponent implements OnInit {
     this.router.navigate(["/create-class"]);
   }
 
+  createStudentCLassMap(){
+    this.router.navigate(["/class-mapping"]);
+  }
+
   logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');

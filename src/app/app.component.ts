@@ -28,10 +28,12 @@ export class AppComponent {
   ngOnInit(): void {
 
     this.is_loggedIn = localStorage.getItem('isLoggedIn');
+    this.loggedInUser = localStorage.getItem('user_name');
   }
 
   login(): void{
     this.is_loggedIn = localStorage.getItem('isLoggedIn');
+    this.loggedInUser = localStorage.getItem('user_name');
   }
 
   openNav(){

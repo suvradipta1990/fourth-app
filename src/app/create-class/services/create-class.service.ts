@@ -22,7 +22,7 @@ export class CreateClassService {
             return this.http.post<any>(this.urlString + '/createclass',v_input_param);
    }
 
-   getClassByTeacherId(teacher_id: string): Observable<Class[]> {
+   getClassByTeacherId(teacher_id: number): Observable<Class[]> {
                      console.log(teacher_id);
 
               const v_input_param  = {teacher_id: teacher_id};             
