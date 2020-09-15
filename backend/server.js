@@ -552,6 +552,15 @@ app.post('/getteacherbyprofileid', (req, res) => {
                                        res);  // res.json(data);
 })
 
+app.post('/getClassByTeacher', (req, res) => {
+    console.log('getClassByTeacher REQ') ;
+    console.log(req.body) ;
+    console.log('getClassByTeacher RES') ;
+    console.log(res.body) ;
+    return db.get_class_by_teacher(req.body.teacher_id,
+                                       res);  // res.json(data);
+})
+
 app.listen(3000, () => {
     console.log('App running in port 3000');
 })

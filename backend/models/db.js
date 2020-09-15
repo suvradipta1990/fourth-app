@@ -746,6 +746,21 @@ var approve_reg_candidate = (id,
         });
   }
 
+  var get_class_by_teacher = (teacher_id,
+                              res) => {
+          const registerQry = 'SELECT * from master.get_class_by_teacher($1)';
+          console.log("db.js console teacher_id: "+teacher_id);
+      client.query(registerQry,[teacher_id], 
+                              (err, result, callback) => {
+                              if (err) {
+                                  console.log(err);
+                                  return null;
+                              }
+                      console.log("db.js console get_class_by_teacher results : "+result.rows);
+                      res.status(200).json(result.rows);
+                  });
+}
+
 module.exports = {'client': client,
                   'login': login,
                    'getprofile': getprofile,
@@ -777,5 +792,6 @@ module.exports = {'client': client,
                    'get_teachers' : get_teachers,
                    'create_teacher' : create_teacher,
                    'create_class' :create_class,
-                   'get_teacher_by_profileid' : get_teacher_by_profileid
+                   'get_teacher_by_profileid' : get_teacher_by_profileid,
+                   'get_class_by_teacher' : get_class_by_teacher
                   };

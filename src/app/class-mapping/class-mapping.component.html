@@ -6,4 +6,35 @@
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
     </div>
 </div>
-<p>class-mapping works!</p>
+<div >
+    <div id="id01" class="wrapper background-image">
+      <div>
+        <table>
+            <tr>
+                <td>
+                  <label for="teacher">Teacher:</label>&nbsp;&nbsp;&nbsp;
+                </td> 
+                <td>
+                    <select type="text" #teacherSelect  id="teacher" [(ngModel)]="teacher" (change)='getClassByTeacherId(teacherSelect.value)'>        
+                       <option *ngFor="let teachers of teachers" value={{teachers.teacher_id}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
+                    </select>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <label for="teacher"> Class:</label>&nbsp;&nbsp;&nbsp; 
+                </td>
+                <td>
+                    <select type="text" #classSelect  id="teacher" [(ngModel)]="class" (change)='onchangeclass(classSelect.value)'>        
+                        <option *ngFor="let classes of classes" value={{classes.class_id}} selected={{classes.class_id}}>{{classes.class_name}}</option>
+                    </select>
+                </td> 
+            </tr>
+        </table>
+    <hr>
+    <button type="submit" (click)="createclassmap()" class="registerbtn">Create Mapping</button><br>
+    <button type="submit" (click)="back()" class="registerbtn">Back</button>
+      </div>
+    </div>
+  </div>
