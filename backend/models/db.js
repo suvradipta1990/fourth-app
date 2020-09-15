@@ -686,27 +686,65 @@ var approve_reg_candidate = (id,
                           res) => {
                       const registerQry = 'SELECT * from MASTER.create_teacher ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10,$11,$12)';
                       console.log("db.js console profile_id: "+firstname);
-                      client.query(registerQry,[firstname, 
-                                                speciality, 
-                                                mobilenumber, 
-                                                emailid, 
-                                                dateofbirth, 
-                                                gender,
-                                                addressline1,
-                                                addressline2,
-                                                district,
-                                                city,
-                                                pincode,
-                                                subject], 
-                      (err, result, callback) => {
-                      if (err) {
+      client.query(registerQry,[firstname, 
+                                speciality, 
+                                mobilenumber, 
+                                emailid, 
+                                dateofbirth, 
+                                gender,
+                                addressline1,
+                                addressline2,
+                                district,
+                                city,
+                                pincode,
+                                subject], 
+              (err, result, callback) => {
+              if (err) {
+              console.log(err);
+              return null;
+              }
+              console.log("db.js console REGISTER results : "+result.rows);
+              res.status(200).json(result.rows);
+        });
+  }
+
+  var create_class = (teacher,
+                      subject,
+                      dow,
+                      stime,
+                      etime,
+                      res) => {
+        const registerQry = 'SELECT * from MASTER.create_class ($1, $2, $3, $4,$5)';
+        console.log("db.js console profile_id: "+teacher);
+        client.query(registerQry,[teacher,
+                                  subject,
+                                  dow,
+                                  stime,
+                                  etime], 
+                    (err, result, callback) => {
+                    if (err) {
                       console.log(err);
                       return null;
-                      }
-                      console.log("db.js console REGISTER results : "+result.rows);
-                      res.status(200).json(result.rows);
-                      });
-                      }
+                    }
+                    console.log("db.js console REGISTER results : "+result.rows);
+                    res.status(200).json(result.rows);
+          });
+  }
+
+  var get_teacher_by_profileid = (teacher,
+                                 res) => {
+      const registerQry = 'SELECT * from MASTER.get_teacher_by_profileid ($1)';
+      console.log("db.js console profile_id: "+teacher);
+      client.query(registerQry,[teacher], 
+                    (err, result, callback) => {
+                    if (err) {
+                      console.log(err);
+                      return null;
+                    }
+                    console.log("db.js console REGISTER results : "+result.rows);
+                    res.status(200).json(result.rows);
+        });
+  }
 
 module.exports = {'client': client,
                   'login': login,
@@ -737,5 +775,7 @@ module.exports = {'client': client,
                    'student_payment_history' : student_payment_history,
                    'payment_report' : payment_report,
                    'get_teachers' : get_teachers,
-                   'create_teacher' : create_teacher
+                   'create_teacher' : create_teacher,
+                   'create_class' :create_class,
+                   'get_teacher_by_profileid' : get_teacher_by_profileid
                   };

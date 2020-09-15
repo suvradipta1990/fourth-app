@@ -530,6 +530,27 @@ app.post('/uploadTeacherPic', TeacherPicupload.single('uploads'), function(req,r
 
 /************************************************************ */   
 
+app.post('/createclass', (req, res) => {
+    console.log('createclass REQ') ;
+    console.log(req) ;
+    console.log('createclass RES') ;
+    console.log(res.body) ;
+    return db.create_class(req.body.teacher,
+                             req.body.subject,
+                             req.body.dow,
+                             req.body.stime,
+                             req.body.etime,
+                             res);  // res.json(data);
+})
+
+app.post('/getteacherbyprofileid', (req, res) => {
+    console.log('getteacherbyprofileid REQ') ;
+    console.log(req.body) ;
+    console.log('getteacherbyprofileid RES') ;
+    console.log(res.body) ;
+    return db.get_teacher_by_profileid(req.body.profile_id,
+                                       res);  // res.json(data);
+})
 
 app.listen(3000, () => {
     console.log('App running in port 3000');

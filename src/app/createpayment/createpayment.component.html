@@ -11,11 +11,9 @@
     <h1><b>Fees Book</b></h1>
     <p><b>Please fill in this form after making payment Online</b></p>
     <div> 
-      <form >
-        <div class="container">
           <hr>
           <label for="regn_no"><b>Student Registration No*</b></label>
-          <input type="text" placeholder="Enter Registration No" [(ngModel)]="regn_no" name="regn_no" id="regn_no" required>
+          <input type="text" (change)="onregnochange(this.regn_no)" placeholder="Enter Registration No" [(ngModel)]="regn_no" name="regn_no" id="regn_no" required>
           
           <br><br>
           <label for="officename"><b>Business/Office Name*</b></label>
@@ -25,23 +23,18 @@
           <label for="transacid"><b>Transaction Id/Reference Id*</b></label>
           <input type="text" placeholder="Enter Transaction Id" [(ngModel)]="transacid" name="transacid" id="transacid" required>
         
-          <!-- <br><br>
-          <label for="radio"><b>LALITKALA'S TEACHER NAME*</b></label><br>
-          <div class="div-block" *ngFor="let teachers of teachers" > 
-              <input type="radio" id="teacher" name="teacher" [(ngModel)]="teacher" value={{teachers.teacher_name}}>&nbsp;
-              <label for="teacher">{{teachers.teacher_name}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>   -->
-
           <br><br>
-            <label for="teacher">Teacher:</label> 
+            <!-- <label for="teacher">Teacher:</label> 
               <select #mySelect class="form-control" id="teacher" [(ngModel)]="teacher" (change)='onOptionsSelected(mySelect.value)'>        
                   <option *ngFor="let teachers of teachers" value={{teachers.teacher_name}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
-              </select>
-          
+              </select> -->
+          <label for="teacher"><b>Teacher's Name*</b></label>
+          <input type="text" placeholder="Teachers Name" [(ngModel)]="teacher" name="teacher" id="teacher" readonly>
+        
           <br><br>
           <label for="paymonthfrom"><b>Payment Month From*(select 1st day of month)</b></label>
           <input type="date" placeholder="select 1st day of month " [(ngModel)]="paymonthfrom" name="paymonthfrom" id="paymonthfrom" required>
-        
+         
           <br><br>
           <label for="paymonthto"><b>Payment Month To*(Select last day of month)</b></label>
           <input type="date" (change)="datechange($event)" placeholder="Select last day of month" [(ngModel)]="paymonthto" name="paymonthto" id="paymonthto" required>
@@ -63,8 +56,6 @@
           <br><br>
           <button type="submit"  (click)="createPayment()" class="registerbtn">Make Payment</button>
           <!-- <button type="submit" (click)="logout()" class="registerbtn">Cancel</button> -->
-        </div>
-      </form>
     </div>
   </div>
 </div>

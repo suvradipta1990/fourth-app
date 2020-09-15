@@ -32,6 +32,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { CreateClassComponent } from './create-class/create-class.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { ClassMappingComponent } from './class-mapping/class-mapping.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'payment-report', component: PaymentReportComponent,canActivate: [AuthGuard] },
   { path: 'teachers', component: TeachersComponent,canActivate: [AuthGuard] },
   { path: 'create-class',  component: CreateClassComponent,canActivate: [AuthGuard] },
+  { path: 'class-mapping', component: ClassMappingComponent },
   { path: 'view-reg-form', component: ViewRegFormComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'aboutus', component: AboutusComponent },

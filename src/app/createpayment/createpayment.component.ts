@@ -22,6 +22,9 @@ export * from './createpayment.component';
   styleUrls: ['./createpayment.component.css']
 })
 export class CreatepaymentComponent implements OnInit {
+  static getallteachers() {
+    throw new Error("Method not implemented.");
+  }
   
 
   public loggedInUser: string="";
@@ -62,7 +65,8 @@ export class CreatepaymentComponent implements OnInit {
     console.log(this.isadmin);
     console.log("fees book profile_id: " +this.profile_id);
     this.getPaymentSummary(this.profile_id);
-    this.getallteachers();
+    //this.getallteachers();
+    this.getteacher(this.loggedInUser);
     if(this.isadmin=="true"){
        this.regn_no="";
     }
@@ -76,8 +80,9 @@ export class CreatepaymentComponent implements OnInit {
     this.reciept_attached=true;
   }
 
-  onOptionsSelected(value :string) {
-     this.teacher = value;
+  onregnochange(regnno :string) {
+    alert(regnno);
+    this.getteacher(regnno);
   }
   createPayment(){
       if(this.transacid ==null ||
@@ -151,6 +156,19 @@ export class CreatepaymentComponent implements OnInit {
           }
         });
       }
+
+      getteacher(profile_id :string){
+        this.paymentService.getteacher(profile_id)
+        .subscribe((data) => {
+          if(data != null ) {
+            console.log('getteachers for fees book');
+             this.teacher=data[0].get_teacher_by_profileid;
+             console.log(this.teachers);
+            }else {
+              console.log(this.teachers);
+            }
+          });
+        }
 
     UploadFeeReciept(regnno:string,paymonthfrom :string){
       var filename: string=regnno+'-'+paymonthfrom.substring(0,10);

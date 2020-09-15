@@ -1,12 +1,11 @@
 
 .header-div {
     background-color: lightblue;    
-    height: 110px;
+    height: 100px;
   }
   .header-welcome-div {   
     text-align: center;
     justify-content: center;
-  
   }
   .header-logout-div {   
     text-align: right;
@@ -24,14 +23,16 @@
     font-family: Arial;
     margin: 5px;
     width: 10%;
-    border: 1px solid #f6f6f6;
+    border: 2px solid #000000;
+    border-radius: 15px;
   }
   .registerbtn {
     background-color: #0b57e2;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
-    border: 2px solid #000103;;
+    border: 2px solid #000000;
+    border-radius: 45px;
     cursor: pointer;
     width: 80%;
     height: 30%;
@@ -63,7 +64,7 @@
   }
   
   .background-image{
-    background-image: url("../../assets/images/backgroud-images/admin_panel_background.jpg");
+    background-image: url("../../assets/images/backgroud-images/create_class_background.jpg");
     width: 100%;
     height: 100%;
     margin-top: 5px;
@@ -81,6 +82,9 @@
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
+    background-color: peru;
+    margin-top: 15px;
+    border-radius: 5px;
     
   }
   

@@ -24,16 +24,18 @@
     font-family: Arial;
     margin: 5px;
     width: 10%;
-    border: 1px solid #f6f6f6;
+    border: 2px solid #000000;
+    border-radius: 15px;
   }
   .registerbtn {
     background-color: #0b57e2;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
-    border: 2px solid #000103;;
+    border: 2px solid #000000;
+    border-radius: 105px;
     cursor: pointer;
-    width: 80%;
+    width: 70%;
     height: 30%;
     opacity: 0.9;
   }

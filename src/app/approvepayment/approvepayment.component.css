@@ -60,7 +60,8 @@ input[type=submit] {
     font-family: Arial;
     margin: 5px;
     width: 120px;
-    border: 1px solid #f6f6f6;
+    border: 2px solid #000000;
+    border-radius: 15px;
   }
   .main-div{
     height: 100px;

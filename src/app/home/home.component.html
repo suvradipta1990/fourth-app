@@ -13,6 +13,8 @@
             <div class="col-md-4">
                 <div class="profile-img">
                     <img src="{{this.profilePicPath}}" alt="Profile photo"/>
+                    <input type="submit" class="profile-edit-btn" (click)="uploadProfilePhoto(profile.profile_id)"  name="btnAddMore" value="Update Profile Photo"/>
+                
                 </div>
             </div>
             <div class="col-md-6">
@@ -187,8 +189,8 @@
             </div>
             <div class="col-md-2">
                 <input type="submit" class="profile-edit-btn" (click)="editprofile(profile.profile_id)"  name="btnAddMore" value="Edit Profile"/>
-                <input type="submit" class="profile-edit-btn" (click)="uploadProfilePhoto(profile.profile_id)"  name="btnAddMore" value="Update Profile Photo"/>
                 <input type="submit" class="profile-edit-btn" (click)="viewPaymentHistory()" name="btnAddMore" value="Payment History"/>
+                <input type="submit" class="profile-edit-btn" (click)="classMapping()" name="btnAddMore" value="Add Your Class"/>
             
             </div>
         </div>

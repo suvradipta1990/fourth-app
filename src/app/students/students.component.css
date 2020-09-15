@@ -84,37 +84,7 @@ html {
     color: #0d0d0d;
     border-bottom: 2px solid #5fbae9;
   }
-  
-  
-  
-  /* FORM TYPOGRAPHY*/
-  
-  /* input[type=button], input[type=submit], input[type=reset]  {
-    background-color: #56baed;
-    color: white;
-    padding: 15px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 13px;
-    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-    margin: 5px 20px 40px 20px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  } */
-  
-  /* input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-    background-color: #39ace7;
-    border: 1px solid #0a0101;
-  } */
-  
+    
   input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
@@ -354,8 +324,10 @@ body {
 /* Add padding to containers */
 .container {
   padding: 16px;
-  background-color: white;
-  width: 50%;
+  background-color: rgba(119, 90, 10, 0.651);
+  width: 40%;
+  margin-top: 10px;
+  border: 2px solid black;
 }
 
 /* Full-width input fields */
@@ -364,8 +336,9 @@ input[type=text], input[type=password] {
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: 1px  solid #0d0d0d;
+  border: 1.5px  solid #0d0d0d;
   background: #f1f1f1;
+  border-radius: 5px;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -389,7 +362,8 @@ hr {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-  border: 1px solid #010f1b;
+  border: 2px solid #000000;
+  border-radius: 25px;
 }
 
 .registerbtn:hover {
@@ -445,7 +419,8 @@ input[type=button] {
   font-family: Arial;
   margin: 5px;
   width: 10%;
-  border: 1px solid #ffffff;
+  border: 2px solid #000000;
+  border-radius: 15px;
 }
 
 .modal {

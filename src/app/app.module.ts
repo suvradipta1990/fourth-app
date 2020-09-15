@@ -44,6 +44,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { CreateClassComponent } from './create-class/create-class.component';
+import { ClassMappingComponent } from './class-mapping/class-mapping.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { CreateClassComponent } from './create-class/create-class.component';
     TeachersComponent,
     GalleryComponent,
     AboutusComponent,
-    CreateClassComponent
+    CreateClassComponent,
+    ClassMappingComponent
   ],
   imports: [
     BrowserModule,

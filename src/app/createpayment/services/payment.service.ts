@@ -30,4 +30,11 @@ export class PaymentService {
     getallteachers(): Observable<Teachers[]> {          
     return this.http.get<Teachers[]>(this.urlString + '/getallteachers');
     }
+
+    getteacher(profile_id: string): Observable<any> {
+           console.log(profile_id);
+           const user  = {profile_id: profile_id};
+              
+           return this.http.post<any>(this.urlString + '/getteacherbyprofileid',user);
+    }
 }

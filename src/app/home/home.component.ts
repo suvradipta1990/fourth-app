@@ -207,6 +207,10 @@ export class HomeComponent implements OnInit {
        this.router.navigate(["/student-payment-history"]);
     }
 
+    classMapping(){
+      this.router.navigate(["/class-mapping"]);
+   }
+
     logout(){
       localStorage.setItem('isLoggedIn', "false");
       localStorage.removeItem('user_id');
