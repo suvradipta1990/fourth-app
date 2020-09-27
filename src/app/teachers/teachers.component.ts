@@ -26,7 +26,7 @@ export class TeachersComponent implements OnInit {
   public addressline2 :string="";
   public district :string="";
   public city :string="";
-  public pincode :string="";
+  public pincode :number=null;
   public gender :string="";
   public subject :string="";
 
@@ -61,8 +61,7 @@ export class TeachersComponent implements OnInit {
   createteacher(){
     console.log("Date Of Birth");
     console.log(this.gender);
-    if(this.firstname == null || this.firstname == "" || this.speciality == null || this.speciality == "" ||
-     this.mobilenumber == null || this.mobilenumber == "" || this.emailid == null || this.emailid == ""){
+    if(this.firstname == null || this.firstname == "" || this.mobilenumber == null || this.mobilenumber == "" ){
       alert("Please fill all mandatory fields");
       if(!this.reciept_attached){
         alert("Kindly Attach Your Photo");     

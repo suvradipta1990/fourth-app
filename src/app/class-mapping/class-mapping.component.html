@@ -25,7 +25,7 @@
               </td> 
               <td>
                   <select type="text" #teacherSelect  id="teacher" [(ngModel)]="teacher" (change)='getClassByTeacherId(teacherSelect.value)'>        
-                      <option *ngFor="let teachers of teachers" value={{teachers.teacher_id}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
+                     <option  *ngFor="let teachers of teachers" value={{teachers.teacher_id}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
                   </select>
               </td>
             </tr>

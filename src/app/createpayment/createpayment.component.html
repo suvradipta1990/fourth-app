@@ -1,11 +1,3 @@
-<!-- <div class="header-div">
-    <div class="header-welcome-div">
-      <h1>Welcome {{this.loggedInUser}}</h1>
-    </div>
-    <div class="header-logout-div">
-       <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
-    </div>
-</div> -->
 <div class="background-image">
   <div id="id01" class="wrapper">
     <h1><b>Fees Book</b></h1>
@@ -24,10 +16,6 @@
           <input type="text" placeholder="Enter Transaction Id" [(ngModel)]="transacid" name="transacid" id="transacid" required>
         
           <br><br>
-            <!-- <label for="teacher">Teacher:</label> 
-              <select #mySelect class="form-control" id="teacher" [(ngModel)]="teacher" (change)='onOptionsSelected(mySelect.value)'>        
-                  <option *ngFor="let teachers of teachers" value={{teachers.teacher_name}} selected={{teachers.teacher_name}}>{{teachers.teacher_name}}</option>
-              </select> -->
           <label for="teacher"><b>Teacher's Name*</b></label>
           <input type="text" placeholder="Teachers Name" [(ngModel)]="teacher" name="teacher" id="teacher" readonly>
         

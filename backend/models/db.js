@@ -685,7 +685,7 @@ var approve_reg_candidate = (id,
                         subject,
                           res) => {
                       const registerQry = 'SELECT * from MASTER.create_teacher ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10,$11,$12)';
-                      console.log("db.js console profile_id: "+firstname);
+                      console.log("db.js console firstname: "+firstname);
       client.query(registerQry,[firstname, 
                                 speciality, 
                                 mobilenumber, 

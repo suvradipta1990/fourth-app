@@ -31,6 +31,8 @@ export class Profile {
         public mother_occupation:string,
         public gender:string,
         public aadhaar_number:string,
-        public subject:string){}
+        public subject:string,
+        public class_id:number,
+        public class_name:string){}
   }
   export * from './Profile';

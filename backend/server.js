@@ -493,9 +493,9 @@ app.get('/getallteachers', (req, res) => {
 })
 
 app.post('/createteacher', (req, res) => {
-    console.log('payment-report REQ') ;
+    console.log('createteacher REQ') ;
     console.log(req) ;
-    console.log('payment-report RES') ;
+    console.log('createteacher RES') ;
     console.log(res.body) ;
     return db.create_teacher(req.body.firstname, 
                             req.body.speciality, 

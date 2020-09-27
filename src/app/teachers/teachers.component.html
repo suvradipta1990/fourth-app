@@ -4,8 +4,8 @@
     </div>
     <div class="header-logout-div">
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
-    </div> -->
-</div>
+    </div> 
+</div> -->
 <div class="background-image">
     <div id="id01" class="wrapper">
       <!-- <p><b>Create a New Teacher</b></p> -->
@@ -18,23 +18,8 @@
             <input type="text" placeholder="Enter First Name and Middle name(if any)" [(ngModel)]="firstname" name="firstname" id="firstname" required>
             
             <br><br>
-            <label for="lastname"><b>Speciality*</b></label><br>
-            <input type="text" placeholder="Enter Speciality" [(ngModel)]="speciality" name="speciality" id="speciality" required>
-            
-            <br><br>
-            <label for="email"><b>Email*</b></label><br>
-            <input type="email" placeholder="Enter Email" [(ngModel)]="emailid" name="emailid" id="emailid" required>
-          
-            <br><br>
             <label for="mobilenumber"><b>Mobile Number*</b></label><br>
             <input type="number" placeholder="Enter Mobile Number" [(ngModel)]="mobilenumber" name="mobilenumber" id="mobilenumber" required>
-            
-            <br><br>
-            <label for="address"><b>Address*</b></label><br>
-            <input type="text" placeholder="Address Line 1*" [(ngModel)]="addressline1" name="addressline1" id="addressline1" required>
-            <input type="text" placeholder="Address Line 2" [(ngModel)]="addressline2" name="addressline2" id="addressline2" required>
-            <input type="text" placeholder="City*" [(ngModel)]="city" name="city" id="city" required>
-            <input type="number" placeholder="Pincode*" [(ngModel)]="pincode" name="pincode" id="pincode" required>
             
             <br><br>
             <label for="subject"><b>Subject*</b></label><br>
@@ -54,10 +39,6 @@
             <input type="radio" id="other" name="gender" [(ngModel)]="gender" value="other">&nbsp;
             <label for="other">Other </label>
 
-            <br><br>
-            <label for="dateofbirth"><b>Date Of Birth*</b></label><br>
-            <input type="date" placeholder="Date f Birth" [(ngModel)]="dateofbirth" name="dateofbirth" id="dateofbirth" required>
-          
             <br><br>
             <label for="profilephoto"><b>Upload Your Passport Size Photo*</b></label><br>
             <form action="/uploadProfilePic" method="post" enctype="multipart/form-data">

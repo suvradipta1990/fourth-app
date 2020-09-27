@@ -4,8 +4,8 @@
     </div>
     <div class="header-logout-div">
        <input id="logoutbtn" type="button" class="logoutbutton" (click)="logout()" href='home' value="Log out">
+</div> 
 </div> -->
-</div>
 
 <div class="container emp-profile background-image"> 
     <form method="post">
@@ -27,6 +27,7 @@
                     <p><label>MOBILE NUMBER: </label><span> {{profile.mobile_number}}</span></p>
                     <p><label>DATE OF BIRTH: </label><span> {{profile.date_of_birth | date}}</span></p>
                     <p><label>EMAIL: </label><span> {{profile.email}}</span></p>
+                    <p><label>CLASS: </label><span> {{profile.class_name}}</span></p>
                     <mat-tab-group>
                         <mat-tab>
                             <ng-template mat-tab-label>

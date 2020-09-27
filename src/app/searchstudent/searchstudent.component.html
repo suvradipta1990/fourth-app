@@ -21,6 +21,7 @@
       </ng-template>
       <ng-template #YES>
           <div class="div-block" *ngFor="let profile of profiles" >
+                <br>
                   <div class="row">
                       <div class="col-md-6">
                           <label>Profile Photo</label>
@@ -29,41 +30,47 @@
                         <img src="{{this.profilePicPath}}{{profile.regn_no}}.jpg" alt="Profile photo"/>
                     </div>
                       <div class="col-md-6">
-                          <label>REGISTRATION NO</label>
+                          <label>Registration No</label>
                       </div>
                       <div class="col-md-6">
                           <p>{{profile.regn_no}}</p>
                       </div>
                       <div class="col-md-6">
-                          <label>NAME</label>
+                          <label>Name</label>
                       </div>
                       <div class="col-md-6">
-                          <p>{{profile.first_name}} {{profile.middle_name}}{{profile.last_name}}</p>
+                          <p>{{profile.first_name}} {{profile.middle_name}} {{profile.last_name}}</p>
                       </div>
                       <div class="col-md-6">
-                          <label>MOBILE NO</label>
+                          <label>Mobile No.</label>
                       </div>
                       <div class="col-md-6">
                           <p>{{profile.mobile_number}}</p>
                       </div>
 
                       <div class="col-md-6">
-                          <label>DATE OF JOINNING</label>
+                          <label>Date Of Join</label>
                       </div>
                       <div class="col-md-6">
                           <p>{{profile.DOJ}}</p>
                       </div>
                       <div class="col-md-6">
-                        <label>Fathers Name and Occupation</label>
+                        <label>Class</label>
+                      </div>
+                      <div class="col-md-1">
+                        <p>{{profile.class_name}}</p>
                       </div>
                       <div class="col-md-6">
-                        <p>{{profile.fathers_name}}({{profile.father_occupation}})</p>
+                        <label>Fathers Name (Occupation)</label>
                       </div>
                       <div class="col-md-6">
-                        <label>Mothers Name and Occupation</label>
+                        <p>{{profile.fathers_name}} ({{profile.father_occupation}})</p>
                       </div>
                       <div class="col-md-6">
-                        <p>{{profile.mothers_name}}({{profile.mother_occupation}})</p>
+                        <label>Mothers Name (Occupation)</label>
+                      </div>
+                      <div class="col-md-6">
+                        <p>{{profile.mothers_name}} ({{profile.mother_occupation}})</p>
                       </div>
                       <div class="col-md-6">
                           <label>Actual Fees Per Month</label>
@@ -71,7 +78,7 @@
                       <div class="col-md-1">
                           <p><input type="text" placeholder={{profile.fees}} [(ngModel)]="fees" name="fees" id="fees"></p>
                       </div>
-                       <div class="col-md-6">
+                      <div class="col-md-6">
                           <label>Fees Payble Per Month</label>
                       </div>
                       <div class="col-md-1">

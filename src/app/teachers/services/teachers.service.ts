@@ -14,7 +14,7 @@ export class TeachersService {
   createteacher(firstname: string,speciality: string,mobilenumber: string,emailid: string,
               dateofbirth: Date,gender:string, addressline1: string,
               addressline2: string,district: string,city: string,
-              pincode: string,subject: string): Observable<any> {
+              pincode: number,subject: string): Observable<any> {
           console.log(dateofbirth);
           const user  = {firstname: firstname,speciality : speciality,
                         mobilenumber: mobilenumber,emailid : emailid,
